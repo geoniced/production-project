@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", // то куда собирается сборка, мы билдим вебпаком, потому не так важно
+    "noImplicitAny": true, // не позволяет использовать переменные без явного указания типа
+    "module": "ESNext", // модульная система. То как будем использовать модули (import / require итд)
+    "target": "es5", // в какую спецификацию комплируем
+    "jsx": "react-jsx", // позволяет использовать реактовый jsx
+    "allowJs": true, // позволяет обрабатывать не только ts, но и js файлы
+    "moduleResolution": "node",
+    "esModuleInterop": true, // Позволяет использовать import вместо require
+    "allowSyntheticDefaultImports": true, // Позволяет писать импорты без (* as _) а в обычном стиле, как default
+//    "baseUrl": "."
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
