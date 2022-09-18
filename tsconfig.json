@@ -9,7 +9,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true, // Позволяет использовать import вместо require
     "allowSyntheticDefaultImports": true, // Позволяет писать импорты без (* as _) а в обычном стиле, как default
-//    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
