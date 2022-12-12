@@ -1,11 +1,12 @@
 {
   "test": "Тестовый пример",
-  "Language": "EN",
+  "Language": "English",
   "Page not found": "Страница не найдена",
   "An unexpected error has occured": "An unexpected error has occured",
   "Reload page": "Reload page",
   "Throw error": "Throw error",
   "Main": "Главная",
   "About": "О сайте",
-  "Toggle": "Переключить"
+  "Toggle": "Переключить",
+  "Short language": "EN"
 }
