@@ -14,5 +14,7 @@
   "Short language": "Short language",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
-  "Войти": "Войти"
+  "Войти": "Войти",
+  "increment": "increment",
+  "decrement": "decrement"
 }
