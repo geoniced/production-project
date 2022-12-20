@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {
@@ -11,5 +11,14 @@ export const Portal = (props: PortalProps) => {
     children,
     element = document.body,
   } = props;
+
+  // const [isMounted, setIsMounted] = useState(false);
+  //
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
+  //
+  // return isMounted && element ? createPortal(children, element) : null;
+
   return createPortal(children, element);
 };
