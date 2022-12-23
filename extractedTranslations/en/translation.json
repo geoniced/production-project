@@ -1,11 +1,14 @@
 {
+  "": "",
   "About": "About",
   "About page": "About page",
   "An unexpected error has occured": "An unexpected error has occured",
+  "Authorization": "Authorization",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Language": "Language",
   "Login": "Login",
+  "Logout": "Logout",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?": " Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?"
   },
@@ -16,6 +19,7 @@
   "Short language": "Short language",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
+  "Wrong username or password": "Wrong username or password",
   "decrement": "decrement",
   "increment": "increment"
 }

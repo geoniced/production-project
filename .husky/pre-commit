@@ -4,6 +4,7 @@
 npm run build:prod
 npm run lint:ts
 npm run lint:scss
-npm run test:unit
-npm run storybook:build
-npm run test:ui:ci
+#Shouldn't use
+#npm run test:unit
+#npm run storybook:build
+#npm run test:ui:ci
