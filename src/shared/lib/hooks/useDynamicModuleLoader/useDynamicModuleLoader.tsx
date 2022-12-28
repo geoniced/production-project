@@ -14,13 +14,7 @@ interface DynamicModuleLoaderProps {
   removeAfterUnmount?: boolean;
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
-  const {
-    reducers,
-    removeAfterUnmount,
-    children,
-  } = props;
-
+export const useDynamicModuleLoader = ({ reducers, removeAfterUnmount }: DynamicModuleLoaderProps) => {
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreWithManager;
 
@@ -40,11 +34,4 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     };
     // eslint-disable-next-line
   }, []);
-
-  return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {children}
-    </>
-  );
 };
