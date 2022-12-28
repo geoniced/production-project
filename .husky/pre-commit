@@ -4,7 +4,7 @@
 npm run build:prod
 npm run lint:ts
 npm run lint:scss
-#Shouldn't use
+#Shouldn't use in precommit and shouldn't screenshot test
 #npm run test:unit
 #npm run storybook:build
 #npm run test:ui:ci

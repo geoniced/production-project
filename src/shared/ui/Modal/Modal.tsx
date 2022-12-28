@@ -55,12 +55,6 @@ export const Modal = (props: ModalProps) => {
     [cls.isClosing]: isClosing,
   };
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setIsMounted(true);
-  //   }
-  // }, [isOpen]);
-
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
