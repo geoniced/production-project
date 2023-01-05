@@ -15,5 +15,14 @@
   "comments": [
     { "id": "1", "body": "some comment", "postId": "1" }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Ivan",
+    "lastname": "Kashin",
+    "age": 26,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
+  }
 }

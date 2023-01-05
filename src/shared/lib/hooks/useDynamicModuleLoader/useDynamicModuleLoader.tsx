@@ -9,7 +9,7 @@ export type ReducersMap = {
 
 type ReducersMapEntry = [StateSchemaKey, Reducer];
 
-interface DynamicModuleLoaderProps {
+export interface DynamicModuleLoaderProps {
   reducers: ReducersMap;
   removeAfterUnmount?: boolean;
 }

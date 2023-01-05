@@ -16,5 +16,7 @@
   "Enter password": "Enter password",
   "Authorization": "Authorization",
   "Wrong username or password": "Wrong username or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile page": "Profile page",
+  "Profile": "Profile"
 }
