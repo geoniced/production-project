@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import { User, userActions } from 'entities/User';
 import { USER_LOCAL_STORAGE_KEY } from 'shared/const/localStorage';
 import { ThunkConfig } from 'app/providers/StoreProvider';
@@ -14,7 +13,11 @@ enum LoginError {
   SERVER_ERROR = '',
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
+export const loginByUsername = createAsyncThunk<
+  User,
+  LoginByUsernameProps,
+  ThunkConfig<string>
+>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
     const { extra, dispatch, rejectWithValue } = thunkAPI;
@@ -28,8 +31,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(data));
       dispatch(userActions.setAuthData(data));
-
-      extra.navigate('/about');
 
       return data;
     } catch (err) {

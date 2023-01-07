@@ -1,12 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import {
   DynamicModuleLoaderProps,
   ReducersMap,
   useDynamicModuleLoader,
 } from 'shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
-import { profileReducer } from 'entities/Profile';
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ProfilePageProps {
   className?: string;
@@ -26,12 +27,18 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     className,
   } = props;
 
+  const dispatch = useAppDispatch();
+
   const { t } = useTranslation();
   useDynamicModuleLoader(dynamicModuleLoaderProps);
 
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
+
   return (
     <div className={classNames('', {}, [className])}>
-      {t('Profile page')}
+      <ProfileCard />
     </div>
   );
 });

@@ -4,6 +4,7 @@
   "About page": "About page",
   "An unexpected error has occured": "An unexpected error has occured",
   "Authorization": "Authorization",
+  "Edit": "Edit",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Language": "Language",
@@ -15,12 +16,15 @@
   "Main": "",
   "Main page": "Main page",
   "Page not found": "Page not found",
+  "Profile": "Profile",
   "Profile page": "Profile page",
   "Reload page": "Reload page",
   "Short language": "Short language",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
   "Wrong username or password": "Wrong username or password",
+  "Your first name": "Your first name",
+  "Your last name": "Your last name",
   "decrement": "decrement",
   "increment": "increment"
 }

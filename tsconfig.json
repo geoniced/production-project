@@ -6,6 +6,7 @@
     "target": "es5", // в какую спецификацию комплируем
     "jsx": "react-jsx", // позволяет использовать реактовый jsx
     "allowJs": true, // позволяет обрабатывать не только ts, но и js файлы
+    "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true, // Позволяет использовать import вместо require
     "allowSyntheticDefaultImports": true, // Позволяет писать импорты без (* as _) а в обычном стиле, как default
