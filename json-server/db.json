@@ -1,9 +1,25 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server 1", "author": "typicode" },
-    { "id": "2", "title": "json-server 2", "author": "typicode" },
-    { "id": "3", "title": "json-server 3", "author": "typicode" },
-    { "id": "4", "title": "json-server 4", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 3",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 4",
+      "author": "typicode"
+    }
   ],
   "users": [
     {
@@ -13,15 +29,19 @@
     }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "profile": {
-    "firstname": "Ivan",
-    "lastname": "Kashin",
-    "age": 26,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
+    "firstname": "Ivan NEW",
+    "lastname": "Kashin NEW",
+    "age": 20,
+    "currency": "EUR",
+    "country": "Kyrgyzstan",
+    "city": "Saint-Petersburg",
     "username": "admin",
     "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
   }

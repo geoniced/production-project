@@ -18,5 +18,7 @@
   "Wrong username or password": "Неправильный юзернейм или пароль",
   "Logout": "Выйти",
   "Profile page": "Страница профиля",
-  "Profile": "Профиль"
+  "Profile": "Профиль",
+  "Select currency": "Укажите валюту",
+  "Select country": "Укажите страну"
 }

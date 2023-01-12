@@ -34,7 +34,16 @@
   color: transparent;
   text-shadow: 0 0 0 var(--primary-color);
 
-  &:focus {
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  &:read-only {
+    opacity: 0.7;
+  }
+
+  &:focus:not(:read-only) {
     outline: none;
 
     + .caret {

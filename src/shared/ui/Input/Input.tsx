@@ -2,12 +2,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, { InputHTMLAttributes, memo, useState } from 'react';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
+  readOnly?: boolean;
 }
 
 const FONT_CHARACTER_WIDTH = 9;
@@ -19,6 +20,7 @@ export const Input = memo((props: InputProps) => {
     onChange,
     type = 'text',
     placeholder,
+    readOnly,
     ...otherProps
   } = props;
 
@@ -51,6 +53,7 @@ export const Input = memo((props: InputProps) => {
           onSelect={selectHandler}
           className={cls.input}
           spellCheck={false}
+          readOnly={readOnly}
           {...otherProps}
         />
         <span
