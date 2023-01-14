@@ -36,12 +36,12 @@
     }
   ],
   "profile": {
-    "firstname": "Ivan NEW",
-    "lastname": "Kashin NEW",
-    "age": 20,
+    "firstname": "Ivan",
+    "lastname": "Kashin",
+    "age": 5,
     "currency": "EUR",
     "country": "Kyrgyzstan",
-    "city": "Saint-Petersburg",
+    "city": "Bishkek",
     "username": "admin",
     "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
   }
