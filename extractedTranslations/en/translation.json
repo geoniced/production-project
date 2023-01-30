@@ -2,6 +2,7 @@
   "": "",
   "About": "About",
   "About page": "About page",
+  "An error happened loading the article": "An error happened loading the article",
   "An unexpected error has occured": "An unexpected error has occured",
   "Article details page": "Article details page",
   "Articles page": "Articles page",
@@ -39,6 +40,7 @@
   "Select currency": "Select currency",
   "Server error while saving": "Server error while saving",
   "Short language": "Short language",
+  "The article was not found": "The article was not found",
   "Throw error": "Throw error",
   "Toggle": "Toggle",
   "Try to reload the page": "Try to reload the page",
@@ -50,5 +52,6 @@
   "Your last name": "Your last name",
   "decrement": "decrement",
   "increment": "increment",
+  "Статья не найдена": "Статья не найдена",
   "Укажите валюту": "Укажите валюту"
 }

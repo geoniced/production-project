@@ -1,0 +1,13 @@
+.articleTextBlockComponent {
+  width: 100%;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.paragraph {
+  &:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}

@@ -3,6 +3,15 @@
   color: inherit;
   padding: 6px 15px;
 
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
   &:disabled {
     opacity: 0.5;
   }
