@@ -5,7 +5,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { SidebarItemType } from '../../model/items';
+import { SidebarItemType } from 'widgets/Sidebar/model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
