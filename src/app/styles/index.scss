@@ -9,6 +9,11 @@ body {
   color: var(--primary-color);
 }
 
+img {
+  display: block;
+  object-fit: cover;
+}
+
 .app {
   min-height: 100vh;
   background-color: var(--bg-color);
