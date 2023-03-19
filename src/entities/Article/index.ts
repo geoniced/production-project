@@ -8,3 +8,4 @@ export { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleListItem } from './ui/ArticleListItem/ArticleListItem';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
