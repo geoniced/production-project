@@ -2,6 +2,14 @@
   min-height: 100%;
 }
 
+.backToArticleListButton {
+  align-self: flex-start;
+}
+
+.articleDetails {
+  flex-shrink: 0;
+}
+
 .commentsTitle {
   margin-top: 20px;
 }
