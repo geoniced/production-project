@@ -17,9 +17,18 @@ export const useDynamicModuleLoader = ({ reducers, removeAfterUnmount = true }: 
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap();
+
     Object.entries(reducers).forEach(([stateKey, reducer]) => {
-      store.reducerManager.add(stateKey as StateSchemaKey, reducer);
-      dispatch({ type: `@INIT ${stateKey} reducer` });
+      const mounted = mountedReducers[stateKey as StateSchemaKey];
+
+      // Добавляем новый редьюсер если его нет
+      // внутри reducerManager.add есть проверка на это, в данном случае мы лишь не вызовем dispatch
+      // при наличии редьюсера в сторе
+      if (!mounted) {
+        store.reducerManager.add(stateKey as StateSchemaKey, reducer);
+        dispatch({ type: `@INIT ${stateKey} reducer` });
+      }
     });
 
     return () => {

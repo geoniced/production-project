@@ -2,16 +2,20 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
-import { ReducersMap, useDynamicModuleLoader } from 'shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import {
+  DynamicModuleLoaderProps,
+  ReducersMap,
+  useDynamicModuleLoader,
+} from 'shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
-  getArticlesPageError, getArticlesPageHasMore,
-  getArticlesPageIsLoading, getArticlesPageNum,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slice/articlesPage';
@@ -25,8 +29,9 @@ const initialReducers: ReducersMap = {
   articlesPage: articlesPageReducer,
 };
 
-const dynamicModuleLoaderProps = {
+const dynamicModuleLoaderProps: DynamicModuleLoaderProps = {
   reducers: initialReducers,
+  removeAfterUnmount: false,
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
@@ -51,8 +56,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   useDynamicModuleLoader(dynamicModuleLoaderProps);
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   return (
