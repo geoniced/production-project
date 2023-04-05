@@ -23,8 +23,6 @@ export const StoreProvider = (props: StoreProviderProps) => {
     asyncReducers as ReducersMapObject<StateSchema>,
   );
 
-  console.log('NAVIGTATE');
-
   return (
     <Provider store={store}>
       {children}
