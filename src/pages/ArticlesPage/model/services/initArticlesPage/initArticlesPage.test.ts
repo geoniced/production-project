@@ -1,11 +1,11 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
-import { initArticlesPage } from './initArticlesPage';
+import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
+import { initArticlesPage } from "./initArticlesPage";
 
-jest.mock('../fetchArticlesList/fetchArticlesList');
+jest.mock("../fetchArticlesList/fetchArticlesList");
 
-describe('initArticlesPage.test', () => {
-  test('successfully initialized', async () => {
+describe("initArticlesPage.test", () => {
+  test("successfully initialized", async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
       articlesPage: {
         page: 1,
@@ -18,13 +18,13 @@ describe('initArticlesPage.test', () => {
       },
     });
     // thunk.api.get.mockReturnValue(Promise.resolve({ data }));
-
-    await thunk.callThunk();
+    const searchParams = new URLSearchParams();
+    await thunk.callThunk(searchParams);
     expect(thunk.dispatch).toBeCalledTimes(4);
     expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
   });
 
-  test('initArticlesPage won\'t initialize when the _inited flag is true', async () => {
+  test("initArticlesPage won't initialize when the _inited flag is true", async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
       articlesPage: {
         page: 1,
@@ -38,7 +38,8 @@ describe('initArticlesPage.test', () => {
     });
     // thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
-    await thunk.callThunk();
+    const searchParams = new URLSearchParams();
+    await thunk.callThunk(searchParams);
     expect(thunk.dispatch).toBeCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });

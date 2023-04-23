@@ -25,5 +25,15 @@
   "There are no comments": "There are no comments",
   "Enter comment text": "Enter comment text",
   "Send": "Send",
-  "Read more": "Read more..."
+  "Read more": "Read more...",
+  "Search": "Search",
+  "Sort by": "Sort by",
+  "asc": "asc",
+  "desc": "desc",
+  "by": "by",
+  "creation date": "creation date",
+  "views": "views",
+  "title": "title",
+  "All": "All",
+  "Articles not found": "Articles not found"
 }

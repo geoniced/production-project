@@ -29,7 +29,7 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.01.2022",
       "type": [
         "IT"
       ],
@@ -53,7 +53,7 @@
       "img": "https://создание-сайта.net/images/newsnew/newsnew/python-logo.jpg",
       "views": 1022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "13.02.2022",
       "type": [
         "IT"
       ],
@@ -77,7 +77,7 @@
       "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
       "views": 1022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.05.2022",
       "type": [
         "IT"
       ],
@@ -101,7 +101,7 @@
       "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
       "views": 1022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "22.01.2022",
       "type": [
         "IT"
       ],
@@ -120,12 +120,12 @@
     },
     {
       "id": "5",
-      "title": "Rust news",
+      "title": "Rust news СВЕЖЕЕ",
       "subtitle": "Что нового в Rust за 2022 год?",
       "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
-      "views": 1022,
+      "views": 999,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2023",
       "type": [
         "IT"
       ],
@@ -144,12 +144,12 @@
     },
     {
       "id": "6",
-      "title": "TypeScript news",
-      "subtitle": "Что нового в TypeScript 5?",
+      "title": "Хаки TypeScript",
+      "subtitle": "Лайфхаки в TypeScript 5?",
       "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
-      "views": 1022,
+      "views": 5522,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "25.01.2023",
       "type": [
         "IT"
       ],
@@ -168,12 +168,12 @@
     },
     {
       "id": "7",
-      "title": "Rust news",
-      "subtitle": "Что нового в Rust за 2022 год?",
+      "title": "Кто заменит Rust?",
+      "subtitle": "Мы пропали?",
       "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
-      "views": 1022,
+      "views": 11022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "10.08.2022",
       "type": [
         "IT"
       ],
@@ -192,12 +192,12 @@
     },
     {
       "id": "8",
-      "title": "TypeScript news",
-      "subtitle": "Что нового в TypeScript 5?",
-      "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
-      "views": 1022,
+      "title": "Python vs JS",
+      "subtitle": "Что лучше?",
+      "img": "https://www.simplilearn.com/ice9/free_resources_article_thumb/python_vs_javascript.jpg",
+      "views": 900,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.06.2019",
       "type": [
         "IT"
       ],
@@ -216,12 +216,12 @@
     },
     {
       "id": "9",
-      "title": "Rust news",
-      "subtitle": "Что нового в Rust за 2022 год?",
-      "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
-      "views": 1022,
+      "title": "Kotlin news",
+      "subtitle": "Что нового в Kotlin за 2022 год?",
+      "img": "https://kotlinlang.org/assets/images/twitter/general.png",
+      "views": 3000,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.09.2022",
       "type": [
         "IT"
       ],
@@ -240,12 +240,12 @@
     },
     {
       "id": "10",
-      "title": "TypeScript news",
-      "subtitle": "Что нового в TypeScript 5?",
-      "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
+      "title": "Golang news",
+      "subtitle": "Что нового в Kotlin?",
+      "img": "https://www.anti-malware.ru/files/styles/imagesize400w/public/images/source/parsethru_news.png?itok=YwJo9JgD",
       "views": 1022,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "09.09.2022",
       "type": [
         "IT"
       ],
@@ -312,14 +312,14 @@
     },
     {
       "id": "13",
-      "title": "Rust news",
-      "subtitle": "Что нового в Rust за 2022 год?",
-      "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
-      "views": 1022,
+      "title": "Экономическая статья",
+      "subtitle": "Экономика - что такое?",
+      "img": "https://cdn.careerspace.app/universities/ep_economics.png",
+      "views": 4522,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2023",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -336,14 +336,14 @@
     },
     {
       "id": "14",
-      "title": "TypeScript news",
-      "subtitle": "Что нового в TypeScript 5?",
-      "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
-      "views": 1022,
+      "title": "Экономика в Айти?",
+      "subtitle": "Как считать цифры?",
+      "img": "https://mignews.com/media/cache/00/6d/006d2d43aecc0243ab7c34760cd325f3.jpg",
+      "views": 322,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "26.04.2023",
       "type": [
-        "IT"
+        "IT", "ECONOMICS"
       ],
       "blocks": [
         {
@@ -360,14 +360,14 @@
     },
     {
       "id": "15",
-      "title": "Rust news",
-      "subtitle": "Что нового в Rust за 2022 год?",
-      "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
+      "title": "Как не посадить здоровье",
+      "subtitle": "Что нужно делать начинающим?",
+      "img": "https://kartinkof.club/uploads/posts/2022-12/1670404199_kartinkof-club-p-kartinki-zdorovya-1.jpg",
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
       "type": [
-        "IT"
+        "HEALTH", "IT"
       ],
       "blocks": [
         {
@@ -384,14 +384,14 @@
     },
     {
       "id": "16",
-      "title": "TypeScript news",
-      "subtitle": "Что нового в TypeScript 5?",
-      "img": "https://devblogs.microsoft.com/typescript/wp-content/uploads/sites/11/2023/03/5-0-feature-image-square-bounds-1.png",
-      "views": 1022,
+      "title": "Набор добавок, которые можно пить каждому",
+      "subtitle": "Есть ли в них кофеин?",
+      "img": "https://kultlab.ru/upload/resize_cache/iblock/681/936_464_2/supplements.jpg",
+      "views": 1333,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "01.04.2023",
       "type": [
-        "IT"
+        "HEALTH"
       ],
       "blocks": [
         {
@@ -408,14 +408,14 @@
     },
     {
       "id": "17",
-      "title": "Rust news",
-      "subtitle": "Что нового в Rust за 2022 год?",
-      "img": "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
-      "views": 1022,
+      "title": "Ученые обнаружили новую планету",
+      "subtitle": "Какое название они ей дали?",
+      "img": "https://in-space.ru/wp-content/uploads/2018/04/solar_system_nasa.jpg",
+      "views": 1337,
       "userId": "1",
-      "createdAt": "26.02.2022",
+      "createdAt": "02.02.2023",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
