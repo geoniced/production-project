@@ -343,7 +343,8 @@
       "userId": "1",
       "createdAt": "26.04.2023",
       "type": [
-        "IT", "ECONOMICS"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -367,7 +368,8 @@
       "userId": "1",
       "createdAt": "26.02.2022",
       "type": [
-        "HEALTH", "IT"
+        "HEALTH",
+        "IT"
       ],
       "blocks": [
         {
@@ -599,6 +601,12 @@
       "userId": "2",
       "text": "RUST??",
       "id": "nZG-k-q"
+    },
+    {
+      "articleId": "16",
+      "userId": "2",
+      "text": "Nice article",
+      "id": "qEeCXwe"
     }
   ],
   "users": [
@@ -638,7 +646,7 @@
       "country": "Russia",
       "city": "Bishkek",
       "username": "user",
-      "avatar": "https://media.licdn.com/dms/image/D4D03AQE6aTfFmEGuCw/profile-displayphoto-shrink_400_400/0/1667567815186?e=1681948800&v=beta&t=WKAzRl331tmnaeYlBMf_6hUieqapb89RAeZ3QFefgdw"
+      "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
     }
   ]
 }
