@@ -9,3 +9,5 @@ export { ArticleListItem } from "./ui/ArticleListItem/ArticleListItem";
 export { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelector";
 export { ArticleSortSelect } from "./ui/ArticleSortSelect/ArticleSortSelect";
 export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
+
+export { getArticleDetailsData } from "./model/selectors/articleDetails";

@@ -35,5 +35,9 @@
   "views": "views",
   "title": "title",
   "All": "All",
-  "Articles not found": "Articles not found"
+  "Articles not found": "Articles not found",
+  "Editing the page with ID = ": "Editing the page with ID = ",
+  "New page creation": "New page creation",
+  "Ivan Kashin App": "Ivan Kashin App",
+  "Create article": "Create article"
 }

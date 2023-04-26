@@ -1,11 +1,14 @@
-import React, { memo, useCallback, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
-import cls from './Navbar.module.scss';
+import React, { memo, useCallback, useState } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import { useTranslation } from "react-i18next";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Text, TextTheme } from "shared/ui/Text/Text";
+import { LoginModal } from "features/AuthByUsername";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserAuthData, userActions } from "entities/User";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
   className?: string;
@@ -34,8 +37,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
+        <Text className={cls.appName} theme={TextTheme.INVERTED} title={t("Ivan Kashin App")} />
+        <AppLink className={cls.createArticle} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>
+          {t("Create article")}
+        </AppLink>
         <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
-          {t('Logout')}
+          {t("Logout")}
         </Button>
       </header>
     );
@@ -44,13 +51,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <header className={classNames(cls.navbar, {}, [className])}>
       <Button onClick={onOpenModal} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
-        {t('Login')}
+        {t("Login")}
       </Button>
 
-      <LoginModal
-        isOpen={isAuthModalOpen}
-        onClose={onCloseModal}
-      />
+      <LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
     </header>
   );
 });

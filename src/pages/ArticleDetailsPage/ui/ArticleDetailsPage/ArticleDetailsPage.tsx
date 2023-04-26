@@ -13,6 +13,7 @@ import { AddCommentForm } from "features/AddCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page/Page";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { fetchArticleRecommendation } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { getArticleDetailsRecommendationsIsLoading } from "../../model/selectors/recommendations";
@@ -39,8 +40,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   useDynamicModuleLoader(dynamicModuleLoaderProps);
 
-  const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
@@ -50,10 +49,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading);
-
-  const onBackToArticlesListClick = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -73,9 +68,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToArticlesListClick} className={cls.backToArticleListButton}>
-        {t("Back to articles list")}
-      </Button>
+      <ArticleDetailsPageHeader />
       <ArticleDetails className={cls.articleDetails} id={id} />
       <Text size={TextSize.L} className={cls.commentsTitle} title={t("We also recommend")} />
       <ArticleList

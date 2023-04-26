@@ -1,21 +1,22 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
-import cls from './Text.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { memo } from "react";
+import cls from "./Text.module.scss";
 
 export enum TextTheme {
-  PRIMARY = 'primary',
-  ERROR = 'error',
+  PRIMARY = "primary",
+  INVERTED = "inverted",
+  ERROR = "error",
 }
 
 export enum TextAlign {
-  LEFT = 'left',
-  RIGHT = 'right',
-  CENTER = 'center',
+  LEFT = "left",
+  RIGHT = "right",
+  CENTER = "center",
 }
 
 export enum TextSize {
-  M = 'size_m',
-  L = 'size_l',
+  M = "size_m",
+  L = "size_l",
 }
 
 interface TextProps {
@@ -28,14 +29,7 @@ interface TextProps {
 }
 
 export const Text = memo((props: TextProps) => {
-  const {
-    className,
-    title,
-    text,
-    theme = TextTheme.PRIMARY,
-    align = TextAlign.LEFT,
-    size = TextSize.M,
-  } = props;
+  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M } = props;
 
   return (
     <div className={classNames(cls.text, {}, [className, cls[theme], cls[align], cls[size]])}>

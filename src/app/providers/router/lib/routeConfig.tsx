@@ -1,10 +1,11 @@
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { AppRoutes, AppRoutesProps, RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ProfilePage } from 'pages/ProfilePage';
-import { ArticlesPage } from 'pages/ArticlesPage';
-import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { AppRoutes, AppRoutesProps, RoutePath } from "shared/config/routeConfig/routeConfig";
+import { NotFoundPage } from "pages/NotFoundPage";
+import { ProfilePage } from "pages/ProfilePage";
+import { ArticlesPage } from "pages/ArticlesPage";
+import { ArticleDetailsPage } from "pages/ArticleDetailsPage";
+import { ArticleEditPage } from "pages/ArticleEditPage";
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
@@ -28,6 +29,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.ARTICLE_DETAILS]: {
     path: `${RoutePath.article_details}:id`,
     element: <ArticleDetailsPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_CREATE]: {
+    path: `${RoutePath.article_create}`,
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_EDIT]: {
+    path: `${RoutePath.article_edit}`,
+    element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRoutes.NOT_FOUND]: {

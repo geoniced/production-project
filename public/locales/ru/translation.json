@@ -35,5 +35,9 @@
   "views": "просмотрам",
   "title": "названию",
   "All": "All",
-  "Articles not found": "Статьи не найдены"
+  "Articles not found": "Статьи не найдены",
+  "Editing the page with ID = ": "Редактирование статьи с ID = ",
+  "New page creation": "Создание новой статьи",
+  "Ivan Kashin App": "Ivan Kashin App",
+  "Create article": "Создать статью"
 }
