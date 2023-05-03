@@ -8,4 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+
+  .row {
+    display: flex;
+    gap: 30px;
+  }
+
+  .card {
+    height: 294px;
+  }
 }
