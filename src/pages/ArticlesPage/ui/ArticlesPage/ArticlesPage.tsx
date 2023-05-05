@@ -57,10 +57,13 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   });
 
   return (
-    <Page onScrollEnd={onNextPartLoad} className={classNames(cls.articlesPage, {}, [className])}>
-      <ArticlesPageFilters />
-      <ArticleList className={cls.list} isLoading={isLoading} view={view} articles={articles} />
-    </Page>
+    <ArticleList
+      className={cls.list}
+      isLoading={isLoading}
+      view={view}
+      articles={articles}
+      onNextPartLoad={onNextPartLoad}
+    />
   );
 };
 

@@ -10,6 +10,7 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { AppLink } from "shared/ui/AppLink/AppLink";
+import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from "shared/const/localStorage";
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from "../../model/types/article";
 import cls from "./ArticleListItem.module.scss";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
@@ -19,10 +20,11 @@ interface ArticleListItemProps {
   article: Article;
   view: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  index?: number;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target } = props;
+  const { className, article, view, target, index } = props;
 
   const { t } = useTranslation();
 
@@ -33,6 +35,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Icon className={cls.viewsIcon} Svg={EyeIcon} />
     </>
   );
+
+  const onButtonClick = useCallback(() => {
+    sessionStorage.setItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX, JSON.stringify(index));
+  }, [index]);
 
   const articleLink = RoutePath.article_details + article.id;
 
@@ -57,7 +63,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           <div className={cls.footer}>
             <AppLink target={target} to={articleLink}>
-              <Button theme={ButtonTheme.OUTLINE}>{t("Read more")}</Button>
+              <Button theme={ButtonTheme.OUTLINE} onClick={onButtonClick}>
+                {t("Read more")}
+              </Button>
             </AppLink>
             {views}
           </div>
@@ -67,7 +75,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <AppLink target={target} to={articleLink} className={classNames(cls.articleListItem, {}, [className, cls[view]])}>
+    <AppLink
+      onClick={onButtonClick}
+      target={target}
+      to={articleLink}
+      className={classNames(cls.articleListItem, {}, [className, cls[view]])}
+    >
       <Card className={cls.tile}>
         <div className={cls.imageWrapper}>
           <img className={cls.img} src={article.img} alt={article.title} width={200} height={200} />
