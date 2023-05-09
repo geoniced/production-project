@@ -1,16 +1,15 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { OutlineDark } from 'shared/ui/Button/Button.stories';
-import { Modal } from './Modal';
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import { Modal } from "./Modal";
 
 export default {
-  title: 'shared/Modal',
+  title: "shared/Modal",
   component: Modal,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof Modal>;
 
@@ -19,12 +18,14 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   isOpen: true,
-  children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?',
+  children:
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?",
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   isOpen: true,
-  children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?',
+  children:
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis deserunt eius eligendi exercitationem facere id impedit ipsam officiis quia?",
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

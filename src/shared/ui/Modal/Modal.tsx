@@ -1,10 +1,7 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import React, {
-  MutableRefObject,
-  ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
-import cls from './Modal.module.scss';
+import { classNames, Mods } from "shared/lib/classNames/classNames";
+import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { Portal } from "../Portal/Portal";
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
   className?: string;
@@ -39,17 +36,23 @@ export const Modal = (props: ModalProps) => {
     }
   }, [onClose]);
 
-  const onOverlayClick = useCallback((evt: React.MouseEvent) => {
-    if (evt.target === evt.currentTarget) {
-      closeHandler();
-    }
-  }, [closeHandler]);
+  const onOverlayClick = useCallback(
+    (evt: React.MouseEvent) => {
+      if (evt.target === evt.currentTarget) {
+        closeHandler();
+      }
+    },
+    [closeHandler]
+  );
 
-  const onKeyDown = useCallback((evt: KeyboardEvent) => {
-    if (evt.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
+  const onKeyDown = useCallback(
+    (evt: KeyboardEvent) => {
+      if (evt.key === "Escape") {
+        closeHandler();
+      }
+    },
+    [closeHandler]
+  );
 
   const mods: Mods = {
     [cls.opened]: isOpen,
@@ -58,12 +61,12 @@ export const Modal = (props: ModalProps) => {
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
+      window.addEventListener("keydown", onKeyDown);
     }
 
     return () => {
       clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onKeyDown]);
 
