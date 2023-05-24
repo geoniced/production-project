@@ -13,18 +13,12 @@
 }
 
 .items {
-  display: flex;
-  flex-direction: column;
   padding-left: 30px;
 }
 
 .item {
   display: flex;
   align-items: center;
-
-  &:not(:last-of-type) {
-    margin-bottom: 10px;
-  }
 }
 
 .link {
