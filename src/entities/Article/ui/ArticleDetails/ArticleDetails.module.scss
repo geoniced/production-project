@@ -1,38 +1,3 @@
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.articleDetails {
-  min-height: 100%;
-}
-
 .avatar {
   margin: 0 auto 20px;
-}
-
-.title {
-  margin-bottom: 15px;
-}
-
-.articleInfo {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  margin-right: 8px;
-}
-
-.block {
-  &:not(:last-of-type) {
-    margin-bottom: 16px;
-  }
-}
-
-.skeleton {
-  &:not(:last-of-type) {
-    margin-bottom: 15px;
-  }
 }

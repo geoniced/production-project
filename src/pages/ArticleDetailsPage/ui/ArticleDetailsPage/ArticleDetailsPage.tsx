@@ -13,6 +13,7 @@ import { AddCommentForm } from "features/AddCommentForm";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page/Page";
+import { VStack } from "shared/ui/Stack";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { fetchArticleRecommendation } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
@@ -68,18 +69,20 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <ArticleDetailsPageHeader />
-      <ArticleDetails className={cls.articleDetails} id={id} />
-      <Text size={TextSize.L} className={cls.commentsTitle} title={t("We also recommend")} />
-      <ArticleList
-        className={cls.recommendations}
-        articles={recommendations}
-        isLoading={recommendationsIsLoading}
-        target="_blank"
-      />
-      <Text size={TextSize.L} className={cls.commentsTitle} title={t("Comments")} />
-      <AddCommentForm onSendComment={onSendComment} />
-      <CommentList isLoading={commentsIsLoading} comments={comments} />
+      <VStack gap="16" max>
+        <ArticleDetailsPageHeader />
+        <ArticleDetails className={cls.articleDetails} id={id} />
+        <Text size={TextSize.L} className={cls.commentsTitle} title={t("We also recommend")} />
+        <ArticleList
+          className={cls.recommendations}
+          articles={recommendations}
+          isLoading={recommendationsIsLoading}
+          target="_blank"
+        />
+        <Text size={TextSize.L} className={cls.commentsTitle} title={t("Comments")} />
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList isLoading={commentsIsLoading} comments={comments} />
+      </VStack>
     </Page>
   );
 };

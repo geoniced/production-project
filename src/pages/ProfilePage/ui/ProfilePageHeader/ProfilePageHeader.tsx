@@ -37,7 +37,7 @@ export const ProfilePageHeader = memo((props: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <HStack justify="between" className={classNames("", {}, [className])}>
+    <HStack justify="between" max className={classNames("", {}, [className])}>
       <Text title={t("Profile")} />
       {canEdit && (
         <HStack gap="8">

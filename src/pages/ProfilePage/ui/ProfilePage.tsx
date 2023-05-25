@@ -133,7 +133,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
   return (
     <Page className={classNames("", {}, [className])}>
-      <VStack gap="16">
+      <VStack gap="16" max>
         <ProfilePageHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (
