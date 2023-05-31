@@ -1,6 +1,7 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
-import { Fragment, memo, ReactNode, useState } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Fragment, memo, ReactNode } from "react";
 import { Listbox as HListBox } from "@headlessui/react";
+import { DropdownDirection } from "shared/types/ui";
 import { HStack } from "../Stack";
 import { Button } from "../Button/Button";
 import cls from "./ListBox.module.scss";
@@ -10,8 +11,6 @@ export interface ListBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = "top" | "bottom";
 
 interface ListBoxProps {
   items?: ListBoxItem[];
@@ -24,6 +23,13 @@ interface ListBoxProps {
   label?: string;
 }
 
+const mapDirectionToClass: Record<DropdownDirection, string> = {
+  "bottom left": cls.optionsBottomLeft,
+  "bottom right": cls.optionsBottomRight,
+  "top left": cls.optionsTopLeft,
+  "top right": cls.optionsTopRight,
+};
+
 export const ListBox = memo((props: ListBoxProps) => {
   const {
     items,
@@ -32,11 +38,11 @@ export const ListBox = memo((props: ListBoxProps) => {
     onChange,
     readonly,
     className,
-    direction = "bottom",
+    direction = "bottom right",
     label,
   } = props;
 
-  const additionalClasses = [cls[direction]];
+  const optionsClasses = mapDirectionToClass[direction];
 
   return (
     <HStack gap="4">
@@ -52,7 +58,7 @@ export const ListBox = memo((props: ListBoxProps) => {
           <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
         <HListBox.Options
-          className={classNames(cls.options, {}, additionalClasses)}
+          className={classNames(cls.options, {}, [optionsClasses])}
         >
           {items?.map((item) => (
             <HListBox.Option

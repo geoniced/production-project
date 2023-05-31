@@ -10,6 +10,21 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => (
@@ -39,6 +54,38 @@ const items: ListBoxItem[] = [
 export const Normal = Template.bind({});
 Normal.args = {
   defaultValue: "Choose item",
+  items,
+  onChange: action("onChange"),
+};
+
+export const TopLeft = Template.bind({});
+TopLeft.args = {
+  direction: "top left",
+  defaultValue: "Listbox",
+  items,
+  onChange: action("onChange"),
+};
+
+export const TopRight = Template.bind({});
+TopRight.args = {
+  direction: "top right",
+  defaultValue: "Listbox",
+  items,
+  onChange: action("onChange"),
+};
+
+export const BottomLeft = Template.bind({});
+BottomLeft.args = {
+  direction: "bottom left",
+  defaultValue: "Listbox",
+  items,
+  onChange: action("onChange"),
+};
+
+export const BottomRight = Template.bind({});
+BottomRight.args = {
+  direction: "bottom right",
+  defaultValue: "Listbox",
   items,
   onChange: action("onChange"),
 };

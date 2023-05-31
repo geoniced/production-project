@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useState } from "react";
+import React, { memo, useCallback, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserAuthData, userActions } from "entities/User";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { Dropdown, DropdownItem } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
@@ -34,23 +36,52 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const dropdownItems: DropdownItem[] = useMemo(
+    () => [
+      {
+        content: t("Profile"),
+        href: RoutePath.profile + (authData?.id ?? ""),
+      },
+      {
+        content: t("Logout"),
+        onClick: onLogout,
+      },
+    ],
+    [authData?.id, onLogout, t]
+  );
+
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
-        <Text className={cls.appName} theme={TextTheme.INVERTED} title={t("Ivan Kashin App")} />
-        <AppLink className={cls.createArticle} theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>
+        <Text
+          className={cls.appName}
+          theme={TextTheme.INVERTED}
+          title={t("Ivan Kashin App")}
+        />
+        <AppLink
+          className={cls.createArticle}
+          theme={AppLinkTheme.SECONDARY}
+          to={RoutePath.article_create}
+        >
           {t("Create article")}
         </AppLink>
-        <Button onClick={onLogout} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
-          {t("Logout")}
-        </Button>
+        <Dropdown
+          direction="bottom right"
+          className={cls.dropdown}
+          items={dropdownItems}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     );
   }
 
   return (
     <header className={classNames(cls.navbar, {}, [className])}>
-      <Button onClick={onOpenModal} theme={ButtonTheme.CLEAR_INVERTED} className={cls.links}>
+      <Button
+        onClick={onOpenModal}
+        theme={ButtonTheme.CLEAR_INVERTED}
+        className={cls.links}
+      >
         {t("Login")}
       </Button>
 
