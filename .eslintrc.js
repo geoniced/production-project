@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended", "prettier"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:i18next/recommended",
+    "prettier",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -13,7 +18,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "kashin-fsd-plugin"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "i18next",
+    "react-hooks",
+    "kashin-fsd-plugin",
+  ],
   rules: {
     indent: [
       "error",
@@ -24,7 +35,10 @@ module.exports = {
     ],
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
-    "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      { extensions: [".js", ".jsx", ".tsx"] },
+    ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-unused-vars": "warn",
@@ -40,7 +54,18 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["as", "role", "data-testid", "to", "target", "justify", "align", "direction", "gap"],
+        ignoreAttribute: [
+          "as",
+          "tag",
+          "role",
+          "data-testid",
+          "to",
+          "target",
+          "justify",
+          "align",
+          "direction",
+          "gap",
+        ],
       },
     ],
     "max-len": ["error", { ignoreComments: true, code: 125 }],

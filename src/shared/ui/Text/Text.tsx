@@ -20,6 +20,8 @@ export enum TextSize {
   L = "size_l",
 }
 
+type HeaderTagType = "h1" | "h2" | "h3" | "p";
+
 interface TextProps {
   className?: string;
   title?: string;
@@ -27,25 +29,37 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+  tag?: HeaderTagType;
 }
 
-type HeaderTagType = "h1" | "h2" | "h3";
-
-const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
-  [TextSize.S]: "h3",
-  [TextSize.M]: "h2",
-  [TextSize.L]: "h1",
-};
+// const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+//   [TextSize.S]: "h3",
+//   [TextSize.M]: "h2",
+//   [TextSize.L]: "h1",
+// };
 
 export const Text = memo((props: TextProps) => {
-  const { className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT, size = TextSize.M } = props;
-
-  const HeaderTag = mapSizeToHeaderTag[size];
+  const {
+    className,
+    title,
+    text,
+    theme = TextTheme.PRIMARY,
+    align = TextAlign.LEFT,
+    size = TextSize.M,
+    tag: HeaderTag = "p",
+  } = props;
 
   return (
-    <div className={classNames(cls.text, {}, [className, cls[theme], cls[align], cls[size]])}>
+    <HeaderTag
+      className={classNames(cls.text, {}, [
+        className,
+        cls[theme],
+        cls[align],
+        cls[size],
+      ])}
+    >
       {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
       {text && <p className={cls.text}>{text}</p>}
-    </div>
+    </HeaderTag>
   );
 });
