@@ -1,7 +1,7 @@
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { ValidateProfileError } from "../../types/profile";
 import { validateProfileData } from "./validateProfileData";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 const data = {
   username: "admin",
@@ -21,7 +21,11 @@ describe("validateProfileData.test", () => {
   });
 
   test("incorrect first and last name", async () => {
-    const result = validateProfileData({ ...data, firstname: "", lastname: "" });
+    const result = validateProfileData({
+      ...data,
+      firstname: "",
+      lastname: "",
+    });
 
     expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
   });

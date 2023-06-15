@@ -16,5 +16,6 @@
   "Incorrect city": "Некорректный город",
   "No data": "Данные не указаны",
   "Server error while saving": "Серверная ошибка при сохранении",
-  "First name and last name are required": "Имя и фамилия обязательны"
+  "First name and last name are required": "Имя и фамилия обязательны",
+  "Profile not found": "Профиль не найден"
 }

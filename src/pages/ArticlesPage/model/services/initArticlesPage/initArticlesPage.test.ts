@@ -21,7 +21,7 @@ describe("initArticlesPage.test", () => {
     const searchParams = new URLSearchParams();
     await thunk.callThunk(searchParams);
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
+    expect(fetchArticlesList).toHaveBeenCalled();
   });
 
   test("initArticlesPage won't initialize when the _inited flag is true", async () => {

@@ -1,4 +1,5 @@
 {
+  "": "",
   "Cancel": "",
   "City": "",
   "Edit": "",
@@ -12,6 +13,7 @@
   "Incorrect user data": "Incorrect user data",
   "No data": "No data",
   "Profile": "",
+  "Profile not found": "Profile not found",
   "Save": "",
   "Server error while saving": "Server error while saving",
   "Try to reload the page": "",
