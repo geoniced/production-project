@@ -47,15 +47,22 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   const { t } = useTranslation("profile");
 
-  const onNumericKeyPress = useCallback((evt: React.KeyboardEvent<HTMLInputElement>) => {
-    if (/\D/.test(evt.key)) {
-      evt.preventDefault();
-    }
-  }, []);
+  const onNumericKeyPress = useCallback(
+    (evt: React.KeyboardEvent<HTMLInputElement>) => {
+      if (/\D/.test(evt.key)) {
+        evt.preventDefault();
+      }
+    },
+    []
+  );
 
   if (isLoading) {
     return (
-      <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.loading])}>
+      <HStack
+        justify="center"
+        max
+        className={classNames(cls.profileCard, {}, [className, cls.loading])}
+      >
         <Loader />
       </HStack>
     );
@@ -63,7 +70,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   if (error) {
     return (
-      <HStack justify="center" max className={classNames(cls.profileCard, {}, [className, cls.error])}>
+      <HStack
+        justify="center"
+        max
+        className={classNames(cls.profileCard, {}, [className, cls.error])}
+      >
         <Text
           theme={TextTheme.ERROR}
           title={t("Error while loading profile")}
@@ -79,7 +90,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
   };
 
   return (
-    <VStack gap="8" max className={classNames(cls.profileCard, mods, [className])}>
+    <VStack
+      gap="8"
+      max
+      className={classNames(cls.profileCard, mods, [className])}
+    >
       {data?.avatar && (
         <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar src={data?.avatar} />
@@ -91,6 +106,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         className={cls.input}
         onChange={onFirstnameChange}
         readOnly={readonly}
+        data-testid="ProfileCard.FirstName"
       />
       <Input
         value={data?.lastname}
@@ -98,6 +114,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         className={cls.input}
         onChange={onLastnameChange}
         readOnly={readonly}
+        data-testid="ProfileCard.LastName"
       />
       <Input
         type="tel"
@@ -107,6 +124,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChange={onAgeChange}
         readOnly={readonly}
         onKeyPress={onNumericKeyPress}
+        data-testid="ProfileCard.Tel"
       />
       <Input
         value={data?.city}
@@ -129,8 +147,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
         onChange={onAvatarChange}
         readOnly={readonly}
       />
-      <CurrencySelect className={cls.input} value={data?.currency} onChange={onCurrencyChange} readonly={readonly} />
-      <CountrySelect className={cls.input} value={data?.country} onChange={onCountryChange} readonly={readonly} />
+      <CurrencySelect
+        className={cls.input}
+        value={data?.currency}
+        onChange={onCurrencyChange}
+        readonly={readonly}
+      />
+      <CountrySelect
+        className={cls.input}
+        value={data?.country}
+        onChange={onCountryChange}
+        readonly={readonly}
+      />
     </VStack>
   );
 };
