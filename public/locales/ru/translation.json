@@ -39,5 +39,7 @@
   "Editing the page with ID = ": "Редактирование статьи с ID = ",
   "New page creation": "Создание новой статьи",
   "Ivan Kashin App": "Ivan Kashin App",
-  "Create article": "Создать статью"
+  "Create article": "Создать статью",
+  "Admin": "Админка",
+  "You do not have access to this page": "У вас нет доступа к этой странице"
 }

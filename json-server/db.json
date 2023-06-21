@@ -620,15 +620,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
-      "avatar": "https://media.licdn.com/dms/image/D4D03AQE6aTfFmEGuCw/profile-displayphoto-shrink_400_400/0/1667567815186?e=1681948800&v=beta&t=WKAzRl331tmnaeYlBMf_6hUieqapb89RAeZ3QFefgdw"
+      "roles": ["USER"],
+      "avatar": "https://pbs.twimg.com/profile_images/1584258394977931265/lrZvCd27_400x400.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
+      "avatar": "https://www.pandasecurity.com/en/mediacenter/src/uploads/2019/07/pandasecurity-How-do-hackers-pick-their-targets.jpg"
     }
   ],
   "profile": [
