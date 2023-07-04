@@ -88,6 +88,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
+    // @ts-ignore
     <WindowScroller scrollElement={document.getElementById(PAGE_ID) as Element}>
       {({
         height,
@@ -98,10 +99,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isScrolling,
       }) => (
         <div
+          // @ts-ignore
           ref={registerChild}
           className={classNames(cls.articleList, {}, [className, cls[view]])}
         >
           {virtualized ? (
+            // @ts-ignore
             <List
               width={width ? width - 80 : 700}
               height={height ?? LIST_ITEM_HEIGHT}
