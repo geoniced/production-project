@@ -34,21 +34,21 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
 
-  if (!id) {
-    return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-        {t("The article was not found")}
-      </div>
-    );
-  }
+  // if (!id) {
+  //   return (
+  //     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+  //       {t("The article was not found")}
+  //     </div>
+  //   );
+  // }
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <VStack gap="16" max>
         <ArticleDetailsPageHeader />
-        <ArticleDetails className={cls.articleDetails} id={id} />
+        <ArticleDetails className={cls.articleDetails} id={id!} />
         <ArticleRecommendationsList />
-        <ArticleDetailsComments id={id} />
+        <ArticleDetailsComments id={id!} />
       </VStack>
     </Page>
   );
