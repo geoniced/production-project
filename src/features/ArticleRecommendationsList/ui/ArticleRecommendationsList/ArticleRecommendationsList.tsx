@@ -28,7 +28,7 @@ export const ArticleRecommendationsList = memo(
     return (
       <VStack gap="8" className={classNames("", {}, [className])}>
         <Text size={TextSize.L} title={t("We also recommend")} />
-        <ArticleList articles={articles} virtualized={false} target="_blank" />
+        <ArticleList articles={articles} target="_blank" />
       </VStack>
     );
   }

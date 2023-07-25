@@ -2,6 +2,17 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  .articleItem {
+    padding: 0 20px 20px 45px;
+  }
+}
+
+.articleList {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .tile {
@@ -14,7 +25,7 @@
     gap: 30px;
   }
 
-  .card {
+  .articleItem {
     height: 294px;
   }
 }

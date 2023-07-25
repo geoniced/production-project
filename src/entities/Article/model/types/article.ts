@@ -1,4 +1,5 @@
 import { User } from "entities/User";
+import { ScrollSeekConfiguration } from "react-virtuoso";
 
 export enum ArticleSortField {
   VIEWS = "views",
@@ -34,7 +35,10 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   paragraphs: string[];
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock;
 
 export enum ArticleType {
   ALL = "all",
@@ -60,3 +64,16 @@ export interface Article {
   type: ArticleType[];
   blocks: ArticleBlock[];
 }
+
+export type VirtualizedParameters = {
+  list: {
+    components: { Header: () => JSX.Element; Footer: () => JSX.Element };
+  };
+  grid: {
+    components: {
+      Header: () => JSX.Element;
+      ScrollSeekPlaceholder: ({ index }: { index: number }) => JSX.Element;
+    };
+    scrollSeekConfiguration: ScrollSeekConfiguration;
+  };
+};

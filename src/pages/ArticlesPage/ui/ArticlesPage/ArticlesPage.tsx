@@ -16,9 +16,7 @@ import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPag
 import { articlesPageReducer } from "../../model/slice/articlesPage";
 import cls from "./ArticlesPage.module.scss";
 
-interface ArticlesPageProps {
-  className?: string;
-}
+interface ArticlesPageProps {}
 
 const initialReducers: ReducersMap = {
   articlesPage: articlesPageReducer,
@@ -30,29 +28,16 @@ const dynamicModuleLoaderProps: DynamicModuleLoaderProps = {
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
-  const { className } = props;
   const dispatch = useAppDispatch();
 
   const [searchParams] = useSearchParams();
-
-  const onNextPartLoad = useCallback(() => {
-    dispatch(fetchNextArticlesPage());
-  }, [dispatch]);
 
   useDynamicModuleLoader(dynamicModuleLoaderProps);
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
   });
 
-  return (
-    <Page
-      onScrollEnd={onNextPartLoad}
-      className={classNames(cls.articlesPage, {}, [className])}
-    >
-      <ArticlesPageFilters />
-      <ArticleInfiniteList className={cls.list} />
-    </Page>
-  );
+  return <ArticleInfiniteList className={cls.articlesPage} />;
 };
 
 export default memo(ArticlesPage);
