@@ -1,13 +1,6 @@
-export { createFooterComponent } from "./ui/ArticleFooter/ArticleFooter";
-
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 
-export {
-  Article,
-  ArticleView,
-  ArticleSortField,
-  ArticleType,
-} from "./model/types/article";
+export { Article, ArticleView, ArticleSortField, ArticleType } from "./model/types/article";
 
 export { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 

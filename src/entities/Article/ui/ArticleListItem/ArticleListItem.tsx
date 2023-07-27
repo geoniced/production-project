@@ -11,10 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import {
-  ARTICLES_SCROLL_INDEX,
-  USER_LOCAL_STORAGE_KEY,
-} from "shared/const/localStorage";
-import {
   Article,
   ArticleBlockType,
   ArticleTextBlock,
@@ -24,7 +20,6 @@ import cls from "./ArticleListItem.module.scss";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 interface ArticleListItemProps {
-  index?: number;
   className?: string;
   article: Article;
   view: ArticleView;
@@ -32,7 +27,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target, index } = props;
+  const { className, article, view, target } = props;
 
   const { t } = useTranslation();
 
@@ -43,10 +38,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Icon className={cls.viewsIcon} Svg={EyeIcon} />
     </>
   );
-
-  const onItemOpenClick = useCallback(() => {
-    localStorage.setItem(ARTICLES_SCROLL_INDEX, JSON.stringify(index));
-  }, [index]);
 
   const articleLink = RoutePath.article_details + article.id;
 
@@ -86,9 +77,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
           <div className={cls.footer}>
             <AppLink target={target} to={articleLink}>
-              <Button theme={ButtonTheme.OUTLINE} onClick={onItemOpenClick}>
-                {t("Read more")}
-              </Button>
+              <Button theme={ButtonTheme.OUTLINE}>{t("Read more")}</Button>
             </AppLink>
             {views}
           </div>
@@ -99,7 +88,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
     <AppLink
-      onClick={onItemOpenClick}
       target={target}
       to={articleLink}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
