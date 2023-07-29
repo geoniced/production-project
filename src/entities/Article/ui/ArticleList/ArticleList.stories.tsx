@@ -10,9 +10,14 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  args: {
+    virtualized: false,
+  },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
 
 const article = {
   id: "1",
@@ -100,22 +105,8 @@ List.args = {
   articles,
 };
 
-export const IsLoadingList = Template.bind({});
-IsLoadingList.args = {
-  isLoading: true,
-  articles: [],
-  view: ArticleView.LIST,
-};
-
 export const Tiles = Template.bind({});
 Tiles.args = {
   view: ArticleView.TILE,
   articles,
-};
-
-export const IsLoadingTiles = Template.bind({});
-IsLoadingTiles.args = {
-  isLoading: true,
-  articles: [],
-  view: ArticleView.TILE,
 };

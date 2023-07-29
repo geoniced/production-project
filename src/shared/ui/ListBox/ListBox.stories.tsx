@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { action } from "@storybook/addon-actions";
+import { CenteredContentDecorator } from "shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
 import { ListBox, ListBoxItem } from "./ListBox";
 
 export default {
@@ -10,21 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "100vh",
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [CenteredContentDecorator()],
 } as ComponentMeta<typeof ListBox>;
 
 const Template: ComponentStory<typeof ListBox> = (args) => (

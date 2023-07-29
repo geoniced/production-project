@@ -21,10 +21,14 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
 
 const article: Article = {
   id: "1",
-  img: "",
+  img: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
   createdAt: "",
   views: 123,
-  user: { id: "1", username: "Ivan" },
+  user: {
+    id: "1",
+    username: "Ivan",
+    avatar: "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+  },
   blocks: [],
   type: [],
   title: "Article",

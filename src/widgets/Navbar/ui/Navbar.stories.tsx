@@ -1,16 +1,16 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Navbar } from './Navbar';
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Navbar } from "./Navbar";
 
 export default {
-  title: 'widget/Navbar',
+  title: "widget/Navbar",
   component: Navbar,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof Navbar>;
 
@@ -26,6 +26,13 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
-AuthNavbar.decorators = [StoreDecorator({
-  user: { authData: {} },
-})];
+AuthNavbar.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        avatar:
+          "https://digi.kg/_next/image?url=%2Fimages%2Fteam_avatars%2Fivan.jpg&w=384&q=75",
+      },
+    },
+  }),
+];

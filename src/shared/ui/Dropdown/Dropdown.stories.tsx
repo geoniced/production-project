@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+import { CenteredContentDecorator } from "shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
 import { Button } from "../Button/Button";
 import { Dropdown } from "./Dropdown";
 
@@ -10,6 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [CenteredContentDecorator()],
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (

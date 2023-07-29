@@ -1,26 +1,28 @@
-import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Select } from './Select';
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { CenteredContentDecorator } from "shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
+import { Select } from "./Select";
 
 export default {
-  title: 'shared/Select',
+  title: "shared/Select",
   component: Select,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
   args: {
-    to: '/',
+    to: "/",
   },
+  decorators: [CenteredContentDecorator()],
 } as ComponentMeta<typeof Select>;
 
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Enter value',
+  label: "Enter value",
   options: [
-    { value: '1', content: 'First option' },
-    { value: '2', content: 'Second option' },
-    { value: '3', content: 'Third option' },
+    { value: "1", content: "First option" },
+    { value: "2", content: "Second option" },
+    { value: "3", content: "Third option" },
   ],
 };
