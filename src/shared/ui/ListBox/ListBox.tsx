@@ -30,7 +30,7 @@ const mapDirectionToClass: Record<DropdownDirection, string> = {
   "top right": cls.optionsTopRight,
 };
 
-export const ListBox = memo((props: ListBoxProps) => {
+export const ListBox = memo(function ListBox(props: ListBoxProps) {
   const {
     items,
     value,

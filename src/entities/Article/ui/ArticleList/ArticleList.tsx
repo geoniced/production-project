@@ -26,7 +26,7 @@ const getSkeletons = (view: ArticleView) =>
     .fill("")
     .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
-export const ArticleList = memo((props: ArticleListProps) => {
+export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
   const {
     className,
     articles,

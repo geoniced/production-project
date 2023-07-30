@@ -17,7 +17,9 @@ interface SelectProps<T extends string> {
   readonly?: boolean;
 }
 
-export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
+export const Select = typedMemo(function Select<T extends string>(
+  props: SelectProps<T>
+) {
   const { className, label, options, value, onChange, readonly } = props;
 
   const optionsList = useMemo(
@@ -42,7 +44,12 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   return (
     <div className={classNames(cls.wrapper, {}, [className])}>
       {label && <span className={cls.label}>{`${label}>`}</span>}
-      <select disabled={readonly} className={cls.select} value={value} onChange={onChangeHandler}>
+      <select
+        disabled={readonly}
+        className={cls.select}
+        value={value}
+        onChange={onChangeHandler}
+      >
         {optionsList}
       </select>
     </div>

@@ -14,7 +14,9 @@ interface ArticleInfiniteListProps {
   className?: string;
 }
 
-export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
+export const ArticleInfiniteList = memo(function ArticleInfiniteList(
+  props: ArticleInfiniteListProps
+) {
   const { className } = props;
 
   const { t } = useTranslation("article");

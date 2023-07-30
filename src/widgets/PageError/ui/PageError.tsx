@@ -9,7 +9,9 @@ interface PageErrorProps {
   className?: string;
 }
 
-export const PageError = memo(({ className }: PageErrorProps) => {
+export const PageError = memo(function PageError({
+  className,
+}: PageErrorProps) {
   const { t } = useTranslation();
 
   const reloadPage = () => {

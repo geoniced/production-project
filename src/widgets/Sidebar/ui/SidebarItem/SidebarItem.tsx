@@ -13,7 +13,7 @@ interface SidebarItemProps {
   collapsed?: boolean;
 }
 
-export const SidebarItem = memo((props: SidebarItemProps) => {
+export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps) {
   const { item, collapsed } = props;
 
   const { t } = useTranslation();

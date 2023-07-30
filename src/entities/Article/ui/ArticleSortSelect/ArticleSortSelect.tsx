@@ -14,7 +14,9 @@ interface ArticleSortSelectProps {
   onSortChange: (newSort: ArticleSortField) => void;
 }
 
-export const ArticleSortSelect = memo((props: ArticleSortSelectProps) => {
+export const ArticleSortSelect = memo(function ArticleSortSelect(
+  props: ArticleSortSelectProps
+) {
   const { className, sort, order, onOrderChange, onSortChange } = props;
 
   const { t } = useTranslation();
@@ -54,8 +56,18 @@ export const ArticleSortSelect = memo((props: ArticleSortSelectProps) => {
   return (
     <div className={classNames(cls.articleSortSelect, {}, [className])}>
       {/* <Select<ArticleSortField> */}
-      <Select label={t("Sort by")} options={sortFieldOptions} value={sort} onChange={onSortChange} />
-      <Select label={t("by")} options={orderOptions} value={order} onChange={onOrderChange} />
+      <Select
+        label={t("Sort by")}
+        options={sortFieldOptions}
+        value={sort}
+        onChange={onSortChange}
+      />
+      <Select
+        label={t("by")}
+        options={orderOptions}
+        value={order}
+        onChange={onOrderChange}
+      />
     </div>
   );
 });

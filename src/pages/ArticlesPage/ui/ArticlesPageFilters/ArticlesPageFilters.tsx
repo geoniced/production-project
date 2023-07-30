@@ -33,7 +33,9 @@ interface ArticlesPageFiltersProps {
 
 const DELAY_MS = 500;
 
-export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
+export const ArticlesPageFilters = memo(function ArticlesPageFilters(
+  props: ArticlesPageFiltersProps
+) {
   const { className } = props;
   const dispatch = useAppDispatch();
 
@@ -106,9 +108,17 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         <ArticleViewSelector view={view} onViewClick={onChangeViewClick} />
       </div>
       <Card className={cls.search}>
-        <Input onChange={onSearchChange} value={search} placeholder={t("Search")} />
+        <Input
+          onChange={onSearchChange}
+          value={search}
+          placeholder={t("Search")}
+        />
       </Card>
-      <ArticleTypeTabs className={cls.tabs} value={type} onTypeChange={onTypeChange} />
+      <ArticleTypeTabs
+        className={cls.tabs}
+        value={type}
+        onTypeChange={onTypeChange}
+      />
     </div>
   );
 });

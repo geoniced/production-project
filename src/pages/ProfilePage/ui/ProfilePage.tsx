@@ -9,7 +9,7 @@ interface ProfilePageProps {
   className?: string;
 }
 
-const ProfilePage = memo((props: ProfilePageProps) => {
+const ProfilePage = memo(function ProfilePage(props: ProfilePageProps) {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
 

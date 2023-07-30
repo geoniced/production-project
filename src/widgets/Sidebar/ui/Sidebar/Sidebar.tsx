@@ -13,7 +13,7 @@ interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar = memo(({ className }: SidebarProps) => {
+export const Sidebar = memo(function Sidebar({ className }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
   const sidebarItemsList = useSelector(getSidebarItems);
   const onToggle = () => {
@@ -21,12 +21,20 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   };
 
   const itemsList = useMemo(
-    () => sidebarItemsList.map((item) => <SidebarItem item={item} collapsed={collapsed} key={item.text} />),
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.text} />
+      )),
     [collapsed, sidebarItemsList]
   );
 
   return (
-    <aside data-testid="sidebar" className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+    <aside
+      data-testid="sidebar"
+      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
       <Button
         className={cls.collapseBtn}
         onClick={onToggle}

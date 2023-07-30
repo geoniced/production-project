@@ -9,7 +9,9 @@ interface ArticleEditPageProps {
   className?: string;
 }
 
-const ArticleEditPage = memo((props: ArticleEditPageProps) => {
+const ArticleEditPage = memo(function ArticleEditPage(
+  props: ArticleEditPageProps
+) {
   const { className } = props;
 
   const { t } = useTranslation();

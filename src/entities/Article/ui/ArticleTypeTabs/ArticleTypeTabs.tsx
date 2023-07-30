@@ -11,7 +11,9 @@ interface ArticleTypeTabsProps {
   onTypeChange: (type: ArticleType) => void;
 }
 
-export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
+export const ArticleTypeTabs = memo(function ArticleTypeTabs(
+  props: ArticleTypeTabsProps
+) {
   const { className, value, onTypeChange } = props;
 
   const { t } = useTranslation();
@@ -48,5 +50,12 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     [onTypeChange]
   );
 
-  return <Tabs className={classNames("", {}, [className])} tabs={typeTabs} value={value} onTabClick={onTabClick} />;
+  return (
+    <Tabs
+      className={classNames("", {}, [className])}
+      tabs={typeTabs}
+      value={value}
+      onTabClick={onTabClick}
+    />
+  );
 });

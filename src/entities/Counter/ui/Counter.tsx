@@ -1,11 +1,11 @@
-import { Button } from 'shared/ui/Button/Button';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/counterSlice';
+import { Button } from "shared/ui/Button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { memo } from "react";
+import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
+import { counterActions } from "../model/slice/counterSlice";
 
-export const Counter = memo(() => {
+export const Counter = memo(function Counter() {
   const dispatch = useDispatch();
   const counterValue = useSelector(getCounterValue);
   const { t } = useTranslation();
@@ -20,14 +20,12 @@ export const Counter = memo(() => {
 
   return (
     <div>
-      <h1 data-testid="value-title">
-        {counterValue}
-      </h1>
+      <h1 data-testid="value-title">{counterValue}</h1>
       <Button data-testid="increment-btn" onClick={increment}>
-        {t('increment')}
+        {t("increment")}
       </Button>
       <Button data-testid="decrement-btn" onClick={decrement}>
-        {t('decrement')}
+        {t("decrement")}
       </Button>
     </div>
   );

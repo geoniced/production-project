@@ -39,7 +39,7 @@ interface TextProps {
 //   [TextSize.L]: "h1",
 // };
 
-export const Text = memo((props: TextProps) => {
+export const Text = memo(function Text(props: TextProps) {
   const {
     className,
     title,

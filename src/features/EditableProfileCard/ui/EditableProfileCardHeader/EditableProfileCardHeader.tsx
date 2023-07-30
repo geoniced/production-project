@@ -17,7 +17,7 @@ interface EditableProfileCardHeaderProps {
 }
 
 export const EditableProfileCardHeader = memo(
-  (props: EditableProfileCardHeaderProps) => {
+  function EditableProfileCardHeader(props: EditableProfileCardHeaderProps) {
     const { className } = props;
 
     const { t } = useTranslation("profile");

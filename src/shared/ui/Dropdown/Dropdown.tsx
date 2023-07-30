@@ -26,7 +26,7 @@ const mapDirectionToClass: Record<DropdownDirection, string> = {
   "top right": cls.optionsTopRight,
 };
 
-export const Dropdown = memo((props: DropdownProps) => {
+export const Dropdown = memo(function Dropdown(props: DropdownProps) {
   const { className, trigger, items, direction = "bottom left" } = props;
 
   const menuClasses = mapDirectionToClass[direction];

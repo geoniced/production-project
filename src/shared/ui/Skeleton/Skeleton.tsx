@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { CSSProperties, memo, useMemo } from 'react';
-import cls from './Skeleton.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { CSSProperties, memo, useMemo } from "react";
+import cls from "./Skeleton.module.scss";
 
 interface SkeletonProps {
   className?: string;
@@ -9,24 +9,19 @@ interface SkeletonProps {
   borderRadius?: string;
 }
 
-export const Skeleton = memo((props: SkeletonProps) => {
-  const {
-    className,
-    height,
-    width,
-    borderRadius,
-  } = props;
+export const Skeleton = memo(function Skeleton(props: SkeletonProps) {
+  const { className, height, width, borderRadius } = props;
 
-  const styles: CSSProperties = useMemo(() => ({
-    height,
-    width,
-    borderRadius,
-  }), [borderRadius, height, width]);
+  const styles: CSSProperties = useMemo(
+    () => ({
+      height,
+      width,
+      borderRadius,
+    }),
+    [borderRadius, height, width]
+  );
 
   return (
-    <div
-      className={classNames(cls.skeleton, {}, [className])}
-      style={styles}
-    />
+    <div className={classNames(cls.skeleton, {}, [className])} style={styles} />
   );
 });

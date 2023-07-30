@@ -71,7 +71,9 @@ const renderBlock = (block: ArticleBlock) => {
   }
 };
 
-export const ArticleDetails = memo((props: ArticleDetailsProps) => {
+export const ArticleDetails = memo(function ArticleDetails(
+  props: ArticleDetailsProps
+) {
   const { className, id } = props;
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);

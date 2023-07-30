@@ -38,7 +38,9 @@ const dynamicModuleLoaderProps: DynamicModuleLoaderProps = {
   removeAfterUnmount: true,
 };
 
-export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
+export const EditableProfileCard = memo(function EditableProfileCard(
+  props: EditableProfileCardProps
+) {
   const { className, id } = props;
   const { t } = useTranslation("profile");
 

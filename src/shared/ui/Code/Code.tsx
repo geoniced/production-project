@@ -9,7 +9,7 @@ interface CodeProps {
   text: string;
 }
 
-export const Code = memo((props: CodeProps) => {
+export const Code = memo(function Code(props: CodeProps) {
   const { className, text } = props;
 
   const onCopyClick = useCallback(() => {
@@ -18,7 +18,11 @@ export const Code = memo((props: CodeProps) => {
 
   return (
     <pre className={classNames(cls.code, {}, [className])}>
-      <Button onClick={onCopyClick} className={cls.copyBtn} theme={ButtonTheme.CLEAR}>
+      <Button
+        onClick={onCopyClick}
+        className={cls.copyBtn}
+        theme={ButtonTheme.CLEAR}
+      >
         <CopyIcon className={cls.copyIcon} />
       </Button>
       <code>{text}</code>

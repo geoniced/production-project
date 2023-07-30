@@ -17,7 +17,9 @@ const options = Object.entries(Currency).map(([value, content]) => ({
   content,
 }));
 
-export const CurrencySelect = memo((props: CurrencySelectProps) => {
+export const CurrencySelect = memo(function CurrencySelect(
+  props: CurrencySelectProps
+) {
   const { className, value, onChange, readonly } = props;
 
   const { t } = useTranslation();

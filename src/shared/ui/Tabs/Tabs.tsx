@@ -17,7 +17,9 @@ interface TabsProps<T extends string> {
   onTabClick: (tab: TabItem<T>) => void;
 }
 
-export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
+export const Tabs = typedMemo(function Tabs<T extends string>(
+  props: TabsProps<T>
+) {
   const { className, tabs, value, onTabClick } = props;
 
   const { t } = useTranslation();

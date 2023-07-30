@@ -5,10 +5,19 @@ import { Input } from "shared/ui/Input/Input";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ReducersMap, useDynamicModuleLoader } from "shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader";
+import {
+  ReducersMap,
+  useDynamicModuleLoader,
+} from "shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader";
 import { HStack } from "shared/ui/Stack";
-import { addCommentFormActions, addCommentFormReducer } from "../../model/slices/addCommentFormSlice";
-import { getAddCommentFormError, getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
+import {
+  addCommentFormActions,
+  addCommentFormReducer,
+} from "../../model/slices/addCommentFormSlice";
+import {
+  getAddCommentFormError,
+  getAddCommentFormText,
+} from "../../model/selectors/addCommentFormSelectors";
 import cls from "./AddCommentForm.module.scss";
 
 export interface AddCommentFormProps {
@@ -24,7 +33,9 @@ const dynamicModuleLoaderProps = {
   reducers: initialReducers,
 };
 
-const AddCommentForm = memo((props: AddCommentFormProps) => {
+const AddCommentForm = memo(function AddCommentForm(
+  props: AddCommentFormProps
+) {
   const { className, onSendComment } = props;
 
   const dispatch = useAppDispatch();
@@ -47,8 +58,18 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   }, [onCommentTextChange, onSendComment, text]);
 
   return (
-    <HStack max justify="between" align="center" className={classNames(cls.addCommentForm, {}, [className])}>
-      <Input className={cls.input} placeholder={t("Enter comment text")} value={text} onChange={onCommentTextChange} />
+    <HStack
+      max
+      justify="between"
+      align="center"
+      className={classNames(cls.addCommentForm, {}, [className])}
+    >
+      <Input
+        className={cls.input}
+        placeholder={t("Enter comment text")}
+        value={text}
+        onChange={onCommentTextChange}
+      />
       <Button theme={ButtonTheme.OUTLINE} onClick={onSendCommentClick}>
         {t("Send")}
       </Button>

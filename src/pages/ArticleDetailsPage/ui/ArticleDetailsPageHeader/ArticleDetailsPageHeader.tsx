@@ -13,7 +13,9 @@ interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = memo(function ArticleDetailsPageHeader(
+  props: ArticleDetailsPageHeaderProps
+) {
   const { className } = props;
   const canEdit = useSelector(getCanEditArticle);
   const article = useSelector(getArticleDetailsData);
@@ -23,7 +25,9 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   return (
     <HStack justify="between" max className={classNames("", {}, [className])}>
       <AppLink to={RoutePath.articles}>
-        <Button theme={ButtonTheme.OUTLINE}>{t("Back to articles list")}</Button>
+        <Button theme={ButtonTheme.OUTLINE}>
+          {t("Back to articles list")}
+        </Button>
       </AppLink>
       {canEdit && (
         <AppLink to={`${RoutePath.article_details}${article?.id}/edit`}>

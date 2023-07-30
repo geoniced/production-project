@@ -1,5 +1,12 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo, MutableRefObject, ReactNode, useRef, UIEvent, useLayoutEffect } from "react";
+import {
+  memo,
+  MutableRefObject,
+  ReactNode,
+  useRef,
+  UIEvent,
+  useLayoutEffect,
+} from "react";
 import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUIScrollByPath, uiActions } from "features/UI";
@@ -18,12 +25,14 @@ interface PageProps {
 const THROTTLE_DELAY_MS = 250;
 export const PAGE_ID = "page-id";
 
-export const Page = memo((props: PageProps) => {
+export const Page = memo(function Page(props: PageProps) {
   const { className, children, onScrollEnd } = props;
 
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
-  const scrollPosition = useSelector((state: StateSchema) => getUIScrollByPath(state, pathname));
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getUIScrollByPath(state, pathname)
+  );
 
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -54,7 +63,12 @@ export const Page = memo((props: PageProps) => {
   }, THROTTLE_DELAY_MS);
 
   return (
-    <section onScroll={onScroll} ref={wrapperRef} className={classNames(cls.page, {}, [className])} id={PAGE_ID}>
+    <section
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(cls.page, {}, [className])}
+      id={PAGE_ID}
+    >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>

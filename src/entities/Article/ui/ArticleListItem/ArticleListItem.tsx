@@ -26,7 +26,9 @@ interface ArticleListItemProps {
   target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = memo((props: ArticleListItemProps) => {
+export const ArticleListItem = memo(function ArticleListItem(
+  props: ArticleListItemProps
+) {
   const { className, article, view, target } = props;
 
   const { t } = useTranslation();

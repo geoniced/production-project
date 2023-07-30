@@ -17,7 +17,9 @@ const options = Object.entries(Country).map(([value, content]) => ({
   content,
 }));
 
-export const CountrySelect = memo((props: CountrySelectProps) => {
+export const CountrySelect = memo(function CountrySelect(
+  props: CountrySelectProps
+) {
   const { className, value, onChange, readonly } = props;
 
   const { t } = useTranslation();
