@@ -114,6 +114,7 @@
     "react-virtualized": "^9.22.3"
   },
   "loki": {
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
