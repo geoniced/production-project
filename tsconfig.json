@@ -14,7 +14,8 @@
     "paths": {
       "*": ["./src/*"]
     },
-    "sourceMap": true
+    "sourceMap": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {
