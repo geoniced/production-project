@@ -2,3 +2,7 @@
   // imo currentColor is more fluid?
   fill: var(--primary-color);
 }
+
+.inverted {
+  fill: var(--inverted-primary-color);
+}

@@ -1,0 +1,29 @@
+.btn {
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  outline: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  z-index: 1000;
+
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  white-space: nowrap;
+}
+
+.item {
+  width: 100%;
+  padding: 10px 25px;
+  color: var(--primary-color);
+  border: none;
+  background: none;
+  outline: transparent;
+  cursor: pointer;
+}

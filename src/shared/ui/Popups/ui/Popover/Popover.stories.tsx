@@ -2,34 +2,30 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { CenteredContentDecorator } from "shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
-import { Button } from "../Button/Button";
-import { Dropdown } from "./Dropdown";
+import { Button } from "../../../Button/Button";
+import { Popover } from "./Popover";
 
 export default {
-  title: "shared/Dropdown",
-  component: Dropdown,
+  title: "shared/Popover",
+  component: Popover,
   argTypes: {
     backgroundColor: { control: "color" },
   },
   decorators: [CenteredContentDecorator()],
-} as ComponentMeta<typeof Dropdown>;
+} as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Dropdown> = (args) => (
-  <Dropdown {...args} />
+const Template: ComponentStory<typeof Popover> = (args) => (
+  <Popover {...args} />
 );
 
 export const Normal = Template.bind({});
 Normal.args = {
   trigger: <Button>Open!</Button>,
-  items: [
-    {
-      content: "first",
-    },
-    {
-      content: "second",
-    },
-    {
-      content: "third",
-    },
-  ],
+  children: (
+    <>
+      <div>first</div>
+      <div>second</div>
+      <div>third</div>
+    </>
+  ),
 };

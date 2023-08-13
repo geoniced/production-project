@@ -65,6 +65,7 @@ module.exports = {
           "align",
           "direction",
           "gap",
+          "borderRadius",
         ],
       },
     ],
@@ -78,7 +79,7 @@ module.exports = {
     "react/no-array-index-key": "off",
     "arrow-body-style": "off",
     "kashin-fsd-plugin/path-checker": "error",
-    "prefer-arrow-callback": "off"
+    "prefer-arrow-callback": "off",
   },
   globals: {
     __IS_DEV__: true,
