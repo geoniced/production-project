@@ -1,10 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+import { mockNotifications } from "shared/config/storybook/mocks/notifications";
 import { NotificationItem } from "./NotificationItem";
 
 export default {
-  title: "shared/NotificationItem",
+  title: "entities/NotificationItem",
   component: NotificationItem,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -16,4 +17,11 @@ const Template: ComponentStory<typeof NotificationItem> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  item: mockNotifications[0],
+};
+
+export const AsALink = Template.bind({});
+AsALink.args = {
+  item: mockNotifications[1],
+};

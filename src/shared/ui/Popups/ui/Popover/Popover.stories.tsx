@@ -21,11 +21,5 @@ const Template: ComponentStory<typeof Popover> = (args) => (
 export const Normal = Template.bind({});
 Normal.args = {
   trigger: <Button>Open!</Button>,
-  children: (
-    <>
-      <div>first</div>
-      <div>second</div>
-      <div>third</div>
-    </>
-  ),
+  children: <div>Content</div>,
 };

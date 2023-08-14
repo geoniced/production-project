@@ -1,14 +1,19 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { CenteredContentDecorator } from "shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
+import withMock from "storybook-addon-mock";
+import { mockNotifications } from "shared/config/storybook/mocks/notifications";
 import { NotificationButton } from "./NotificationButton";
 
 export default {
-  title: "shared/NotificationButton",
+  title: "features/NotificationButton",
   component: NotificationButton,
   argTypes: {
     backgroundColor: { control: "color" },
   },
+  decorators: [withMock, CenteredContentDecorator(), StoreDecorator({})],
 } as ComponentMeta<typeof NotificationButton>;
 
 const Template: ComponentStory<typeof NotificationButton> = (args) => (
@@ -17,3 +22,13 @@ const Template: ComponentStory<typeof NotificationButton> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/notifications`,
+      method: "GET",
+      status: 200,
+      response: mockNotifications,
+    },
+  ],
+};
