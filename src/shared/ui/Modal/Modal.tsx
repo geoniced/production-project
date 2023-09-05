@@ -1,5 +1,13 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames";
-import React, { MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  MutableRefObject,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { Overlay } from "../Overlay/Overlay";
 import { Portal } from "../Portal/Portal";
 import cls from "./Modal.module.scss";
 
@@ -36,14 +44,9 @@ export const Modal = (props: ModalProps) => {
     }
   }, [onClose]);
 
-  const onOverlayClick = useCallback(
-    (evt: React.MouseEvent) => {
-      if (evt.target === evt.currentTarget) {
-        closeHandler();
-      }
-    },
-    [closeHandler]
-  );
+  const onOverlayClick = useCallback(() => {
+    closeHandler();
+  }, [closeHandler]);
 
   const onKeyDown = useCallback(
     (evt: KeyboardEvent) => {
@@ -82,9 +85,8 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.modal, mods, [className])}>
-        <div className={cls.overlay} onClick={onOverlayClick}>
-          <div className={cls.content}>{children}</div>
-        </div>
+        <Overlay onClick={onOverlayClick} />
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );
