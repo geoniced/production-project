@@ -10,6 +10,8 @@
   align-items: flex-end;
 
   opacity: 0;
+  transition: 0.3s opacity;
+
   pointer-events: none;
 }
 
@@ -53,5 +55,13 @@
 
   .content {
     transform: translateY(0%);
+  }
+}
+
+.isClosing {
+  opacity: 0;
+
+  .content {
+    transform: translateY(100%);
   }
 }
