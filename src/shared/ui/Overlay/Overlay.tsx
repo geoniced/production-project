@@ -4,7 +4,7 @@ import cls from "./Overlay.module.scss";
 
 interface OverlayProps {
   className?: string;
-  onClick?: (evt: React.MouseEvent) => void;
+  onClick?: () => void;
 }
 
 export const Overlay = memo((props: OverlayProps) => {
