@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true, // Позволяет писать импорты без (* as _) а в обычном стиле, как default
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     "sourceMap": true,
     "isolatedModules": true

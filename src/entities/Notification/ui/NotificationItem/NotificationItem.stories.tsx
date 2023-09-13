@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { mockNotifications } from "shared/config/storybook/mocks/notifications";
+import { mockNotifications } from "@/shared/config/storybook/mocks/notifications";
 import { NotificationItem } from "./NotificationItem";
 
 export default {

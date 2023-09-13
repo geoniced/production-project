@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { userActions } from 'entities/User';
-import { Comment } from 'entities/Comment';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { userActions } from '@/entities/User';
+import { Comment } from '@/entities/Comment';
 import {
   fetchCommentsByArticleId,
 } from './fetchCommentsByArticleId';
