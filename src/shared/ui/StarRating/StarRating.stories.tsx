@@ -17,3 +17,8 @@ const Template: ComponentStory<typeof StarRating> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+
+export const Large = Template.bind({});
+Large.args = {
+  size: 60,
+};
