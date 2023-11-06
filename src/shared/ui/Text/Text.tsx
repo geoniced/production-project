@@ -47,7 +47,7 @@ export const Text = memo(function Text(props: TextProps) {
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
-    tag: HeaderTag = "p",
+    tag: HeaderTag = "div",
     "data-testid": dataTestId = "Text",
   } = props;
 
