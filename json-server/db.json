@@ -707,5 +707,69 @@
       "username": "user",
       "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 1,
+      "feedback": "Bad article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "rate": 5,
+      "articleId": "3",
+      "feedback": "Perfect one!",
+      "id": "vlNZA1n"
+    },
+    {
+      "userId": "1",
+      "rate": 4,
+      "articleId": "4",
+      "id": "m5brtZZ"
+    },
+    {
+      "userId": "1",
+      "rate": 2,
+      "articleId": "5",
+      "feedback": "",
+      "id": "ql9n7zX"
+    },
+    {
+      "userId": "1",
+      "rate": 5,
+      "articleId": "16",
+      "id": "pBDF_oB"
+    },
+    {
+      "userId": "1",
+      "rate": 4,
+      "articleId": "7",
+      "id": "ZWzBjew"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 1,
+      "feedback": "Bad profile",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }
