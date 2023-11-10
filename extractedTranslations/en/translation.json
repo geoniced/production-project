@@ -39,7 +39,9 @@
   "Incorrect user data": "Incorrect user data",
   "Ivan Kashin App": "Ivan Kashin App",
   "Language": "Language",
+  "Leave your feedback of this profile": "",
   "Leave your feedback, it will improve the quality of our articles": "Leave your feedback, it will improve the quality of our articles",
+  "Leave your feedback, it will improve the quality of our profiles": "",
   "Login": "Login",
   "Logout": "Logout",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
@@ -55,6 +57,7 @@
   "Profile not found": "Profile not found",
   "Profile page": "Profile page",
   "Rate this article": "Rate this article",
+  "Rate this profile": "",
   "Read more": "Read more",
   "Reload page": "Reload page",
   "Save": "Save",

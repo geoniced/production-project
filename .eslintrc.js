@@ -80,6 +80,7 @@ module.exports = {
     "arrow-body-style": "off",
     "kashin-fsd-plugin/path-checker": "error",
     "prefer-arrow-callback": "off",
+    "jsx-a11y/no-autofocus": "warn",
   },
   globals: {
     __IS_DEV__: true,

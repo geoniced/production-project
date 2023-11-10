@@ -12,6 +12,7 @@ interface InputProps extends HTMLInputProps {
   value?: string | number;
   onChange?: (value: string) => void;
   readOnly?: boolean;
+  autoFocus?: boolean;
 }
 
 const FONT_CHARACTER_WIDTH = 9;
@@ -24,6 +25,7 @@ export const Input = memo(function Input(props: InputProps) {
     type = "text",
     placeholder,
     readOnly,
+    autoFocus = false,
     ...otherProps
   } = props;
 
@@ -57,6 +59,7 @@ export const Input = memo(function Input(props: InputProps) {
           className={cls.input}
           spellCheck={false}
           readOnly={readOnly}
+          autoFocus={autoFocus}
           {...otherProps}
         />
         <span

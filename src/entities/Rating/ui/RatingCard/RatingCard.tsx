@@ -67,6 +67,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         value={feedback}
         onChange={setFeedback}
         placeholder={t("Your review")}
+        autoFocus
       />
     </>
   );
