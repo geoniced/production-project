@@ -7,7 +7,7 @@ import { mockNotifications } from "@/shared/config/storybook/mocks/notifications
 import { NotificationList } from "./NotificationList";
 
 export default {
-  title: "entities/NotificationList",
+  title: "entities/Notification/NotificationList",
   component: NotificationList,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -20,7 +20,7 @@ export default {
         method: "GET",
         status: 200,
         response: mockNotifications,
-        delay: 1500,
+        delay: 500,
       },
     ],
   },

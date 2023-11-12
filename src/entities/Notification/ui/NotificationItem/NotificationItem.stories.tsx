@@ -5,7 +5,7 @@ import { mockNotifications } from "@/shared/config/storybook/mocks/notifications
 import { NotificationItem } from "./NotificationItem";
 
 export default {
-  title: "entities/NotificationItem",
+  title: "entities/Notification/NotificationItem",
   component: NotificationItem,
   argTypes: {
     backgroundColor: { control: "color" },

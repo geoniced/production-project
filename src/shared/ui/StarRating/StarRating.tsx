@@ -3,6 +3,7 @@ import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import cls from "./StarRating.module.scss";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import StarIcon from "@/shared/assets/icons/star.svg";
+import { HStack } from "@/shared/ui/Stack";
 
 interface StarRatingProps {
   className?: string;
@@ -40,7 +41,7 @@ export const StarRating = memo((props: StarRatingProps) => {
   };
 
   return (
-    <div className={classNames(cls.starRating, {}, [className])}>
+    <HStack gap="16" className={classNames(cls.starRating, {}, [className])}>
       {stars.map((starNumber) => (
         <Icon
           className={classNames(
@@ -60,6 +61,6 @@ export const StarRating = memo((props: StarRatingProps) => {
           onMouseLeave={onLeave}
         />
       ))}
-    </div>
+    </HStack>
   );
 });

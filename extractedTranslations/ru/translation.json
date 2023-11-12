@@ -39,6 +39,7 @@
   "Incorrect user data": "Incorrect user data",
   "Ivan Kashin App": "Ivan Kashin App",
   "Language": "Language",
+  "Leave your feedback of this profile": "Leave your feedback of this profile",
   "Leave your feedback, it will improve the quality of our articles": "Leave your feedback, it will improve the quality of our articles",
   "Login": "Login",
   "Logout": "Logout",
@@ -55,6 +56,7 @@
   "Profile not found": "Profile not found",
   "Profile page": "Profile page",
   "Rate this article": "Rate this article",
+  "Rate this profile": "Rate this profile",
   "Read more": "Read more",
   "Reload page": "Reload page",
   "Save": "Save",
@@ -92,7 +94,5 @@
   "views": "views",
   "Выйти": "Выйти",
   "Статья не найдена": "Статья не найдена",
-  "Укажите валюту": "Укажите валюту",
-  "Rate this profile": "Rate this profile",
-  "Leave your feedback of this profile": "Leave your feedback of this profile"
+  "Укажите валюту": "Укажите валюту"
 }

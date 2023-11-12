@@ -9,7 +9,7 @@ import { mockNotifications } from "@/shared/config/storybook/mocks/notifications
 import { Navbar } from "./Navbar";
 
 export default {
-  title: "widget/Navbar",
+  title: "widgets/Navbar",
   component: Navbar,
   argTypes: {
     backgroundColor: { control: "color" },

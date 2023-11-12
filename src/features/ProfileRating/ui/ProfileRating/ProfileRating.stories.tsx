@@ -32,7 +32,7 @@ const postReviewMock = {
   method: "POST",
   status: 200,
   response: null,
-  delay: 1500,
+  delay: 500,
 };
 
 export const Normal = Template.bind({});
@@ -46,7 +46,7 @@ Normal.parameters = {
       method: "GET",
       status: 200,
       response: null,
-      delay: 1500,
+      delay: 500,
     },
     postReviewMock,
   ],
@@ -70,7 +70,7 @@ HasReview.parameters = {
           feedback: "Five stars",
         },
       ],
-      delay: 1500,
+      delay: 500,
     },
     postReviewMock,
   ],

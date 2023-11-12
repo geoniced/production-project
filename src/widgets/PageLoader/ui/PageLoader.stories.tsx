@@ -1,19 +1,21 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { PageLoader } from './PageLoader';
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { PageLoader } from "./PageLoader";
 
 export default {
-  title: 'widget/PageLoader',
+  title: "widgets/PageLoader",
   component: PageLoader,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
 } as ComponentMeta<typeof PageLoader>;
 
-const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
+const Template: ComponentStory<typeof PageLoader> = (args) => (
+  <PageLoader {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
