@@ -8,7 +8,7 @@ import {
 } from "../../api/profileRatingApi";
 import { getUserAuthData } from "@/entities/User";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { getProfileData } from "@/features/EditableProfileCard/model/selectors/getProfileData/getProfileData";
+import { getProfileData } from "@/features/EditableProfileCard";
 
 export interface ProfileRatingProps {
   className?: string;

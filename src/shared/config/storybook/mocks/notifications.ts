@@ -1,3 +1,5 @@
+// TODO
+// eslint-disable-next-line kashin-fsd-plugin/public-api-imports
 import { Notification } from "@/entities/Notification/model/types/notification";
 
 export const mockNotifications: Notification[] = [

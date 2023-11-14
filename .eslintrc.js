@@ -79,6 +79,7 @@ module.exports = {
     "react/no-array-index-key": "off",
     "arrow-body-style": "off",
     "kashin-fsd-plugin/path-checker": ["error", { alias: "@" }],
+    "kashin-fsd-plugin/public-api-imports": ["error", { alias: "@" }],
     "prefer-arrow-callback": "off",
     "jsx-a11y/no-autofocus": "warn",
   },
