@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import withMock from "storybook-addon-mock";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { CenteredContentDecorator } from "@/shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
-import { mockNotifications } from "@/shared/config/storybook/mocks/notifications";
+import { mockNotifications } from "@/shared/config/storybook/mocks/notifications.test";
 import { NotificationButton } from "./NotificationButton";
 
 export default {

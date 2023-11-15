@@ -5,7 +5,7 @@ import withMock from "storybook-addon-mock";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/app/providers/ThemeProvider";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { mockNotifications } from "@/shared/config/storybook/mocks/notifications";
+import { mockNotifications } from "@/shared/config/storybook/mocks/notifications.test";
 import { Navbar } from "./Navbar";
 
 export default {
