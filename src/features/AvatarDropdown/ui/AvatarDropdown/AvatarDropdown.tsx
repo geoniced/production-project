@@ -5,13 +5,13 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
 import { DropdownItem } from "@/shared/ui/Popups/ui/Dropdown/Dropdown";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import {
   getUserAuthData,
   isUserAdmin,
   isUserManager,
   userActions,
 } from "@/entities/User";
+import { RoutePath } from "@/shared/const/router";
 
 interface AvatarDropdownProps {
   className?: string;
