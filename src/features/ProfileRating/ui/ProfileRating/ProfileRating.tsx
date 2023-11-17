@@ -8,7 +8,6 @@ import {
 } from "../../api/profileRatingApi";
 import { getUserAuthData } from "@/entities/User";
 import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { getProfileData } from "@/features/EditableProfileCard";
 
 export interface ProfileRatingProps {
   className?: string;
@@ -25,9 +24,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
   const [rateProfileMutation] = useRateProfile();
 
   const authData = useSelector(getUserAuthData);
-  const profileData = useSelector(getProfileData);
-  // could use reselect selector and use authData and profileData inside
-  const isCurrentUserProfile = authData?.id === profileData?.id;
+  const isCurrentUserProfile = authData?.id === profileId;
 
   const { t } = useTranslation();
 

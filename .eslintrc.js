@@ -90,6 +90,13 @@ module.exports = {
         ],
       },
     ],
+    "kashin-fsd-plugin/layer-imports": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+      },
+    ],
     "prefer-arrow-callback": "off",
     "jsx-a11y/no-autofocus": "warn",
   },
