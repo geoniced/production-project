@@ -1,0 +1,1 @@
+export { typedMemo } from "./TypedMemo";

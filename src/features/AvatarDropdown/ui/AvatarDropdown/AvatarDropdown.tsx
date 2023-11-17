@@ -2,9 +2,8 @@ import { useTranslation } from "react-i18next";
 import React, { memo, useCallback, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { Dropdown } from "@/shared/ui/Popups";
-import { DropdownItem } from "@/shared/ui/Popups/ui/Dropdown/Dropdown";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Dropdown, DropdownItem } from "@/shared/ui/Popups";
 import {
   getUserAuthData,
   isUserAdmin,
