@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector, useStore } from "react-redux";
-import { memo, useCallback, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { memo, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";

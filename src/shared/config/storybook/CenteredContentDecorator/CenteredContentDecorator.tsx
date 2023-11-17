@@ -2,7 +2,6 @@ import React from "react";
 
 import { Story } from "@storybook/react";
 
-import { Theme } from "@/shared/const/theme";
 
 export const CenteredContentDecorator = () => (StoryComponent: Story) =>
   (

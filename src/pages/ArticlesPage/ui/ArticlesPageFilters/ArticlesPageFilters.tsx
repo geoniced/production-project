@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { memo, useCallback, useMemo } from "react";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import {
   ArticleSortField,
@@ -15,7 +15,6 @@ import { Card } from "@/shared/ui/Card";
 import { Input } from "@/shared/ui/Input";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { SortOrder } from "@/shared/types";
-import { TabItem, Tabs } from "@/shared/ui/Tabs";
 import { articlesPageActions } from "../../model/slice/articlesPage";
 import {
   getArticlesPageOrder,

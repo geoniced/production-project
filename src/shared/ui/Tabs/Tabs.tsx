@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { memo, ReactNode, useCallback } from "react";
+import { ReactNode, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Card, CardTheme } from "../Card/Card";
 import { typedMemo } from "../TypedMemo/TypedMemo";

@@ -24,6 +24,7 @@ module.exports = {
     "i18next",
     "react-hooks",
     "kashin-fsd-plugin",
+    "unused-imports",
   ],
   rules: {
     indent: [
@@ -35,6 +36,7 @@ module.exports = {
     ],
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
+    "unused-imports/no-unused-imports": "error",
     "react/jsx-filename-extension": [
       "error",
       { extensions: [".js", ".jsx", ".tsx"] },
