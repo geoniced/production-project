@@ -1,8 +1,11 @@
 import React from "react";
+
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+
 import { CenteredContentDecorator } from "@/shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
-import { Country } from "../../model/consts/country";
+
 import { CountrySelect } from "./CountrySelect";
+import { Country } from "../../model/consts/country";
 
 export default {
   title: "entities/CountrySelect",

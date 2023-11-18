@@ -1,8 +1,10 @@
 import React from "react";
+
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Text } from "../Text/Text";
 
 import { Card } from "./Card";
+import { Text } from "../Text/Text";
+
 
 export default {
   title: "shared/Card",

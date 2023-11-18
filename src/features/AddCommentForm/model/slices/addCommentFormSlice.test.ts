@@ -1,5 +1,5 @@
-import { AddCommentFormSchema } from '../types/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from './addCommentFormSlice';
+import { AddCommentFormSchema } from '../types/addCommentForm';
 
 const data = {
   text: '',

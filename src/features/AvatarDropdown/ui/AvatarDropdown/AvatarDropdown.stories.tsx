@@ -1,9 +1,11 @@
 import React from "react";
+
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { UserRole } from "@/entities/User";
 import { CenteredContentDecorator } from "@/shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+
 import { AvatarDropdown } from "./AvatarDropdown";
 
 export default {

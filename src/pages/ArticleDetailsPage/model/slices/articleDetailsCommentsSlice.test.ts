@@ -1,8 +1,9 @@
 import { Comment } from "@/entities/Comment";
+
 import { articleDetailsCommentsReducer } from "./articleDetailsCommentsSlice";
+import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { ArticleDetailsCommentsSchema } from "../types/ArticleDetailsCommentsSchema";
 
-import { fetchCommentsByArticleId } from "../services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 
 const data: ArticleDetailsCommentsSchema = {
   isLoading: false,

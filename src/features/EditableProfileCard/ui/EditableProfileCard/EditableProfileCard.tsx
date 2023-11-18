@@ -1,29 +1,32 @@
-import { useTranslation } from "react-i18next";
 import { memo, useCallback, useMemo } from "react";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { classNames } from "@/shared/lib/classNames/classNames";
 
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Currency } from "@/entities/Currency";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
+
 import { Country } from "@/entities/Country";
-import { Text, TextTheme } from "@/shared/ui/Text";
+import { Currency } from "@/entities/Currency";
 import { ProfileCard } from "@/entities/Profile";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
   DynamicModuleLoaderProps,
   ReducersMap,
   useDynamicModuleLoader,
 } from "@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { VStack } from "@/shared/ui/Stack";
+import { Text, TextTheme } from "@/shared/ui/Text";
+
 import { ValidateProfileError } from "../../model/consts/consts";
-import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
-import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
-import { profileActions, profileReducer } from "../../model/slice/profileSlice";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
-import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
-import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { profileActions, profileReducer } from "../../model/slice/profileSlice";
+import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface EditableProfileCardProps {
   className?: string;

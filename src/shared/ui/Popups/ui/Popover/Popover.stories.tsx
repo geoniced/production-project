@@ -1,9 +1,11 @@
 import React from "react";
+
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { CenteredContentDecorator } from "@/shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";
-import { Button } from "../../../Button/Button";
+
 import { Popover } from "./Popover";
+import { Button } from "../../../Button/Button";
 
 export default {
   title: "shared/Popover",
