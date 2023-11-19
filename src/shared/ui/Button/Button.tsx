@@ -21,10 +21,25 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
+  /**
+   * Тема кнопки. Отвечает за визуал (в рамке, без стилей, противоположный главной теме)
+   */
   theme?: ButtonTheme;
+  /**
+   * Флаг делающий кнопку квадратной
+   */
   square?: boolean;
+  /**
+   * Размер кнопки в соответствии дизайн системе
+   */
   size?: ButtonSize;
+  /**
+   * Содержимое кнопки
+   */
   children?: ReactNode;
+  /**
+   * Сделать кнопку на полную ширину
+   */
   fullWidth?: boolean;
 }
 
