@@ -7,18 +7,6 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
-export default {
-  title: "pages/ArticleDetailsPage/ArticleDetailsPage",
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-  <ArticleDetailsPage {...args} />
-);
-
 const article: Article = {
   id: "1",
   title: "Javascript news",
@@ -93,12 +81,26 @@ const article: Article = {
   ],
 };
 
+export default {
+  title: "pages/ArticleDetailsPage/ArticleDetailsPage",
+  component: ArticleDetailsPage,
+  argTypes: {
+    backgroundColor: { control: "color" },
+  },
+  decorators: [
+    // MemoryRouterDecorator(["/articles/1"], "/articles/:id"),
+
+    StoreDecorator({
+      articleDetails: {
+        data: article,
+      },
+    }),
+  ],
+} as ComponentMeta<typeof ArticleDetailsPage>;
+
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+  <ArticleDetailsPage {...args} />
+);
+
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: article,
-    },
-  }),
-];

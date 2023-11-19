@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import withMock from "storybook-addon-mock";
 
-import { mockNotifications } from "@/shared/config/storybook/mocks/notifications.test";
+import { mockNotifications } from "@/shared/config/storybook/mocks/notifications.mock";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 import { NotificationList } from "./NotificationList";

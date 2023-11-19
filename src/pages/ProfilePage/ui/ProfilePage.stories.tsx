@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import withMock from "storybook-addon-mock";
 
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
@@ -16,6 +17,24 @@ export default {
   component: ProfilePage,
   argTypes: {
     backgroundColor: { control: "color" },
+  },
+  decorators: [withMock],
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/profile-ratings?userId=`,
+        method: "GET",
+        status: 200,
+        response: {
+          id: "1",
+          rate: 4,
+          feedback: "Good profile",
+          userId: "1",
+          profileId: "1",
+        },
+        delay: 500,
+      },
+    ],
   },
 } as ComponentMeta<typeof ProfilePage>;
 

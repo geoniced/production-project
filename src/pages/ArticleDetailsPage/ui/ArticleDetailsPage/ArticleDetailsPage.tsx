@@ -20,8 +20,6 @@ import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
-
-
 interface ArticleDetailsPageProps {
   className?: string;
 }
@@ -41,17 +39,17 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation("article-details");
 
-  // if (!id) {
-  //   return (
-  //     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
-  //       {t("The article was not found")}
-  //     </div>
-  //   );
-  // }
-
   if (!id) {
-    return null;
+    return (
+      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+        {t("The article was not found")}
+      </div>
+    );
   }
+
+  // if (!id) {
+  //   return null;
+  // }
 
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>

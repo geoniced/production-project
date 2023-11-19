@@ -89,6 +89,7 @@ module.exports = {
           "**/*.test.*",
           "**/*.stories.*",
           "**/StoreDecorator.tsx",
+          "**/*.mock.*",
         ],
       },
     ],
@@ -96,7 +97,7 @@ module.exports = {
       "error",
       {
         alias: "@",
-        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing", '**/*.mock.*'],
       },
     ],
     "prefer-arrow-callback": "off",
