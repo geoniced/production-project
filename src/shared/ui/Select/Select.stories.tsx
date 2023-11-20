@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { CenteredContentDecorator } from "@/shared/config/storybook/CenteredContentDecorator/CenteredContentDecorator";

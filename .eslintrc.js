@@ -97,7 +97,7 @@ module.exports = {
       "error",
       {
         alias: "@",
-        ignoreImportPatterns: ["**/StoreProvider", "**/testing", '**/*.mock.*'],
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing", "**/*.mock.*"],
       },
     ],
     "prefer-arrow-callback": "off",
@@ -113,18 +113,44 @@ module.exports = {
             position: "before",
           },
           {
-            pattern: "@/**",
-            group: "external",
+            pattern: "@/app/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/pages/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/widgets/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/features/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/entities/**",
+            group: "internal",
+            position: "after",
+          },
+          {
+            pattern: "@/shared/**",
+            group: "internal",
             position: "after",
           },
           {
             pattern: "./**.module.*",
-            group: "internal",
+            group: "sibling",
             position: "after",
           },
         ],
         pathGroupsExcludedImportTypes: ["react"],
         "newlines-between": "always",
+        distinctGroup: false,
         alphabetize: {
           order: "asc",
           caseInsensitive: true,

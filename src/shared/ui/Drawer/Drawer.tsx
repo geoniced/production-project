@@ -9,10 +9,10 @@ import { useModal } from "@/shared/lib/hooks/useModal/useModal";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 
-import cls from "./Drawer.module.scss";
 
 import { Overlay } from "../Overlay/Overlay";
 import { Portal } from "../Portal/Portal";
+import cls from "./Drawer.module.scss";
 
 interface DrawerProps {
   className?: string;

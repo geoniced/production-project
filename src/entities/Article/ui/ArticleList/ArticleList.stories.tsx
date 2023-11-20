@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { articles } from "@/shared/config/storybook/mocks/articleList.mock";

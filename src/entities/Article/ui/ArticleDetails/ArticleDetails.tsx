@@ -1,5 +1,4 @@
 import { memo, useEffect } from "react";
-
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -17,7 +16,6 @@ import { Skeleton } from "@/shared/ui/Skeleton";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
 
-import cls from "./ArticleDetails.module.scss";
 
 import { ArticleBlockType } from "../../model/consts/articleConsts";
 import {
@@ -31,6 +29,7 @@ import { ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsProps {
   className?: string;

@@ -1,5 +1,4 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
-
 import { useTranslation } from "react-i18next";
 
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
@@ -12,7 +11,6 @@ import { Card } from "@/shared/ui/Card";
 import { Icon } from "@/shared/ui/Icon";
 import { Text } from "@/shared/ui/Text";
 
-import cls from "./ArticleListItem.module.scss";
 
 import {
   ArticleBlockType,
@@ -20,6 +18,7 @@ import {
 } from "../../model/consts/articleConsts";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import cls from "./ArticleListItem.module.scss";
 
 interface ArticleListItemProps {
   className?: string;

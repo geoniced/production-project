@@ -1,5 +1,4 @@
 import { memo, useCallback } from "react";
-
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -13,7 +12,6 @@ import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
 import { HStack } from "@/shared/ui/Stack";
 
-import cls from "./AddCommentForm.module.scss";
 
 import {
   getAddCommentFormError,
@@ -23,6 +21,7 @@ import {
   addCommentFormActions,
   addCommentFormReducer,
 } from "../../model/slices/addCommentFormSlice";
+import cls from "./AddCommentForm.module.scss";
 
 export interface AddCommentFormProps {
   className?: string;

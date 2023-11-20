@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Article, ArticleType, ArticleBlockType } from "@/entities/Article";

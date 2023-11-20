@@ -1,5 +1,4 @@
 import { memo, useCallback, useState } from "react";
-
 import { useTranslation } from "react-i18next";
 
 import { useIsMobile } from "@/shared/lib/hooks/useIsMobile/useIsMobile";
