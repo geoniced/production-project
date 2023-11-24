@@ -4,13 +4,14 @@ import { useTranslation } from "react-i18next";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
 import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
+import { AppImage } from "@/shared/ui/AppImage";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Card } from "@/shared/ui/Card";
 import { Icon } from "@/shared/ui/Icon";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { Text } from "@/shared/ui/Text";
-
 
 import {
   ArticleBlockType,
@@ -63,12 +64,13 @@ export const ArticleListItem = memo(function ArticleListItem(
 
           {types}
 
-          <img
+          <AppImage
             className={cls.img}
             src={article.img}
             alt={article.title}
             width="400"
             height="200"
+            fallback={<Skeleton width="100%" height={200} />}
           />
 
           {textBlock && (
@@ -97,12 +99,13 @@ export const ArticleListItem = memo(function ArticleListItem(
     >
       <Card className={cls.tile}>
         <div className={cls.imageWrapper}>
-          <img
+          <AppImage
             className={cls.img}
             src={article.img}
             alt={article.title}
             width={200}
             height={200}
+            fallback={<Skeleton width={200} height={200} />}
           />
           <Text className={cls.date} text={article.createdAt} />
         </div>
