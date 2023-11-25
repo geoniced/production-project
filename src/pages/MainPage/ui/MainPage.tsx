@@ -7,7 +7,7 @@ import { Counter } from "@/entities/Counter";
 const MainPage = memo(function MainPage() {
   const { t } = useTranslation("main");
   return (
-    <Page>
+    <Page data-testid="MainPage">
       <Counter />
       {t("Main page")}
     </Page>
