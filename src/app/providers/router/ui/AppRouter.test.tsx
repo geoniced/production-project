@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { act, screen } from "@testing-library/react";
 
 import { UserRole } from "@/entities/User";
 import {
@@ -9,6 +9,22 @@ import {
 import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
 
 import AppRouter from "./AppRouter";
+
+beforeAll(() => {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // Deprecated
+      removeListener: jest.fn(), // Deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
+});
 
 describe("app/router/AppRouter", () => {
   test("Страница должна отрендериться", async () => {
@@ -42,15 +58,17 @@ describe("app/router/AppRouter", () => {
   });
 
   test("Доступ к закрытой странице для авторизованного пользователя", async () => {
-    componentRender(<AppRouter />, {
-      route: getRouteProfile("1"),
-      initialState: {
-        user: {
-          authData: {},
-          _initialized: true,
+    await act(() =>
+      componentRender(<AppRouter />, {
+        route: getRouteProfile("1"),
+        initialState: {
+          user: {
+            authData: {},
+            _initialized: true,
+          },
         },
-      },
-    });
+      })
+    );
 
     const page = await screen.findByTestId("ProfilePage");
 
