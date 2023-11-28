@@ -7,5 +7,5 @@ npm-debug.log*
 /storybook-static
 .loki/report.html
 .loki/report.json
-/reports
+/reports/unit
 .ideavimrc
