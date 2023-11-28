@@ -16,7 +16,6 @@ import { Skeleton } from "@/shared/ui/Skeleton";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
 
-
 import { ArticleBlockType } from "../../model/consts/articleConsts";
 import {
   getArticleDetailsData,
