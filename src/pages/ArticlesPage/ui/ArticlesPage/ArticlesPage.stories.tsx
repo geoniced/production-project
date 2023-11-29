@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import withMock from "storybook-addon-mock";
 
 import { articles } from "@/shared/config/storybook/mocks/articleList.mock";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
@@ -13,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  decorators: [withMock, StoreDecorator({})],
+  decorators: [StoreDecorator({})],
   parameters: {
     mockData: [
       {

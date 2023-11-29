@@ -1,5 +1,3 @@
-import { addDecorator } from "@storybook/react";
-
 import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorator/RouterDecorator";
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { SuspenseDecorator } from "../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator";
@@ -29,9 +27,16 @@ export const parameters = {
   },
 };
 
-addDecorator(StyleDecorator);
-addDecorator(RouterDecorator);
-// Bug: not applying theme from storybook theme addon and instead storybook uses this decorator
-// If you click on the theme icon in header toolbar then it will work
-addDecorator(ThemeDecorator(Theme.LIGHT));
-addDecorator(SuspenseDecorator);
+export const decorators = [
+  StyleDecorator,
+  ThemeDecorator(Theme.LIGHT),
+  RouterDecorator,
+  SuspenseDecorator,
+];
+
+// addDecorator(StyleDecorator);
+// addDecorator(RouterDecorator);
+// // Bug: not applying theme from storybook theme addon and instead storybook uses this decorator
+// // If you click on the theme icon in header toolbar then it will work
+// addDecorator(ThemeDecorator(Theme.LIGHT));
+// addDecorator(SuspenseDecorator);

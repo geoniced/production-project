@@ -7,7 +7,7 @@ import { Dropdown } from "./Dropdown";
 import { Button } from "../../../Button/Button";
 
 export default {
-  title: "shared/Popover",
+  title: "shared/Dropdown",
   component: Dropdown,
   argTypes: {
     backgroundColor: { control: "color" },

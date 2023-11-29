@@ -754,6 +754,13 @@
       "rate": 4,
       "articleId": "7",
       "id": "ZWzBjew"
+    },
+    {
+      "userId": "2",
+      "rate": 3,
+      "articleId": "16",
+      "feedback": "kl",
+      "id": "cfsHiur"
     }
   ],
   "profile-ratings": [

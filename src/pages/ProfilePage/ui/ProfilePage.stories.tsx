@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import withMock from "storybook-addon-mock";
 
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
@@ -17,7 +16,6 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  decorators: [withMock],
   parameters: {
     mockData: [
       {

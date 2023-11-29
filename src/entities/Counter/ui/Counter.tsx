@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
 
 import { Button } from "@/shared/ui/Button";
 
@@ -8,7 +7,6 @@ import { useCounterValue } from "../model/selectors/getCounterValue/getCounterVa
 import { useCounterActions } from "../model/slice/counterSlice";
 
 export const Counter = memo(function Counter() {
-  const dispatch = useDispatch();
   const counterValue = useCounterValue();
   const { t } = useTranslation();
   const { increment, decrement, add } = useCounterActions();
