@@ -682,6 +682,15 @@
         "MANAGER"
       ],
       "avatar": "https://www.pandasecurity.com/en/mediacenter/src/uploads/2019/07/pandasecurity-How-do-hackers-pick-their-targets.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
     }
   ],
   "profile": [
@@ -705,6 +714,17 @@
       "country": "Russia",
       "city": "Bishkek",
       "username": "user",
+      "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "Test",
+      "lastname": "User",
+      "age": 999,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Bishkek",
+      "username": "testuser",
       "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
     }
   ],
