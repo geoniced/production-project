@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text, TextSize } from "@/shared/ui/Text";
 
-
 import { ArticleView } from "../../model/consts/articleConsts";
 import { Article } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
@@ -44,7 +43,10 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
   }
 
   return (
-    <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+    <div
+      className={classNames(cls.articleList, {}, [className, cls[view]])}
+      data-testid="ArticleList"
+    >
       {articles.map((item) => (
         <ArticleListItem
           className={cls.card}

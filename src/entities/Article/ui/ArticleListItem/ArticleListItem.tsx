@@ -35,7 +35,13 @@ export const ArticleListItem = memo(function ArticleListItem(
 
   const { t } = useTranslation();
 
-  const types = <Text className={cls.types} text={article.type.join(", ")} />;
+  const types = (
+    <Text
+      className={cls.types}
+      text={article.type.join(", ")}
+      data-testid="ArticleListItem.Types"
+    />
+  );
   const views = (
     <>
       <Text className={cls.views} text={String(article.views)} />
@@ -52,6 +58,7 @@ export const ArticleListItem = memo(function ArticleListItem(
     return (
       <div
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
+        data-testid="ArticleListItem"
       >
         <Card className={cls.list}>
           <div className={cls.header}>
@@ -60,7 +67,12 @@ export const ArticleListItem = memo(function ArticleListItem(
             <Text className={cls.date} text={article.createdAt} />
           </div>
 
-          <Text className={cls.title} title={article.title} tag="h2" />
+          <Text
+            className={cls.title}
+            title={article.title}
+            tag="h2"
+            data-testid="ArticleListItemTitle"
+          />
 
           {types}
 
@@ -93,6 +105,7 @@ export const ArticleListItem = memo(function ArticleListItem(
 
   return (
     <AppLink
+      data-testid="ArticleListItem"
       target={target}
       to={articleLink}
       className={classNames(cls.articleListItem, {}, [className, cls[view]])}
@@ -115,7 +128,11 @@ export const ArticleListItem = memo(function ArticleListItem(
           {views}
         </div>
 
-        <Text className={cls.title} text={article.title} />
+        <Text
+          className={cls.title}
+          text={article.title}
+          data-testid="ArticleListItemTitle"
+        />
       </Card>
     </AppLink>
   );

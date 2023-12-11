@@ -2,7 +2,7 @@ import { ReactNode, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-
+import { TestProps } from "@/shared/types/tests";
 
 import { Card, CardTheme } from "../Card/Card";
 import { typedMemo } from "../TypedMemo/TypedMemo";
@@ -13,7 +13,7 @@ export interface TabItem<T extends string> {
   content: ReactNode;
 }
 
-interface TabsProps<T extends string> {
+interface TabsProps<T extends string> extends TestProps {
   className?: string;
   tabs: TabItem<T>[];
   value: T;
@@ -42,6 +42,7 @@ export const Tabs = typedMemo(function Tabs<T extends string>(
           className={cls.tab}
           key={tab.value}
           onClick={clickHandler(tab)}
+          data-testid={`${props["data-testid"]}.${tab.value}`}
         >
           {tab.content}
         </Card>

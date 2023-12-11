@@ -56,6 +56,7 @@ export const ArticleTypeTabs = memo(function ArticleTypeTabs(
       tabs={typeTabs}
       value={value}
       onTabClick={onTabClick}
+      data-testid="ArticleTypeTabs"
     />
   );
 });

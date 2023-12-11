@@ -12,7 +12,6 @@ import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
 import { HStack } from "@/shared/ui/Stack";
 
-
 import {
   getAddCommentFormError,
   getAddCommentFormText,
@@ -66,14 +65,20 @@ const AddCommentForm = memo(function AddCommentForm(
       justify="between"
       align="center"
       className={classNames(cls.addCommentForm, {}, [className])}
+      data-testid="AddCommentForm"
     >
       <Input
         className={cls.input}
         placeholder={t("Enter comment text")}
         value={text}
         onChange={onCommentTextChange}
+        data-testid="AddCommentForm.Input"
       />
-      <Button theme={ButtonTheme.OUTLINE} onClick={onSendCommentClick}>
+      <Button
+        theme={ButtonTheme.OUTLINE}
+        onClick={onSendCommentClick}
+        data-testid="AddCommentForm.Button"
+      >
         {t("Send")}
       </Button>
     </HStack>

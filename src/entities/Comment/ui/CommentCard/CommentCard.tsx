@@ -11,7 +11,6 @@ import { Text } from "@/shared/ui/Text";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
 
-
 interface CommentCardProps {
   className?: string;
   comment?: Comment;
@@ -27,6 +26,7 @@ export const CommentCard = memo(function CommentCard(props: CommentCardProps) {
         gap="8"
         max
         className={classNames(cls.commentCard, {}, [className])}
+        data-testid="CommentCard.Loading"
       >
         <div className={cls.header}>
           <Skeleton width={30} height={30} borderRadius="100%" />
@@ -47,6 +47,7 @@ export const CommentCard = memo(function CommentCard(props: CommentCardProps) {
       gap="8"
       max
       className={classNames(cls.commentCard, {}, [className])}
+      data-testid="CommentCard.Content"
     >
       <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
