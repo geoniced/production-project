@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "firstname": "Test",
+  "lastname": "User",
+  "age": 25,
+  "currency": "EUR",
+  "country": "Russia",
+  "city": "Bishkek",
+  "username": "testuser",
+  "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
+}
