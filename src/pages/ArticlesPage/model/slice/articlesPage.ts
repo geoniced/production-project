@@ -2,31 +2,31 @@ import {
   createEntityAdapter,
   createSlice,
   PayloadAction,
-} from "@reduxjs/toolkit";
+} from '@reduxjs/toolkit';
 
-import { StateSchema } from "@/app/providers/StoreProvider";
+import { StateSchema } from '@/app/providers/StoreProvider';
 import {
   Article,
   ArticleType,
   ArticleView,
   ArticleSortField,
-} from "@/entities/Article";
-import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from "@/shared/const/localStorage";
-import { SortOrder } from "@/shared/types/sort";
+} from '@/entities/Article';
+import { ARTICLES_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import { SortOrder } from '@/shared/types/sort';
 
-import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
-import { ArticlesPageSchema } from "../types/articlesPageSchema";
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-  (state) => state.articlesPage || articlesAdapter.getInitialState()
+  (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
 export const articlesPageSlice = createSlice({
-  name: "articlesPage",
+  name: 'articlesPage',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     isLoading: false,
     ids: [],
@@ -37,8 +37,8 @@ export const articlesPageSlice = createSlice({
     hasMore: true,
     limit: 9,
     sort: ArticleSortField.CREATED_AT,
-    search: "",
-    order: "asc",
+    search: '',
+    order: 'asc',
     type: ArticleType.ALL,
     _inited: false,
   }),
@@ -64,7 +64,7 @@ export const articlesPageSlice = createSlice({
     },
     initState: (state) => {
       const view = localStorage.getItem(
-        ARTICLES_VIEW_LOCAL_STORAGE_KEY
+        ARTICLES_VIEW_LOCAL_STORAGE_KEY,
       ) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.LIST ? 4 : 9;

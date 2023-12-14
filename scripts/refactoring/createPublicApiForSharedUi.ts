@@ -1,19 +1,19 @@
-import path from "path";
+import path from 'path';
 
-import { Project } from "ts-morph";
+import { Project } from 'ts-morph';
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths("src/**/*.ts");
-project.addSourceFilesAtPaths("src/**/*.tsx");
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
 
 const files = project.getSourceFiles();
 
-const uiPath = path.resolve(__dirname, "..", "..", "src", "shared", "ui");
+const uiPath = path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui');
 const sharedUiDirectory = project.getDirectory(uiPath);
 const componentsDir = sharedUiDirectory?.getDirectories();
 
-const layers = ["app", "shared", "entities", "features", "widgets", "pages"];
+const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
 const isAbsoluteAndLayer = (value: string) => {
   return layers.some((layer) => value.startsWith(layer));
 };
@@ -26,7 +26,7 @@ componentsDir?.forEach((directory) => {
   // console.log(`${directoryBaseName}, has index.ts:`, Boolean(indexFile));
 
   if (!indexFile) {
-    const component = directoryBaseName.replace(".tsx", "");
+    const component = directoryBaseName.replace('.tsx', '');
 
     // or export * from './...'
     const sourceCode = `export { ${component} } from './${directoryBaseName}';`;
@@ -45,17 +45,17 @@ files.forEach((sourceFile) => {
 
   importDeclarations.forEach((importDeclaration) => {
     const value = importDeclaration.getModuleSpecifierValue();
-    const valueWithoutAlias = value.replace("@/", "");
+    const valueWithoutAlias = value.replace('@/', '');
 
-    const segments = valueWithoutAlias.split("/");
+    const segments = valueWithoutAlias.split('/');
 
-    const isSharedLayer = segments?.[0] === "shared";
-    const isUiSlice = segments?.[1] === "ui";
+    const isSharedLayer = segments?.[0] === 'shared';
+    const isUiSlice = segments?.[1] === 'ui';
 
     if (isAbsoluteAndLayer(valueWithoutAlias) && isSharedLayer && isUiSlice) {
-      const result = valueWithoutAlias.split("/").slice(0, 3).join("/");
+      const result = valueWithoutAlias.split('/').slice(0, 3).join('/');
       const newImport = `@/${result}`;
-      console.log(value, "->", newImport);
+      console.log(value, '->', newImport);
       importDeclaration.setModuleSpecifier(newImport);
     }
   });

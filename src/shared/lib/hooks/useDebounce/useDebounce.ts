@@ -1,4 +1,4 @@
-import { MutableRefObject, useCallback, useEffect, useRef } from "react";
+import { MutableRefObject, useCallback, useEffect, useRef } from 'react';
 
 /**
  * Хук позволяющий отменять предыдущий вызов функции пока не истечет delay
@@ -14,7 +14,7 @@ export function useDebounce(callback: (...args: any[]) => void, delay: number) {
     () => () => {
       clearTimeout(timeoutRef.current);
     },
-    []
+    [],
   );
 
   return useCallback(
@@ -27,6 +27,6 @@ export function useDebounce(callback: (...args: any[]) => void, delay: number) {
         callback(...args);
       }, delay);
     },
-    [callback, delay]
+    [callback, delay],
   );
 }

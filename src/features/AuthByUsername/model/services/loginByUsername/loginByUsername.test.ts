@@ -12,7 +12,9 @@ describe('loginByUsername.test', () => {
 
     const result = await thunk.callThunk({ username: '123', password: '123' });
 
-    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
+    expect(thunk.dispatch).toHaveBeenCalledWith(
+      userActions.setAuthData(userValue),
+    );
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toEqual('fulfilled');

@@ -1,21 +1,21 @@
-import path from "path";
+import path from 'path';
 
-import { Project } from "ts-morph";
+import { Project } from 'ts-morph';
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths("docs/**/*.md");
-project.addSourceFilesAtPaths("src/**/*.ts");
-project.addSourceFilesAtPaths("src/**/*.tsx");
-project.addSourceFilesAtPaths("src/**/*.md");
+project.addSourceFilesAtPaths('docs/**/*.md');
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
+project.addSourceFilesAtPaths('src/**/*.md');
 
 const files = project.getSourceFiles();
 
 const SliceMap = {
-  pages: "Page",
-  widgets: "Widget",
-  features: "Feature",
-  entities: "Entity",
+  pages: 'Page',
+  widgets: 'Widget',
+  features: 'Feature',
+  entities: 'Entity',
 } as const;
 
 type Slice = keyof typeof SliceMap;
@@ -23,7 +23,7 @@ type Slice = keyof typeof SliceMap;
 const createReadmeFilesForSlice = (slice: Slice) => {
   if (!Object.keys(SliceMap).includes(slice)) return;
 
-  const slicePath = path.resolve(__dirname, "..", "..", "src", `${slice}`);
+  const slicePath = path.resolve(__dirname, '..', '..', 'src', `${slice}`);
   const sliceDirectory = project.getDirectory(slicePath);
   const sliceDirectories = sliceDirectory?.getDirectories();
 
@@ -35,7 +35,7 @@ const createReadmeFilesForSlice = (slice: Slice) => {
     if (!readmeFile) {
       const sliceName = SliceMap[slice];
       const directoryBaseName = directory.getBaseName();
-      const componentName = directoryBaseName.replace(".tsx", "");
+      const componentName = directoryBaseName.replace('.tsx', '');
 
       const readmeContents = `## ${sliceName} ${componentName}`;
 
@@ -52,14 +52,14 @@ const createReadmeFilesForSlice = (slice: Slice) => {
 
 const capitalize = (str: string) => `${str[0].toUpperCase()}${str.slice(1)}`;
 const getSrcPath = (filePath: string) => {
-  const pathList = filePath.split("/");
-  const srcIndex = pathList.indexOf("src");
-  const pathWithSrc = pathList.slice(srcIndex).join("/");
+  const pathList = filePath.split('/');
+  const srcIndex = pathList.indexOf('src');
+  const pathWithSrc = pathList.slice(srcIndex).join('/');
   return pathWithSrc;
 };
 
 const createReadmeWithCreatedReadmeFiles = (slices: Slice[]) => {
-  const docsPath = path.resolve(__dirname, "..", "..", `docs`);
+  const docsPath = path.resolve(__dirname, '..', '..', `docs`);
   const docsDirectory = project.getDirectory(docsPath);
   const componentsPath = docsDirectory
     ? `${docsDirectory?.getPath()}/components.md`
@@ -67,7 +67,7 @@ const createReadmeWithCreatedReadmeFiles = (slices: Slice[]) => {
   let componentsContents = ``;
 
   slices.forEach((slice) => {
-    const slicePath = path.resolve(__dirname, "..", "..", "src", `${slice}`);
+    const slicePath = path.resolve(__dirname, '..', '..', 'src', `${slice}`);
     const sliceDirectory = project.getDirectory(slicePath);
     const sliceDirectories = sliceDirectory?.getDirectories();
 
@@ -80,7 +80,7 @@ const createReadmeWithCreatedReadmeFiles = (slices: Slice[]) => {
 
       if (readmeFile) {
         const directoryBaseName = directory.getBaseName();
-        const componentName = directoryBaseName.replace(".tsx", "");
+        const componentName = directoryBaseName.replace('.tsx', '');
 
         const projectRelatedFilePath = getSrcPath(readmeFilePath);
         const contents = ` - [${componentName}](../${projectRelatedFilePath})`;
@@ -98,7 +98,7 @@ const createReadmeWithCreatedReadmeFiles = (slices: Slice[]) => {
       componentsContents,
       {
         overwrite: true,
-      }
+      },
     );
 
     file
@@ -107,9 +107,9 @@ const createReadmeWithCreatedReadmeFiles = (slices: Slice[]) => {
   }
 };
 
-createReadmeFilesForSlice("entities");
-createReadmeFilesForSlice("features");
+createReadmeFilesForSlice('entities');
+createReadmeFilesForSlice('features');
 
-createReadmeWithCreatedReadmeFiles(["entities", "features"]);
+createReadmeWithCreatedReadmeFiles(['entities', 'features']);
 
 project.save();

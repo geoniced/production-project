@@ -1,20 +1,20 @@
-import { Article } from "../../../src/entities/Article";
+import { Article } from '../../../src/entities/Article';
 
 const testArticle = {
-  title: "Article for tests",
-  subtitle: "Subtitle test",
-  img: "https://www.rust-lang.org/static/images/rust-social-wide.jpg",
+  title: 'Article for tests',
+  subtitle: 'Subtitle test',
+  img: 'https://www.rust-lang.org/static/images/rust-social-wide.jpg',
   views: 999999,
-  userId: "1",
-  createdAt: "10.08.2022",
-  type: ["IT"],
+  userId: '1',
+  createdAt: '10.08.2022',
+  type: ['IT'],
   blocks: [],
 };
 
 export const createArticle = (article?: Article) => {
   return cy
     .request({
-      method: "POST",
+      method: 'POST',
       url: `http://localhost:8000/articles`,
       headers: {
         Authorization: `Authorization`,
@@ -26,7 +26,7 @@ export const createArticle = (article?: Article) => {
 
 export const removeArticle = (articleId: string) => {
   return cy.request({
-    method: "DELETE",
+    method: 'DELETE',
     url: `http://localhost:8000/articles/${articleId}`,
     headers: {
       Authorization: `Authorization`,

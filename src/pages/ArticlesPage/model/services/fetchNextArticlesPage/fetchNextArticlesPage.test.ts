@@ -1,12 +1,12 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { fetchNextArticlesPage } from "./fetchNextArticlesPage";
-import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
+import { fetchNextArticlesPage } from './fetchNextArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
-jest.mock("../fetchArticlesList/fetchArticlesList");
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
-describe("fetchNextArticlesPage.test", () => {
-  test("success", async () => {
+describe('fetchNextArticlesPage.test', () => {
+  test('success', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
@@ -24,7 +24,7 @@ describe("fetchNextArticlesPage.test", () => {
     expect(fetchArticlesList).toHaveBeenCalled();
   });
 
-  test("fetchArticlesList has not been called when there is no more data on the server", async () => {
+  test('fetchArticlesList has not been called when there is no more data on the server', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
@@ -42,7 +42,7 @@ describe("fetchNextArticlesPage.test", () => {
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });
 
-  test("fetchArticlesList has not been called when the data is already requested", async () => {
+  test('fetchArticlesList has not been called when the data is already requested', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,

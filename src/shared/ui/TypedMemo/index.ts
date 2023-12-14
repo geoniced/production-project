@@ -1,1 +1,1 @@
-export { typedMemo } from "./TypedMemo";
+export { typedMemo } from './TypedMemo';

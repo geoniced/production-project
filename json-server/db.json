@@ -58,9 +58,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.01.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -82,9 +80,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "13.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -106,9 +102,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.05.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -130,9 +124,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "22.01.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -154,9 +146,7 @@
       "views": 999,
       "userId": "1",
       "createdAt": "26.02.2023",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -178,9 +168,7 @@
       "views": 5522,
       "userId": "1",
       "createdAt": "25.01.2023",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -202,9 +190,7 @@
       "views": 11022,
       "userId": "1",
       "createdAt": "10.08.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -226,9 +212,7 @@
       "views": 900,
       "userId": "1",
       "createdAt": "26.06.2019",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -250,9 +234,7 @@
       "views": 3000,
       "userId": "1",
       "createdAt": "26.09.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -274,9 +256,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "09.09.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -298,9 +278,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -322,9 +300,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -346,9 +322,7 @@
       "views": 4522,
       "userId": "1",
       "createdAt": "26.02.2023",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -370,10 +344,7 @@
       "views": 322,
       "userId": "1",
       "createdAt": "26.04.2023",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -395,10 +366,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "HEALTH",
-        "IT"
-      ],
+      "type": ["HEALTH", "IT"],
       "blocks": [
         {
           "id": "1",
@@ -420,9 +388,7 @@
       "views": 1333,
       "userId": "1",
       "createdAt": "01.04.2023",
-      "type": [
-        "HEALTH"
-      ],
+      "type": ["HEALTH"],
       "blocks": [
         {
           "id": "1",
@@ -444,9 +410,7 @@
       "views": 1337,
       "userId": "1",
       "createdAt": "02.02.2023",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -468,9 +432,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -492,9 +454,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -516,9 +476,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -540,9 +498,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -564,9 +520,7 @@
       "views": 1022,
       "userId": "1",
       "createdAt": "26.02.2022",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -660,36 +614,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://pbs.twimg.com/profile_images/1584258394977931265/lrZvCd27_400x400.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://www.pandasecurity.com/en/mediacenter/src/uploads/2019/07/pandasecurity-How-do-hackers-pick-their-targets.jpg"
     },
     {
       "id": "4",
       "username": "testuser",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
     }
   ],

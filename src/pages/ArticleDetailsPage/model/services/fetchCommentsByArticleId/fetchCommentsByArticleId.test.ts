@@ -1,19 +1,28 @@
 import { Comment } from '@/entities/Comment';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import {
-  fetchCommentsByArticleId,
-} from './fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
-const data: Comment[] = [{
-  id: '1',
-  user: { id: '1', username: 'ivan', avatar: 'https://placeholder.com/avatar.jpg' },
-  text: 'Comment text',
-}, {
-  id: '2',
-  user: { id: '2', username: 'admin', avatar: 'https://placeholder.com/avatar.jpg' },
-  text: 'Comment text 2',
-}];
+const data: Comment[] = [
+  {
+    id: '1',
+    user: {
+      id: '1',
+      username: 'ivan',
+      avatar: 'https://placeholder.com/avatar.jpg',
+    },
+    text: 'Comment text',
+  },
+  {
+    id: '2',
+    user: {
+      id: '2',
+      username: 'admin',
+      avatar: 'https://placeholder.com/avatar.jpg',
+    },
+    text: 'Comment text 2',
+  },
+];
 
 describe('fetchCommentsByArticleId.test', () => {
   test('success', async () => {

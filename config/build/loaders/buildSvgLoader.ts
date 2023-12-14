@@ -3,12 +3,12 @@ export function buildSvgLoader() {
     test: /\.svg$/,
     use: [
       {
-        loader: "@svgr/webpack",
+        loader: '@svgr/webpack',
         options: {
           svgoConfig: {
             plugins: [
               {
-                name: "removeViewBox",
+                name: 'removeViewBox',
                 active: false,
               },
             ],

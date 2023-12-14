@@ -1,14 +1,14 @@
-import { User } from "../../../src/entities/User";
-import { USER_LOCAL_STORAGE_KEY } from "../../../src/shared/const/localStorage";
-import { selectByTestId } from "../../helpers/selectByTestId";
+import { User } from '../../../src/entities/User';
+import { USER_LOCAL_STORAGE_KEY } from '../../../src/shared/const/localStorage';
+import { selectByTestId } from '../../helpers/selectByTestId';
 
 export const login = (
-  username: string = "testuser",
-  password: string = "123"
+  username: string = 'testuser',
+  password: string = '123',
 ) => {
   return cy
     .request({
-      method: "POST",
+      method: 'POST',
       url: `http://localhost:8000/login`,
       body: {
         username,

@@ -1,13 +1,13 @@
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import CircularDependencyPlugin from "circular-dependency-plugin";
-import CopyPlugin from "copy-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import webpack, { HotModuleReplacementPlugin } from "webpack";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack, { HotModuleReplacementPlugin } from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-import { BuildOptions } from "./types/config";
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
@@ -36,13 +36,13 @@ export function buildPlugins({
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
-      })
+      }),
     );
     plugins.push(
       new CircularDependencyPlugin({
         exclude: /node_modules/,
         failOnError: true,
-      })
+      }),
     );
     plugins.push(
       new ForkTsCheckerWebpackPlugin({
@@ -51,24 +51,24 @@ export function buildPlugins({
             semantic: true,
             syntactic: true,
           },
-          mode: "write-references",
+          mode: 'write-references',
         },
-      })
+      }),
     );
   }
 
   if (isProd) {
     plugins.push(
       new MiniCssExtractPlugin({
-        filename: "css/[name].[contenthash:8].css",
-        chunkFilename: "css/[name].[contenthash:8].css",
-      })
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
     );
 
     plugins.push(
       new CopyPlugin({
         patterns: [{ from: paths.locales, to: paths.buildLocales }],
-      })
+      }),
     );
   }
 

@@ -1,12 +1,12 @@
-import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-import { initArticlesPage } from "./initArticlesPage";
-import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
+import { initArticlesPage } from './initArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
-jest.mock("../fetchArticlesList/fetchArticlesList");
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
-describe("initArticlesPage.test", () => {
-  test("successfully initialized", async () => {
+describe('initArticlesPage.test', () => {
+  test('successfully initialized', async () => {
     const thunk = new TestAsyncThunk(initArticlesPage, {
       articlesPage: {
         page: 1,

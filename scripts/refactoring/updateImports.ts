@@ -1,13 +1,13 @@
-import { Project } from "ts-morph";
+import { Project } from 'ts-morph';
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths("src/**/*.ts");
-project.addSourceFilesAtPaths("src/**/*.tsx");
+project.addSourceFilesAtPaths('src/**/*.ts');
+project.addSourceFilesAtPaths('src/**/*.tsx');
 
 const files = project.getSourceFiles();
 
-const layers = ["app", "shared", "entities", "features", "widgets", "pages"];
+const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages'];
 const isAbsoluteAndLayer = (value: string) => {
   return layers.some((layer) => value.startsWith(layer));
 };

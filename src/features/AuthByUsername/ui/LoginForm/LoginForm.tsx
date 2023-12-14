@@ -1,26 +1,24 @@
-import { memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   ReducersMap,
   useDynamicModuleLoader,
-} from "@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { Text, TextTheme } from "@/shared/ui/Text";
+} from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
-
-import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
-import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
-import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
-import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import { loginActions, loginReducer } from "../../model/slice/loginSlice";
-import cls from "./LoginForm.module.scss";
-
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
   className?: string;
@@ -53,44 +51,44 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps) {
     (value: string) => {
       dispatch(loginActions.setUsername(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onPasswordChange = useCallback(
     (value: string) => {
       dispatch(loginActions.setPassword(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
 
-    if (result.meta.requestStatus === "fulfilled") {
+    if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
     }
   }, [dispatch, onSuccess, password, username]);
 
   return (
     <div className={classNames(cls.loginForm, {}, [className])}>
-      <Text className={cls.formTitle} title={t("Authorization")} />
+      <Text className={cls.formTitle} title={t('Authorization')} />
       {error && (
         <Text
           className={cls.formError}
-          text={t("Wrong username or password")}
+          text={t('Wrong username or password')}
           theme={TextTheme.ERROR}
         />
       )}
       <Input
         autoFocus
-        placeholder={t("Enter username")}
+        placeholder={t('Enter username')}
         type="text"
         className={cls.input}
         onChange={onUsernameChange}
         value={username}
       />
       <Input
-        placeholder={t("Enter password")}
+        placeholder={t('Enter password')}
         type="text"
         className={cls.input}
         onChange={onPasswordChange}
@@ -102,7 +100,7 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps) {
         onClick={onLoginClick}
         disabled={isLoading}
       >
-        {t("Login")}
+        {t('Login')}
       </Button>
     </div>
   );
