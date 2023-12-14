@@ -40,4 +40,12 @@ describe("User visits article detailed page", () => {
     cy.setRate(4, "feedback");
     cy.get("[data-selected=true]").should("have.length", 4);
   });
+
+  it("User can send a recommendation/rating (fixtures example)", () => {
+    cy.intercept("GET", "**/articles/*", { fixture: "article-details.json" });
+    cy.getByTestId("ArticleDetails.Info").should("exist");
+    cy.getByTestId("RatingCard").scrollIntoView();
+    cy.setRate(4, "feedback");
+    cy.get("[data-selected=true]").should("have.length", 4);
+  });
 });

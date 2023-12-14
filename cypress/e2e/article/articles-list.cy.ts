@@ -16,6 +16,19 @@ describe("User visits articles page", () => {
     cy.getByTestId("ArticleListItem").should("have.length.greaterThan", 3);
   });
 
+  it("Articles are loaded successfully with fixtures", () => {
+    cy.intercept("GET", "**/articles[?]*", { fixture: "articles.json" });
+
+    cy.getByTestId("ArticleList").should("exist");
+    cy.getByTestId("ArticleListItem").should("have.length.greaterThan", 3);
+  });
+
+  it.skip("TEST SKIP EXAMPLE", () => {
+    cy.getByTestId("ArticleList").should("exist");
+    cy.getByTestId("ArticleListItem").should("have.length.greaterThan", 3);
+    cy.getByTestId("abrakadabra").should("exist");
+  });
+
   it("Sorting by title works", () => {
     cy.getByTestId("ArticleSortSelectType").click();
     cy.getByTestId("ArticleSortSelectType.select").select("title");
