@@ -9,5 +9,5 @@ npm-debug.log*
 .loki/report.json
 /reports/unit
 .ideavimrc
-#/json-server/cert.pem
-#/json-server/key.pem
+/json-server/cert.pem
+/json-server/key.pem
