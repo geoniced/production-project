@@ -6,6 +6,16 @@ npm install - устанавливаем зависимости
 npm run start:dev или npm run start:dev:vite - запуск сервера + frontend проекта
 ```
 
+## Генерация сертификата для бэкенда
+
+```
+openssl genrsa -out ./json-server/key.pem 
+cd json-server
+openssl req -new -key key.pem -out csr.pem 
+openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+rm csr.pem
+```
+
 ## Скрипты
 - `npm run start` - запуск frontend проекта на webpack dev server
 - `npm run start:vite` - запуск frontend проекта на vite
