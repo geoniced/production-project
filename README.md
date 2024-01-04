@@ -8,6 +8,7 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 
 ## Генерация сертификата для бэкенда
 
+
 ```
 openssl genrsa -out ./json-server/key.pem 
 cd json-server
@@ -149,6 +150,30 @@ rm csr.pem
 Пример использования можно посмотреть на примере [ArticlesPage](src/pages/ArticlesPage/ui/ArticlesPage/ArticlesPage.tsx)
 
 ---
+
+### Работа с feature flags
+
+Разрешено использование feature flags только с помощью хелпера `toggleFeatures`
+
+В него передается объект с опциями:
+```
+{
+  name: название фича-флага,
+  on: функция, которая отработает после включения фичи
+  off: функция, которая отработает при выключении фичи
+}
+```
+
+Для автоматического удаления фичи использовать скрипт `remove-feature.ts`:
+```shell
+npx ts-node ./scripts/remove-feature.ts isCounterEnabled on   
+```
+
+Где аргументы:
+1. Название удаляемого фича-флага
+2. Состояние (on/off). 
+   * on — оставляем то, что было в свойстве on
+   * off — оставляем, что было в свойстве off
 
 ## Описание сущностей
 

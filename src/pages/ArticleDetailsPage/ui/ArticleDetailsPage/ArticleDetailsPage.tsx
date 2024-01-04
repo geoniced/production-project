@@ -6,13 +6,13 @@ import { Page } from '@/widgets/Page';
 import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleDetails } from '@/entities/Article';
-import { Counter } from '@/entities/Counter';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { toggleFeatures } from '@/shared/lib/features';
 import {
   ReducersMap,
   useDynamicModuleLoader,
 } from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -38,8 +38,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation('article-details');
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
   if (!id) {
     return (
@@ -53,13 +51,18 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   //   return null;
   // }
 
+  const articleRating = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Article rating is coming soon!')}</Card>,
+  });
+
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <VStack gap="16" max>
         <ArticleDetailsPageHeader />
         <ArticleDetails className={cls.articleDetails} id={id!} />
-        {isCounterEnabled && <Counter />}
-        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+        {articleRating}
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id!} />
       </VStack>
