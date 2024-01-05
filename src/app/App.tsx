@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Navbar } from "@/widgets/Navbar";
-import { Sidebar } from "@/widgets/Sidebar";
-import { getUserInitialized, userActions } from "@/entities/User";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { getUserInitialized, userActions } from '@/entities/User';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { AppRouter } from "./providers/router";
+import { AppRouter } from './providers/router';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className={classNames("app", {})}>
+    <div className={classNames('app', {})}>
       <Suspense fallback="">
         <Navbar />
         <main className="content-page">

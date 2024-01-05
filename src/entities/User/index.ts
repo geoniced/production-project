@@ -9,3 +9,5 @@ export {
 } from './model/selectors/roleSelectors';
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 export { getUserInitialized } from './model/selectors/getUserInitialized/getUserInitialized';
+export { useJsonSettings } from './model/selectors/jsonSettings';
+export { saveJsonSettings } from './model/services/saveJsonSettings';
