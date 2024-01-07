@@ -2,6 +2,7 @@ import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
@@ -54,6 +55,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     >
       <ArticlesPageFilters />
       <ArticleInfiniteList className={cls.list} />
+      <ArticlePageGreeting />
     </Page>
   );
 };
