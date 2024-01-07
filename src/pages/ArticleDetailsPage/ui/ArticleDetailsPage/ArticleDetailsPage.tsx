@@ -7,7 +7,7 @@ import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { ArticleDetails } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import {
   ReducersMap,
   useDynamicModuleLoader,
@@ -51,18 +51,16 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   //   return null;
   // }
 
-  const articleRating = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Article rating is coming soon!')}</Card>,
-  });
-
   return (
     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
       <VStack gap="16" max>
         <ArticleDetailsPageHeader />
         <ArticleDetails className={cls.articleDetails} id={id!} />
-        {articleRating}
+        <ToggleFeatures
+          feature="isArticleRatingEnabled"
+          on={<ArticleRating articleId={id} />}
+          off={<Card>{t('Article rating is coming soon!')}</Card>}
+        />
         <ArticleRecommendationsList />
         <ArticleDetailsComments id={id!} />
       </VStack>

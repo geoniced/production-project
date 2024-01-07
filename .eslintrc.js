@@ -69,6 +69,7 @@ module.exports = {
           'direction',
           'gap',
           'borderRadius',
+          'feature',
         ],
       },
     ],
