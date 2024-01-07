@@ -1,23 +1,42 @@
 import React, { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { Navbar } from '@/widgets/Navbar';
+import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserInitialized, userActions } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { getUserInitialized, initAuthData } from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { VStack } from '@/shared/ui/Stack';
 
 import { AppRouter } from './providers/router';
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const initialized = useSelector(getUserInitialized);
 
   useEffect(() => {
-    dispatch(userActions.initAuthData());
+    dispatch(initAuthData());
   }, [dispatch]);
 
+  if (!initialized) {
+    return (
+      <VStack align="center" justify="center" max className="app">
+        <main className="content-page" style={{ height: '100%' }}>
+          <VStack
+            align="center"
+            justify="center"
+            max
+            style={{ height: '100%' }}
+          >
+            <PageLoader />
+          </VStack>
+        </main>
+      </VStack>
+    );
+  }
+
   return (
-    <div className={classNames('app', {})}>
+    <div className="app">
       <Suspense fallback="">
         <Navbar />
         <main className="content-page">
