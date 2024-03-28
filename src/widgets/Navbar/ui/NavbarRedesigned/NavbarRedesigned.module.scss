@@ -1,0 +1,19 @@
+.navbarRedesigned {
+  padding: 16px;
+}
+
+.links,
+.actions {
+  margin-left: auto;
+}
+
+.link {
+  &:not(:last-of-type) {
+    margin-right: 15px;
+  }
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
+}

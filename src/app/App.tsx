@@ -5,6 +5,8 @@ import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInitialized, initAuthData } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/Stack';
 
@@ -36,15 +38,32 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Suspense fallback="">
-        <Navbar />
-        <main className="content-page">
-          <Sidebar />
-          {initialized && <AppRouter />}
-        </main>
-      </Suspense>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedisigned"
+      on={
+        <div className="app_redesigned">
+          <Suspense fallback="">
+            <MainLayout
+              header={<Navbar />}
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+              toolbar={<div>{}</div>}
+            />
+          </Suspense>
+        </div>
+      }
+      off={
+        <div className="app">
+          <Suspense fallback="">
+            <Navbar />
+            <main className="content-page">
+              <Sidebar />
+              <AppRouter />
+            </main>
+          </Suspense>
+        </div>
+      }
+    />
   );
 }
 

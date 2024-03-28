@@ -5,19 +5,20 @@ import {
   useRef,
   UIEvent,
   useLayoutEffect,
-} from "react";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+} from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getUIScrollByPath, uiActions } from "@/features/UI";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
-import { TestProps } from "@/shared/types/tests";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { toggleFeatures } from '@/shared/lib/features';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
 
-import cls from "./Page.module.scss";
+import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -26,7 +27,7 @@ interface PageProps extends TestProps {
 }
 
 const THROTTLE_DELAY_MS = 250;
-export const PAGE_ID = "page-id";
+export const PAGE_ID = 'page-id';
 
 export const Page = memo(function Page(props: PageProps) {
   const { className, children, onScrollEnd } = props;
@@ -34,7 +35,7 @@ export const Page = memo(function Page(props: PageProps) {
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const scrollPosition = useSelector((state: StateSchema) =>
-    getUIScrollByPath(state, pathname)
+    getUIScrollByPath(state, pathname),
   );
 
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -61,17 +62,23 @@ export const Page = memo(function Page(props: PageProps) {
       uiActions.setScrollPosition({
         position: evt.currentTarget.scrollTop,
         path: pathname,
-      })
+      }),
     );
   }, THROTTLE_DELAY_MS);
+
+  const pageClass = toggleFeatures({
+    name: 'isAppRedisigned',
+    on: () => cls.pageRedesigned,
+    off: () => cls.page,
+  });
 
   return (
     <section
       onScroll={onScroll}
       ref={wrapperRef}
-      className={classNames(cls.page, {}, [className])}
+      className={classNames(pageClass, {}, [className])}
       id={PAGE_ID}
-      data-testid={props["data-testid"] ?? "Page"}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

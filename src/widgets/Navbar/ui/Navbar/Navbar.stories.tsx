@@ -1,24 +1,24 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { mockNotifications } from "@/shared/config/storybook/mocks/notifications.mock";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/shared/const/theme";
+import { mockNotifications } from '@/shared/config/storybook/mocks/notifications.mock';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 
-import { Navbar } from "./Navbar";
+import { Navbar } from './Navbar';
 
 export default {
-  title: "widgets/Navbar",
+  title: 'widgets/Navbar',
   component: Navbar,
   argTypes: {
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
   },
   parameters: {
     mockData: [
       {
         url: `${__API__}/notifications`,
-        method: "GET",
+        method: 'GET',
         status: 200,
         response: mockNotifications,
       },
@@ -43,7 +43,7 @@ AuthNavbar.decorators = [
     user: {
       authData: {
         avatar:
-          "https://digi.kg/_next/image?url=%2Fimages%2Fteam_avatars%2Fivan.jpg&w=384&q=75",
+          'https://digi.kg/_next/image?url=%2Fimages%2Fteam_avatars%2Fivan.jpg&w=384&q=75',
       },
     },
   }),
