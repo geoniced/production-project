@@ -1,4 +1,4 @@
-import { memo, ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -12,7 +12,7 @@ interface MainLayoutProps {
   toolbar?: ReactElement;
 }
 
-export const MainLayout = memo((props: MainLayoutProps) => {
+export const MainLayout = (props: MainLayoutProps) => {
   const { className, content, toolbar, header, sidebar } = props;
 
   return (
@@ -25,4 +25,4 @@ export const MainLayout = memo((props: MainLayoutProps) => {
       </div>
     </div>
   );
-});
+};

@@ -1,13 +1,13 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { ArticleView } from "@/entities/Article";
-import ListIcon from "@/shared/assets/icons/list-24-24.svg";
-import TileIcon from "@/shared/assets/icons/tiled-24-24.svg";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Icon } from "@/shared/ui/Icon";
+import { ArticleView } from '@/entities/Article';
+import ListIcon from '@/shared/assets/icons/list-24-24.svg';
+import TileIcon from '@/shared/assets/icons/tiled-24-24.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 
-import cls from "./ArticleViewSelector.module.scss";
+import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
   className?: string;
@@ -27,7 +27,7 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo(function ArticleViewSelector(
-  props: ArticleViewSelectorProps
+  props: ArticleViewSelectorProps,
 ) {
   const { className, view, onViewClick } = props;
 
@@ -44,7 +44,9 @@ export const ArticleViewSelector = memo(function ArticleViewSelector(
           key={viewType.view}
         >
           <Icon
-            className={classNames("", {
+            width={24}
+            height={24}
+            className={classNames('', {
               [cls.notSelected]: view !== viewType.view,
             })}
             Svg={viewType.icon}
