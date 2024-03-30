@@ -1,17 +1,17 @@
-import React, { memo, useCallback, useMemo } from "react";
-import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import React, { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   getUserAuthData,
   isUserAdmin,
   isUserManager,
   userActions,
-} from "@/entities/User";
-import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Dropdown, DropdownItem } from "@/shared/ui/Popups";
+} from '@/entities/User';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown, DropdownItem } from '@/shared/ui/deprecated/Popups';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -34,18 +34,18 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   const dropdownItems: DropdownItem[] = useMemo(() => {
     const adminPanelItem = {
-      content: t("Admin"),
+      content: t('Admin'),
       href: getRouteAdmin(),
     };
 
     return [
       ...(isAdminPanelAvailable ? [adminPanelItem] : []),
       {
-        content: t("Profile"),
-        href: getRouteProfile(authData?.id ?? ""),
+        content: t('Profile'),
+        href: getRouteProfile(authData?.id ?? ''),
       },
       {
-        content: t("Logout"),
+        content: t('Logout'),
         onClick: onLogout,
       },
     ];
@@ -58,7 +58,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   return (
     <Dropdown
       direction="bottom right"
-      className={classNames("", {}, [className])}
+      className={classNames('', {}, [className])}
       items={dropdownItems}
       trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
     />

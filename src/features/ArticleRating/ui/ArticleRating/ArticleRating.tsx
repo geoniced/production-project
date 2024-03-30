@@ -1,15 +1,15 @@
-import { memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import { RatingCard } from "@/entities/Rating";
-import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { RatingCard } from '@/entities/Rating';
+import { getUserAuthData } from '@/entities/User';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 import {
   useGetArticleRating,
   useRateArticle,
-} from "../../api/articleRatingApi";
+} from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
   className?: string;
@@ -21,7 +21,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const userData = useSelector(getUserAuthData);
   const { data, isLoading } = useGetArticleRating({
     articleId,
-    userId: userData?.id ?? "",
+    userId: userData?.id ?? '',
   });
   const [rateArticleMutation] = useRateArticle();
 
@@ -31,7 +31,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     (starsCount: number, feedback?: string) => {
       try {
         rateArticleMutation({
-          userId: userData?.id ?? "",
+          userId: userData?.id ?? '',
           rate: starsCount,
           articleId,
           feedback,
@@ -41,21 +41,21 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         console.log(err);
       }
     },
-    [articleId, rateArticleMutation, userData?.id]
+    [articleId, rateArticleMutation, userData?.id],
   );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
       handleArticleRating(starsCount, feedback);
     },
-    [handleArticleRating]
+    [handleArticleRating],
   );
 
   const onCancel = useCallback(
     (starsCount: number) => {
       handleArticleRating(starsCount);
     },
-    [handleArticleRating]
+    [handleArticleRating],
   );
 
   if (isLoading) {
@@ -70,9 +70,9 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
       onCancel={onCancel}
       rate={rating?.rate}
       className={className}
-      title={t("Rate this article")}
+      title={t('Rate this article')}
       feedbackTitle={t(
-        "Leave your feedback, it will improve the quality of our articles"
+        'Leave your feedback, it will improve the quality of our articles',
       )}
       hasFeedback
     />

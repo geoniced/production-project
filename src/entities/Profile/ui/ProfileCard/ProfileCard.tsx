@@ -1,18 +1,17 @@
-import React, { useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Country, CountrySelect } from "@/entities/Country";
-import { Currency, CurrencySelect } from "@/entities/Currency";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Input } from "@/shared/ui/Input";
-import { Loader } from "@/shared/ui/Loader";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text";
+import { Country, CountrySelect } from '@/entities/Country';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 
-import { Profile } from "../../model/types/profile";
-import cls from "./ProfileCard.module.scss";
-
+import { Profile } from '../../model/types/profile';
+import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
   className?: string;
@@ -48,7 +47,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onCountryChange,
   } = props;
 
-  const { t } = useTranslation("profile");
+  const { t } = useTranslation('profile');
 
   const onNumericKeyPress = useCallback(
     (evt: React.KeyboardEvent<HTMLInputElement>) => {
@@ -56,7 +55,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
         evt.preventDefault();
       }
     },
-    []
+    [],
   );
 
   if (isLoading) {
@@ -80,8 +79,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
       >
         <Text
           theme={TextTheme.ERROR}
-          title={t("Error while loading profile")}
-          text={t("Try to reload the page")}
+          title={t('Error while loading profile')}
+          text={t('Try to reload the page')}
           align={TextAlign.CENTER}
         />
       </HStack>
@@ -105,7 +104,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       )}
       <Input
         value={data?.firstname}
-        placeholder={t("Your first name")}
+        placeholder={t('Your first name')}
         className={cls.input}
         onChange={onFirstnameChange}
         readOnly={readonly}
@@ -113,7 +112,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       />
       <Input
         value={data?.lastname}
-        placeholder={t("Your last name")}
+        placeholder={t('Your last name')}
         className={cls.input}
         onChange={onLastnameChange}
         readOnly={readonly}
@@ -122,7 +121,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <Input
         type="tel"
         value={data?.age}
-        placeholder={t("Your age")}
+        placeholder={t('Your age')}
         className={cls.input}
         onChange={onAgeChange}
         readOnly={readonly}
@@ -131,21 +130,21 @@ export const ProfileCard = (props: ProfileCardProps) => {
       />
       <Input
         value={data?.city}
-        placeholder={t("City")}
+        placeholder={t('City')}
         className={cls.input}
         onChange={onCityChange}
         readOnly={readonly}
       />
       <Input
         value={data?.username}
-        placeholder={t("Enter username")}
+        placeholder={t('Enter username')}
         className={cls.input}
         onChange={onUsernameChange}
         readOnly={readonly}
       />
       <Input
         value={data?.avatar}
-        placeholder={t("Enter avatar link")}
+        placeholder={t('Enter avatar link')}
         className={cls.input}
         onChange={onAvatarChange}
         readOnly={readonly}

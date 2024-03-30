@@ -1,11 +1,11 @@
-import { memo } from "react";
-import { useTranslation } from "react-i18next";
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button } from "@/shared/ui/Button";
-import { HStack } from "@/shared/ui/Stack";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button } from '@/shared/ui/deprecated/Button';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 
-import cls from "./PageError.module.scss";
+import cls from './PageError.module.scss';
 
 interface PageErrorProps {
   className?: string;
@@ -23,8 +23,8 @@ export const PageError = memo(function PageError({
   return (
     <div className={classNames(cls.pageError, {}, [className])}>
       <HStack gap="16">
-        <p>{t("An unexpected error has occured")}</p>
-        <Button onClick={reloadPage}>{t("Reload page")}</Button>
+        <p>{t('An unexpected error has occured')}</p>
+        <Button onClick={reloadPage}>{t('Reload page')}</Button>
       </HStack>
     </div>
   );

@@ -1,4 +1,4 @@
-import { User } from '../../../src/entities/User';
+import { User } from '../../../@/entities/User';
 
 export const updateProfile = (firstName: string, lastName: string) => {
   cy.getByTestId('EditableProfileCardHeader.EditButton').click();

@@ -1,15 +1,15 @@
-import { memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import { RatingCard } from "@/entities/Rating";
-import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { RatingCard } from '@/entities/Rating';
+import { getUserAuthData } from '@/entities/User';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 import {
   useGetProfileRating,
   useRateProfile,
-} from "../../api/profileRatingApi";
+} from '../../api/profileRatingApi';
 
 export interface ProfileRatingProps {
   className?: string;
@@ -21,7 +21,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
   const userData = useSelector(getUserAuthData);
   const { data, isLoading } = useGetProfileRating({
     profileId,
-    userId: userData?.id ?? "",
+    userId: userData?.id ?? '',
   });
   const [rateProfileMutation] = useRateProfile();
 
@@ -34,7 +34,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     (starsCount: number, feedback?: string) => {
       try {
         rateProfileMutation({
-          userId: userData?.id ?? "",
+          userId: userData?.id ?? '',
           rate: starsCount,
           profileId,
           feedback,
@@ -44,21 +44,21 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
         console.log(err);
       }
     },
-    [profileId, rateProfileMutation, userData?.id]
+    [profileId, rateProfileMutation, userData?.id],
   );
 
   const onAccept = useCallback(
     (starsCount: number, feedback?: string) => {
       handleProfileRating(starsCount, feedback);
     },
-    [handleProfileRating]
+    [handleProfileRating],
   );
 
   const onCancel = useCallback(
     (starsCount: number) => {
       handleProfileRating(starsCount);
     },
-    [handleProfileRating]
+    [handleProfileRating],
   );
 
   if (isCurrentUserProfile) {
@@ -77,8 +77,8 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
       onCancel={onCancel}
       rate={rating?.rate}
       className={className}
-      title={t("Rate this profile")}
-      feedbackTitle={t("Leave your feedback of this profile")}
+      title={t('Rate this profile')}
+      feedbackTitle={t('Leave your feedback of this profile')}
       hasFeedback
     />
   );

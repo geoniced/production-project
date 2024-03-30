@@ -1,34 +1,34 @@
-import { memo, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
+import { memo, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
-import CalendarIcon from "@/shared/assets/icons/calendar-20-20.svg";
-import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   ReducersMap,
   useDynamicModuleLoader,
-} from "@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Icon } from "@/shared/ui/Icon";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
+} from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 
-import { ArticleBlockType } from "../../model/consts/articleConsts";
+import { ArticleBlockType } from '../../model/consts/articleConsts';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsIsLoading,
-} from "../../model/selectors/articleDetails";
-import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
-import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
-import { ArticleBlock } from "../../model/types/article";
-import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
-import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
-import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import cls from "./ArticleDetails.module.scss";
+} from '../../model/selectors/articleDetails';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -75,7 +75,7 @@ const renderBlock = (block: ArticleBlock) => {
 };
 
 export const ArticleDetails = memo(function ArticleDetails(
-  props: ArticleDetailsProps
+  props: ArticleDetailsProps,
 ) {
   const { className, id } = props;
   const dispatch = useAppDispatch();
@@ -85,10 +85,10 @@ export const ArticleDetails = memo(function ArticleDetails(
 
   useDynamicModuleLoader(dynamicModuleLoaderProps);
 
-  const { t } = useTranslation("article-details");
+  const { t } = useTranslation('article-details');
 
   useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
+    if (__PROJECT__ !== 'storybook') {
       dispatch(fetchArticleById(id));
     }
   }, [dispatch, id]);
@@ -114,7 +114,7 @@ export const ArticleDetails = memo(function ArticleDetails(
     content = (
       <Text
         align={TextAlign.CENTER}
-        text={t("An error happened loading the article")}
+        text={t('An error happened loading the article')}
       />
     );
   } else {

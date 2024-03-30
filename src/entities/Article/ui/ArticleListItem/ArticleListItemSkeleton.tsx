@@ -1,12 +1,11 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Card } from "@/shared/ui/Card";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
-import { ArticleView } from "../../model/consts/articleConsts";
-import cls from "./ArticleListItem.module.scss";
-
+import { ArticleView } from '../../model/consts/articleConsts';
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemSkeletonProps {
   className?: string;
@@ -14,7 +13,7 @@ interface ArticleListItemSkeletonProps {
 }
 
 export const ArticleListItemSkeleton = memo(function ArticleListItemSkeleton(
-  props: ArticleListItemSkeletonProps
+  props: ArticleListItemSkeletonProps,
 ) {
   const { className, view } = props;
 

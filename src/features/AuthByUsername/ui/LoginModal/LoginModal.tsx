@@ -1,10 +1,10 @@
-import { memo, Suspense } from "react";
+import { memo, Suspense } from 'react';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Loader } from "@/shared/ui/Loader";
-import { Modal } from "@/shared/ui/Modal";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Modal } from '@/shared/ui/deprecated/Modal';
 
-import { LoginFormAsync } from "../LoginForm/LoginForm.async";
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 // import cls from './LoginModal.module.scss';
 
 interface LoginModalProps {
@@ -18,7 +18,7 @@ export const LoginModal = memo(function LoginModal(props: LoginModalProps) {
 
   return (
     <Modal
-      className={classNames("", {}, [className])}
+      className={classNames('', {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       // lazy

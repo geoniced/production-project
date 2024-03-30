@@ -1,4 +1,4 @@
-import { Article } from '../../../src/entities/Article';
+import { Article } from '../../../@/entities/Article';
 
 const testArticle = {
   title: 'Article for tests',

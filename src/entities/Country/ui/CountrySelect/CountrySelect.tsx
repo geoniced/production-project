@@ -1,10 +1,10 @@
-import { memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { ListBox } from "@/shared/ui/Popups";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
 
-import { Country } from "../../model/consts/country";
+import { Country } from '../../model/consts/country';
 
 interface CountrySelectProps {
   className?: string;
@@ -19,7 +19,7 @@ const options = Object.entries(Country).map(([value, content]) => ({
 }));
 
 export const CountrySelect = memo(function CountrySelect(
-  props: CountrySelectProps
+  props: CountrySelectProps,
 ) {
   const { className, value, onChange, readonly } = props;
 
@@ -29,14 +29,14 @@ export const CountrySelect = memo(function CountrySelect(
     (value: string) => {
       onChange?.(value as Country);
     },
-    [onChange]
+    [onChange],
   );
 
   return (
     <ListBox
-      className={classNames("", {}, [className])}
-      label={t("Select country")}
-      defaultValue={t("Select country")}
+      className={classNames('', {}, [className])}
+      label={t('Select country')}
+      defaultValue={t('Select country')}
       items={options}
       value={value}
       onChange={onChangeHandler}
