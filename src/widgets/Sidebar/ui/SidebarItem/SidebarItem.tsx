@@ -4,7 +4,13 @@ import { useSelector } from 'react-redux';
 
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
+import { ToggleFeatures } from '@/shared/lib/features';
+import {
+  AppLink as DeprecatedAppLink,
+  AppLinkTheme,
+} from '@/shared/ui/deprecated/AppLink';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
@@ -14,7 +20,32 @@ interface SidebarItemProps {
   collapsed?: boolean;
 }
 
-export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps) {
+const DeprecatedSidebarItem = memo(function DeprecatedSidebarItem(
+  props: SidebarItemProps,
+) {
+  const { item, collapsed } = props;
+
+  const { t } = useTranslation();
+  const isAuth = useSelector(getUserAuthData);
+  if (item.authOnly && !isAuth) {
+    return null;
+  }
+
+  return (
+    <DeprecatedAppLink
+      theme={AppLinkTheme.SECONDARY}
+      className={classNames(cls.item, { [cls.collapsed]: collapsed })}
+      to={item.path}
+    >
+      <item.Icon className={cls.icon} />
+      <span className={cls.link}>{t(item.text)} </span>
+    </DeprecatedAppLink>
+  );
+});
+
+const RedesignedSidebarItem = memo(function RedesignedSidebarItem(
+  props: SidebarItemProps,
+) {
   const { item, collapsed } = props;
 
   const { t } = useTranslation();
@@ -25,12 +56,24 @@ export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps) {
 
   return (
     <AppLink
-      theme={AppLinkTheme.SECONDARY}
-      className={classNames(cls.item, { [cls.collapsed]: collapsed })}
+      className={classNames(cls.itemRedesigned, {
+        [cls.collapsedRedesigned]: collapsed,
+      })}
       to={item.path}
+      activeClassName={cls.active}
     >
-      <item.Icon className={cls.icon} />
+      <Icon Svg={item.Icon} />
       <span className={cls.link}>{t(item.text)} </span>
     </AppLink>
+  );
+});
+
+export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps) {
+  return (
+    <ToggleFeatures
+      feature="isAppRedisigned"
+      on={<RedesignedSidebarItem {...props} />}
+      off={<DeprecatedSidebarItem {...props} />}
+    />
   );
 });

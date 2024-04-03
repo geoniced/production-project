@@ -1,11 +1,17 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './SidebarRedesigned.module.scss';
 
 interface SidebarRedesignedProps {
@@ -21,6 +27,14 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
     setCollapsed((prev) => !prev);
   };
 
+  const itemsList = useMemo(
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.text} />
+      )),
+    [collapsed, sidebarItemsList],
+  );
+
   const { t } = useTranslation();
 
   return (
@@ -32,7 +46,30 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
         [className],
       )}
     >
-      <AppLogo className={cls.appLogo} />
+      <AppLogo className={cls.appLogo} size={collapsed ? 30 : 50} />
+
+      <VStack
+        max
+        role="navigation"
+        className={cls.items}
+        gap="8"
+        align={collapsed ? 'center' : undefined}
+      >
+        {itemsList}
+      </VStack>
+
+      <Icon
+        data-testid="sidebar-toggle"
+        className={cls.collapseBtn}
+        onClick={onToggle}
+        Svg={ArrowIcon}
+        clickable
+      />
+
+      <div className={cls.switchers}>
+        <ThemeSwitcher />
+        <LangSwitcher short={collapsed} className={cls.langSwitcher} />
+      </div>
     </aside>
   );
 });
