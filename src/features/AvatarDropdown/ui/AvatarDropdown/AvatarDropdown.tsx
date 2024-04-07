@@ -60,7 +60,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={
         <Dropdown
           direction="bottom right"

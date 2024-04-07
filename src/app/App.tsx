@@ -39,7 +39,7 @@ function App() {
 
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={
         <div className="app_redesigned">
           <Suspense fallback="">

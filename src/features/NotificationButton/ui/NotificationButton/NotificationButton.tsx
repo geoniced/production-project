@@ -12,7 +12,7 @@ interface NotificationButtonProps {
 export const NotificationButton = memo((props: NotificationButtonProps) => {
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={<RedesignedNotificationButton {...props} />}
       off={<DeprecatedNotificationButton {...props} />}
     />

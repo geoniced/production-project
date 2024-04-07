@@ -67,7 +67,7 @@ export const Page = memo(function Page(props: PageProps) {
   }, THROTTLE_DELAY_MS);
 
   const pageClass = toggleFeatures({
-    name: 'isAppRedisigned',
+    name: 'isAppRedesigned',
     on: () => cls.pageRedesigned,
     off: () => cls.page,
   });

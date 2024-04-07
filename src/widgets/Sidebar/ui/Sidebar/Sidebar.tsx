@@ -12,7 +12,7 @@ interface SidebarProps {
 export const Sidebar = memo(function Sidebar({ className }: SidebarProps) {
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={<SidebarRedesigned />}
       off={<DeprecatedSidebar />}
     />

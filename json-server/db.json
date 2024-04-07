@@ -666,15 +666,14 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true,
-        "isAppRedisigned": true
+        "isAppRedesigned": true
       },
       "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4",
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
-        "isArticlesPageWasVisited": true,
-        "isAppRedisigned": true
+        "isArticlesPageWasVisited": true
       }
     },
     {

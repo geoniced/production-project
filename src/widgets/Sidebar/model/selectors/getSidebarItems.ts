@@ -24,7 +24,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     {
       path: getRouteMain(),
       Icon: toggleFeatures({
-        name: 'isAppRedisigned',
+        name: 'isAppRedesigned',
         on: () => MainIcon,
         off: () => MainIconDeprecated,
       }),
@@ -33,7 +33,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     {
       path: getRouteAbout(),
       Icon: toggleFeatures({
-        name: 'isAppRedisigned',
+        name: 'isAppRedesigned',
         on: () => AboutIcon,
         off: () => AboutIconDeprecated,
       }),
@@ -46,7 +46,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         path: getRouteProfile(userData.id),
         Icon: toggleFeatures({
-          name: 'isAppRedisigned',
+          name: 'isAppRedesigned',
           on: () => ProfileIcon,
           off: () => ProfileIconDeprecated,
         }),
@@ -56,7 +56,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         path: getRouteArticles(),
         Icon: toggleFeatures({
-          name: 'isAppRedisigned',
+          name: 'isAppRedesigned',
           on: () => ArticleIcon,
           off: () => ArticleIconDeprecated,
         }),

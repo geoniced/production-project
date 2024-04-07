@@ -12,7 +12,7 @@ interface NavbarProps {
 export const Navbar = memo(function Navbar({ className }: NavbarProps) {
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={<NavbarRedesigned className={className} />}
       off={<NavbarDeprecated className={className} />}
     />

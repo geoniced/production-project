@@ -71,7 +71,7 @@ const RedesignedSidebarItem = memo(function RedesignedSidebarItem(
 export const SidebarItem = memo(function SidebarItem(props: SidebarItemProps) {
   return (
     <ToggleFeatures
-      feature="isAppRedisigned"
+      feature="isAppRedesigned"
       on={<RedesignedSidebarItem {...props} />}
       off={<DeprecatedSidebarItem {...props} />}
     />
