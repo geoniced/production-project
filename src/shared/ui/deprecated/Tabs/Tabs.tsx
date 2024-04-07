@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TestProps } from '@/shared/types/tests';
 
+import { typedMemo } from '../../redesigned/TypedMemo/TypedMemo';
 import { Card, CardTheme } from '../Card/Card';
-import { typedMemo } from '../TypedMemo/TypedMemo';
 import cls from './Tabs.module.scss';
 
 export interface TabItem<T extends string> {

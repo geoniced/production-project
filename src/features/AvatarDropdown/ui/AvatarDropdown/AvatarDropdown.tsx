@@ -10,8 +10,11 @@ import {
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Dropdown, DropdownItem } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -32,7 +35,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
   const isAdminPanelAvailable = isAdmin || isManager;
 
-  const dropdownItems: DropdownItem[] = useMemo(() => {
+  const dropdownItems = useMemo(() => {
     const adminPanelItem = {
       content: t('Admin'),
       href: getRouteAdmin(),
@@ -56,11 +59,30 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   }
 
   return (
-    <Dropdown
-      direction="bottom right"
-      className={classNames('', {}, [className])}
-      items={dropdownItems}
-      trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+    <ToggleFeatures
+      feature="isAppRedisigned"
+      on={
+        <Dropdown
+          direction="bottom right"
+          className={classNames('', {}, [className])}
+          items={dropdownItems}
+          trigger={<Avatar size={40} src={authData.avatar} />}
+        />
+      }
+      off={
+        <DropdownDeprecated
+          direction="bottom right"
+          className={classNames('', {}, [className])}
+          items={dropdownItems}
+          trigger={
+            <AvatarDeprecated
+              fallbackInverted
+              size={30}
+              src={authData.avatar}
+            />
+          }
+        />
+      }
     />
   );
 });

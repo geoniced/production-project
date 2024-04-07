@@ -1,58 +1,20 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo } from 'react';
 
-import { NotificationList } from '@/entities/Notification';
-import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useIsMobile } from '@/shared/lib/hooks/useIsMobile/useIsMobile';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Icon } from '@/shared/ui/deprecated/Icon';
-import { Popover } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
 
-import cls from './NotificationButton.module.scss';
+import { DeprecatedNotificationButton } from '../DeprecatedNotificationButton/DeprecatedNotificationButton';
+import { RedesignedNotificationButton } from '../RedesignedNotificationButton/RedesignedNotificationButton';
 
 interface NotificationButtonProps {
   className?: string;
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-  const { className } = props;
-
-  const isMobile = useIsMobile();
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const onDrawerOpen = useCallback(() => setIsOpen(true), []);
-  const onDrawerClose = useCallback(() => setIsOpen(false), []);
-
-  const trigger = (
-    <Button
-      onClick={onDrawerOpen}
-      className={cls.triggerButton}
-      theme={ButtonTheme.CLEAR}
-    >
-      <Icon Svg={NotificationIcon} inverted />
-    </Button>
-  );
-
-  if (isMobile) {
-    return (
-      <div>
-        {trigger}
-
-        <Drawer onClose={onDrawerClose} isOpen={isOpen}>
-          <NotificationList />
-        </Drawer>
-      </div>
-    );
-  }
-
   return (
-    <Popover
-      className={classNames(cls.notificationButton, {}, [className])}
-      trigger={trigger}
-    >
-      <NotificationList className={cls.notifications} />
-    </Popover>
+    <ToggleFeatures
+      feature="isAppRedisigned"
+      on={<RedesignedNotificationButton {...props} />}
+      off={<DeprecatedNotificationButton {...props} />}
+    />
   );
 });

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './PageError.module.scss';
 

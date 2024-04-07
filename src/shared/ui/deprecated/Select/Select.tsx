@@ -3,7 +3,7 @@ import { ChangeEvent, useCallback, useMemo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { TestProps } from '@/shared/types/tests';
 
-import { typedMemo } from '../TypedMemo/TypedMemo';
+import { typedMemo } from '../../redesigned/TypedMemo/TypedMemo';
 import cls from './Select.module.scss';
 
 export interface SelectOption<T extends string> {

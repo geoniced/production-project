@@ -13,8 +13,8 @@ import {
   useDynamicModuleLoader,
 } from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';

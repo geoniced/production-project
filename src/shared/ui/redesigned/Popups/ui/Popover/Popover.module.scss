@@ -1,0 +1,9 @@
+.panel {
+  position: absolute;
+  z-index: 1000;
+
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--dark-bg-redesigned);
+  white-space: nowrap;
+}
