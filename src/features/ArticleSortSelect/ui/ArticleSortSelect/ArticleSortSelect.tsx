@@ -3,8 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { SortOrder } from '@/shared/types/sort';
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import cls from './ArticleSortSelect.module.scss';
 
@@ -56,22 +60,50 @@ export const ArticleSortSelect = memo(function ArticleSortSelect(
   );
 
   return (
-    <div className={classNames(cls.articleSortSelect, {}, [className])}>
-      {/* <Select<ArticleSortField> */}
-      <Select
-        label={t('Sort by')}
-        options={sortFieldOptions}
-        value={sort}
-        onChange={onSortChange}
-        data-testid="ArticleSortSelectType"
-      />
-      <Select
-        label={t('by')}
-        options={orderOptions}
-        value={order}
-        onChange={onOrderChange}
-        data-testid="ArticleSortSelectBy"
-      />
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <VStack
+          gap="8"
+          className={classNames(cls.articleSortSelectRedesigned, {}, [
+            className,
+          ])}
+        >
+          <Text text={t('Sort by')} />
+          {/* <ListBox<ArticleSortField> */}
+          <ListBox
+            items={sortFieldOptions}
+            value={sort}
+            onChange={onSortChange}
+            data-testid="ArticleSortSelectType"
+          />
+          <ListBox
+            items={orderOptions}
+            value={order}
+            onChange={onOrderChange}
+            data-testid="ArticleSortSelectBy"
+          />
+        </VStack>
+      }
+      off={
+        <div className={classNames(cls.articleSortSelect, {}, [className])}>
+          {/* <Select<ArticleSortField> */}
+          <Select
+            label={t('Sort by')}
+            options={sortFieldOptions}
+            value={sort}
+            onChange={onSortChange}
+            data-testid="ArticleSortSelectType"
+          />
+          <Select
+            label={t('by')}
+            options={orderOptions}
+            value={order}
+            onChange={onOrderChange}
+            data-testid="ArticleSortSelectBy"
+          />
+        </div>
+      }
+    />
   );
 });

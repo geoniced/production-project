@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof ListBox> = (args) => (
   <ListBox {...args} />
 );
 
-const items: ListBoxItem[] = [
+const items: ListBoxItem<string>[] = [
   {
     value: '1',
     content: 'First value',

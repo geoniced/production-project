@@ -3,7 +3,9 @@ import { useSearchParams } from 'react-router-dom';
 
 import { Page } from '@/widgets/Page';
 import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   DynamicModuleLoaderProps,
@@ -17,6 +19,8 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { articlesPageReducer } from '../../model/slice/articlesPage';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -48,15 +52,38 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   });
 
   return (
-    <Page
-      data-testid="ArticlesPage"
-      onScrollEnd={onNextPartLoad}
-      className={classNames(cls.articlesPage, {}, [className])}
-    >
-      <ArticlesPageFilters />
-      <ArticleInfiniteList className={cls.list} />
-      <ArticlePageGreeting />
-    </Page>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <StickyContentLayout
+          left={<ViewSelectorContainer />}
+          right={<FiltersContainer />}
+          content={
+            <Page
+              data-testid="ArticlesPage"
+              onScrollEnd={onNextPartLoad}
+              className={classNames(cls.articlesPageRedesigned, {}, [
+                className,
+              ])}
+            >
+              <ArticleInfiniteList className={cls.list} />
+              <ArticlePageGreeting />
+            </Page>
+          }
+        />
+      }
+      off={
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onNextPartLoad}
+          className={classNames(cls.articlesPage, {}, [className])}
+        >
+          <ArticlesPageFilters />
+          <ArticleInfiniteList className={cls.list} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+    />
   );
 };
 

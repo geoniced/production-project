@@ -15,7 +15,6 @@ export const ToggleFeatures = memo(function ToggleFeatures(
 ) {
   const { off, on, feature } = props;
 
-  console.log(getFeatureFlag(feature));
   if (getFeatureFlag(feature)) {
     return on;
   }
