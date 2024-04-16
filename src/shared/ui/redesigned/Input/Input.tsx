@@ -1,6 +1,6 @@
-import React, { InputHTMLAttributes, memo, useState } from 'react';
+import React, { InputHTMLAttributes, memo, ReactNode } from 'react';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
 
@@ -15,9 +15,9 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   readOnly?: boolean;
   autoFocus?: boolean;
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
 }
-
-const FONT_CHARACTER_WIDTH = 9;
 
 export const Input = memo(function Input(props: InputProps) {
   const {
@@ -28,47 +28,49 @@ export const Input = memo(function Input(props: InputProps) {
     placeholder,
     readOnly,
     autoFocus = false,
+    addonLeft,
+    addonRight,
     ...otherProps
   } = props;
 
-  const [caretPosition, setCaretPosition] = useState(0);
+  // const [isFocused, setIsFocused] = useState(false);
+  //
+  // const onBlur = () => {
+  //   setIsFocused(false);
+  // };
+  //
+  // const onFocus = () => {
+  //   setIsFocused(true);
+  // };
 
   const changeHandler = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = evt.target;
     onChange?.(value);
-    setCaretPosition(value.length);
   };
 
-  const selectHandler = (
-    evt: React.SyntheticEvent<HTMLInputElement, Event>,
-  ) => {
-    if (evt.target instanceof HTMLInputElement) {
-      setCaretPosition(evt?.target?.selectionStart || 0);
-    }
+  const mods: Mods = {
+    // [cls.focused]: isFocused,
+    [cls.withAddonLeft]: Boolean(addonLeft),
+    [cls.withAddonRight]: Boolean(addonRight),
   };
 
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className])}>
-      {placeholder && (
-        <div className={cls.placeholder}>{`${placeholder}>`}</div>
-      )}
-      <div className={cls.caretWrapper}>
-        <input
-          type={type}
-          value={value}
-          onChange={changeHandler}
-          onSelect={selectHandler}
-          className={cls.input}
-          spellCheck={false}
-          readOnly={readOnly}
-          autoFocus={autoFocus}
-          {...otherProps}
-        />
-        <span
-          className={cls.caret}
-          style={{ left: `${caretPosition * FONT_CHARACTER_WIDTH}px` }}
-        />
-      </div>
+    <div className={classNames(cls.inputWrapper, mods, [className])}>
+      {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
+      <input
+        type={type}
+        value={value}
+        onChange={changeHandler}
+        className={cls.input}
+        spellCheck={false}
+        readOnly={readOnly}
+        autoFocus={autoFocus}
+        placeholder={placeholder}
+        // onBlur={onBlur}
+        // onFocus={onFocus}
+        {...otherProps}
+      />
+      {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </div>
   );
 });

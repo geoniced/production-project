@@ -1,11 +1,29 @@
+.addonLeft,
+.addonRight {
+  display: flex;
+
+  & svg {
+    color: var(--hint-redesigned);
+  }
+}
+
 .button {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
   color: var(--text-redesigned);
-  padding: 6px 15px;
+  cursor: pointer;
 
   &:hover,
   &:focus-visible {
     color: var(--accent-redesigned);
+
+    .addonLeft,
+    .addonRight {
+      & svg {
+        color: var(--accent-redesigned);
+      }
+    }
   }
 
   &:active {
@@ -30,11 +48,13 @@
 }
 
 .filled {
-  padding: 8px 16px;
-
   background-color: var(--light-bg-redesigned);
   border: none;
   border-radius: 34px;
+}
+
+.withAddon {
+  padding: 0 16px;
 }
 
 .square {

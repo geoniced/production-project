@@ -30,6 +30,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * Сделать кнопку на полную ширину
    */
   fullWidth?: boolean;
+  /**
+   * Дополнительные компоненты справа/слева
+   */
+  addonLeft?: ReactNode;
+  addonRight?: ReactNode;
 }
 
 export const Button = (props: ButtonProps) => {
@@ -40,12 +45,15 @@ export const Button = (props: ButtonProps) => {
     square,
     size = 'm',
     fullWidth,
+    addonLeft,
+    addonRight,
     ...otherProps
   } = props;
 
   const mods: Mods = {
     [cls.square]: square,
     [cls.fullWidth]: fullWidth,
+    [cls.withAddon]: Boolean(addonRight) || Boolean(addonLeft),
   };
 
   return (
@@ -58,7 +66,9 @@ export const Button = (props: ButtonProps) => {
       ])}
       {...otherProps}
     >
+      {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
       {children}
+      {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </button>
   );
 };

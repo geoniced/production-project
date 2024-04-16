@@ -1,67 +1,51 @@
 .inputWrapper {
   display: flex;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+  padding: 8px 16px;
+  border-radius: 48px;
+  border: 2px solid var(--icon-redesigned);
+
+  &:has(.input:focus) {
+    border: 2px solid var(--accent-redesigned);
+
+    & svg {
+      color: var(--accent-redesigned);
+    }
+  }
 }
 
-.placeholder {
-  margin-right: 5px;
+.withAddonLeft {
+  padding-left: 8px;
 }
 
-.caretWrapper {
-  position: relative;
-  flex-grow: 1;
+.withAddonRight {
+  padding-right: 8px;
 }
 
-.caret {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  display: none;
-  width: 9px;
-  height: 3px;
-  background-color: var(--primary-color);
-
-  animation: blink 0.7s forwards infinite;
+.addonLeft,
+.addonRight {
+  display: flex;
 }
 
 .input {
-  background-color: transparent;
-  border: none;
-  outline: none;
   width: 100%;
-
-  // Removing the caret styles
-  color: transparent;
-  text-shadow: 0 0 0 var(--primary-color);
+  border: none;
+  background-color: transparent;
+  color: var(--text-redesigned);
+  outline: none;
 
   &[type="number"]::-webkit-outer-spin-button,
   &[type="number"]::-webkit-inner-spin-button {
     appearance: none;
   }
 
+  &::placeholder {
+    color: var(--hint-redesigned);
+  }
+
   &:read-only {
     opacity: 0.7;
-  }
-
-  &:focus:not(:read-only) {
-    outline: none;
-
-    + .caret {
-      display: block;
-    }
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.01;
-  }
-
-  100% {
-    opacity: 1;
   }
 }

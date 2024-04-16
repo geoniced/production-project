@@ -1,11 +1,13 @@
 import { Fragment, ReactNode, useMemo } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 
 import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button/Button';
+import { Icon } from '../../../Icon';
 import { typedMemo } from '../../../TypedMemo';
 import { mapDirectionToClass } from '../../styles/consts';
 import popupCls from '../../styles/popups.module.scss';
@@ -58,7 +60,11 @@ export const ListBox = typedMemo(function ListBox<T extends string>(
         onChange={onChange}
       >
         <HListBox.Button className={cls.trigger}>
-          <Button variant="filled" disabled={readonly}>
+          <Button
+            variant="filled"
+            disabled={readonly}
+            addonRight={<Icon Svg={ArrowIcon} />}
+          >
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>
