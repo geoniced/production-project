@@ -17,5 +17,10 @@
   "No data": "Данные не указаны",
   "Server error while saving": "Серверная ошибка при сохранении",
   "First name and last name are required": "Имя и фамилия обязательны",
-  "Profile not found": "Профиль не найден"
+  "Profile not found": "Профиль не найден",
+  "First name": "Имя",
+  "Last name": "Фамилия",
+  "Age": "Возраст",
+  "Username": "Юзернейм",
+  "Avatar link": "Аватар"
 }

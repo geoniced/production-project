@@ -17,5 +17,10 @@
   "No data": "No data",
   "Server error while saving": "Server error while saving",
   "First name and last name are required": "First name and last name are required",
-  "Profile not found": "Profile not found"
+  "Profile not found": "Profile not found",
+  "First name": "First name",
+  "Last name": "Last name",
+  "Age": "Age",
+  "Username": "Username",
+  "Avatar link": "Avatar link"
 }

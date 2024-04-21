@@ -5,7 +5,7 @@ import { getFlex } from './getFlex';
 export type FlexJustify = 'start' | 'end' | 'center' | 'between';
 export type FlexAlign = 'start' | 'end' | 'center';
 export type FlexDirection = 'row' | 'column';
-export type FlexGap = '4' | '8' | '16' | '32';
+export type FlexGap = '4' | '8' | '16' | '24' | '32';
 
 type DivProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,

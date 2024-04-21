@@ -16,5 +16,10 @@
   "Try to reload the page": "Try to reload the page",
   "Your age": "Your age",
   "Your first name": "Your first name",
-  "Your last name": "Your last name"
+  "Your last name": "Your last name",
+  "First name": "First name",
+  "Last name": "Last name",
+  "Age": "Age",
+  "Username": "Username",
+  "Avatar link": "Avatar link"
 }

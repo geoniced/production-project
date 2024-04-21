@@ -7,5 +7,10 @@
   "country": "Russia",
   "city": "Bishkek",
   "username": "testuser",
-  "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg"
+  "avatar": "https://www.bleepstatic.com/content/hl-images/2022/09/30/cyber-hacker.jpg",
+  "First name": "First name",
+  "Last name": "Last name",
+  "Age": "Age",
+  "Username": "Username",
+  "Avatar link": "Avatar link"
 }
