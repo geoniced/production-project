@@ -1,9 +1,10 @@
 .appLogo {
   position: relative;
+}
 
-  svg {
-    position: relative;
-  }
+.logo {
+  position: relative;
+  z-index: 1;
 }
 
 .gradientBig {

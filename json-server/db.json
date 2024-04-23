@@ -670,7 +670,7 @@
       },
       "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4",
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_typewriter_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
         "isArticlesPageWasVisited": true
@@ -726,14 +726,14 @@
   "profile": [
     {
       "id": "1",
-      "firstname": "Ivan!",
-      "lastname": "Kashin!",
+      "firstname": "Ivan",
+      "lastname": "Kashin",
       "age": 18,
       "currency": "EUR",
-      "country": "Kyrgyzstan",
+      "country": "Armenia",
       "city": "Bishkek",
       "username": "admin",
-      "avatar": "https://avatas.githubusercontent.com/u/27809417?v=4"
+      "avatar": "https://avatars.githubusercontent.com/u/27809417?v=4"
     },
     {
       "id": "2",
