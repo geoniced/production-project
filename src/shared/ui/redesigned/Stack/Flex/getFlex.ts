@@ -42,6 +42,7 @@ export const getFlex = ({
   gap,
   max,
   align,
+  wrap = 'nowrap',
 }: Omit<FlexProps, 'children'>) => {
   const mods: Mods = {
     [cls.max]: max,
@@ -53,6 +54,7 @@ export const getFlex = ({
     align && alignClasses[align],
     directionClasses[direction],
     gap && gapClasses[gap],
+    cls[wrap],
   ];
 
   return classNames(cls.flex, mods, classes);

@@ -2,7 +2,9 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import { ArticleView } from '../../model/consts/articleConsts';
 import { Article } from '../../model/types/article';
@@ -43,21 +45,46 @@ export const ArticleList = memo(function ArticleList(props: ArticleListProps) {
   }
 
   return (
-    <div
-      className={classNames(cls.articleList, {}, [className, cls[view]])}
-      data-testid="ArticleList"
-    >
-      {articles.map((item) => (
-        <ArticleListItem
-          className={cls.card}
-          target={target}
-          article={item}
-          view={view}
-          key={item.id}
-        />
-      ))}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack
+          gap="16"
+          wrap="wrap"
+          className={classNames(cls.articleListRedesign, {}, [className])}
+          data-testid="ArticleList"
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              className={cls.card}
+              target={target}
+              article={item}
+              view={view}
+              key={item.id}
+            />
+          ))}
 
-      {isLoading && getSkeletons(view)}
-    </div>
+          {isLoading && getSkeletons(view)}
+        </HStack>
+      }
+      off={
+        <div
+          className={classNames(cls.articleList, {}, [className, cls[view]])}
+          data-testid="ArticleList"
+        >
+          {articles.map((item) => (
+            <ArticleListItem
+              className={cls.card}
+              target={target}
+              article={item}
+              view={view}
+              key={item.id}
+            />
+          ))}
+
+          {isLoading && getSkeletons(view)}
+        </div>
+      }
+    />
   );
 });
