@@ -39,6 +39,7 @@
   "Incorrect city": "Incorrect city",
   "Incorrect country": "Incorrect country",
   "Incorrect user data": "Incorrect user data",
+  "Interface variant": "Interface variant",
   "Ivan Kashin App": "Ivan Kashin App",
   "Language": "Language",
   "Leave your feedback of this profile": "",
@@ -52,8 +53,10 @@
   "Main": "",
   "Main page": "Main page",
   "N": "N",
+  "New": "New",
   "New page creation": "New page creation",
   "No data": "No data",
+  "Old": "Old",
   "Page not found": "Page not found",
   "Profile": "Profile",
   "Profile not found": "Profile not found",
@@ -97,6 +100,8 @@
   "title": "title",
   "views": "views",
   "Выйти": "",
+  "Настройки пользователя": "Настройки пользователя",
   "Статья не найдена": "Статья не найдена",
-  "Укажите валюту": "Укажите валюту"
+  "Укажите валюту": "Укажите валюту",
+  "Settings": "Settings"
 }

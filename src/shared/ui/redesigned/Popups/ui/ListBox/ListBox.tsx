@@ -86,7 +86,6 @@ export const ListBox = typedMemo(function ListBox<T extends string>(
                     [cls.selected]: selected,
                   })}
                 >
-                  {selected && '✅ '}
                   {item.content}
                 </li>
               )}
