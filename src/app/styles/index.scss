@@ -4,11 +4,6 @@
 @import "./themes/normal";
 @import "./themes/typewriter";
 
-body {
-  font: var(--font-m);
-  color: var(--primary-color);
-}
-
 img {
   display: block;
   object-fit: cover;
@@ -17,6 +12,8 @@ img {
 .app {
   min-height: 100vh;
   background-color: var(--bg-color);
+  font: var(--font-m);
+  color: var(--primary-color);
 }
 
 .app_redesigned {

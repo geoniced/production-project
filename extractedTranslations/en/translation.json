@@ -72,6 +72,7 @@
   "Select currency": "Select currency",
   "Send": "Send",
   "Server error while saving": "Server error while saving",
+  "Settings": "Settings",
   "Short language": "Short language",
   "Sort by": "Sort by",
   "Submit": "Submit",
@@ -102,6 +103,5 @@
   "Выйти": "",
   "Настройки пользователя": "Настройки пользователя",
   "Статья не найдена": "Статья не найдена",
-  "Укажите валюту": "Укажите валюту",
-  "Settings": "Settings"
+  "Укажите валюту": "Укажите валюту"
 }

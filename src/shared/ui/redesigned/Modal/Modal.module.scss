@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: center;
 
-  color: var(--primary-color);
   opacity: 0;
   pointer-events: none;
 }
@@ -21,9 +20,20 @@
   padding: 20px;
   border-radius: 12px;
 
-  background-color: var(--bg-color);
   transition: 0.3s transform;
   max-width: 60%;
+}
+
+.modalNew {
+  .content {
+    background-color: var(--light-bg-redesigned);
+  }
+}
+
+.modalOld {
+  .content {
+    background-color: var(--bg-color);
+  }
 }
 
 .opened {

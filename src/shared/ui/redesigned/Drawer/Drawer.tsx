@@ -1,6 +1,7 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { toggleFeatures } from '@/shared/lib/features';
 import {
   AnimationProvider,
   useAnimationLibs,
@@ -8,8 +9,8 @@ import {
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
-import { Overlay } from '../../redesigned/Overlay/Overlay';
-import { Portal } from '../../redesigned/Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {
@@ -98,12 +99,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
   };
 
   return (
-    <Portal>
+    <Portal element={document.getElementById('app') ?? document.body}>
       <div
         className={classNames(cls.drawer, mods, [
           className,
           theme,
           'app_drawer',
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.drawerNew,
+            off: () => cls.drawerOld,
+          }),
         ])}
       >
         <Overlay onClick={close} />
@@ -129,10 +135,6 @@ const DrawerAsync = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Drawer = memo((props: DrawerProps) => {
   return (
     <AnimationProvider>

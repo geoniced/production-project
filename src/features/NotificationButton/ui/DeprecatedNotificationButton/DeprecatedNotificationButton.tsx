@@ -8,9 +8,9 @@ import {
   Button as ButtonDeprecated,
   ButtonTheme,
 } from '@/shared/ui/deprecated/Button';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 
 import cls from './DeprecatedNotificationButton.module.scss';
 
