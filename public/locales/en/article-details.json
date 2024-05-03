@@ -5,5 +5,9 @@
   "Back to articles list": "Back to articles list",
   "We also recommend": "We also recommend",
   "Edit article": "Edit article",
-  "Article rating is coming soon!": "Article rating is coming soon!"
+  "Article rating is coming soon!": "Article rating is coming soon!",
+  "Edit": "Edit",
+  "views_count_zero": "{{count}} views",
+  "views_count_one": "{{count}} view",
+  "views_count_other": "{{count}} views"
 }

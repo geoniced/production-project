@@ -3,7 +3,13 @@
   "Article rating is coming soon!": "Article rating is coming soon!",
   "Back to articles list": "Back to articles list",
   "Comments": "Comments",
+  "Edit": "Edit",
   "Edit article": "Edit article",
   "The article was not found": "",
-  "We also recommend": "We also recommend"
+  "We also recommend": "We also recommend",
+  "views": "",
+  "views_count": "",
+  "views_count_plural": "",
+  "{{count}} views": "",
+  "{{count}} views_plural": ""
 }

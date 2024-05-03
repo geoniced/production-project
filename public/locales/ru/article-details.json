@@ -5,5 +5,10 @@
   "Back to articles list": "Назад к списку статей",
   "We also recommend": "Рекомендуем",
   "Edit article": "Редактировать статью",
-  "Article rating is coming soon!": "Оценка статей скоро появится!"
+  "Article rating is coming soon!": "Оценка статей скоро появится!",
+  "Edit": "Edit",
+  "views_count_zero": "{{count}} просмотров",
+  "views_count_one": "{{count}} просмотр",
+  "views_count_few": "{{count}} просмотра",
+  "views_count_many": "{{count}} просмотров"
 }
