@@ -52,7 +52,7 @@ export const Text = memo(function Text(props: TextProps) {
   ];
 
   return (
-    <HeaderTag
+    <div
       className={classNames(cls.text, { [cls.bold]: bold }, additionalClasses)}
     >
       {title && (
@@ -65,6 +65,6 @@ export const Text = memo(function Text(props: TextProps) {
           {text}
         </p>
       )}
-    </HeaderTag>
+    </div>
   );
 });
