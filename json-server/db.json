@@ -725,6 +725,18 @@
       "userId": "1",
       "text": "nice article",
       "id": "khN-vhW"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Aliquam asperiores atque commodi doloremque esse expedita impedit laboriosam nesciunt? Accusamus accusantium   aliquam, architecto corporis dolore eveniet facere inventore ipsam iste minima nesciunt possimus quia quidem quos   reiciendis reprehenderit ullam!",
+      "id": "KGO9xB_"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "asdadsdaasd",
+      "id": "Mb0X_Yj"
     }
   ],
   "users": [
@@ -883,6 +895,12 @@
       "articleId": "16",
       "feedback": "kl",
       "id": "cfsHiur"
+    },
+    {
+      "userId": "1",
+      "rate": 4,
+      "articleId": "6",
+      "id": "rt1cwQN"
     }
   ],
   "profile-ratings": [

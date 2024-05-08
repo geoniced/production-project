@@ -16,10 +16,6 @@ interface ModalProps {
   // lazy?: boolean;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Modal = (props: ModalProps) => {
   const {
     className,

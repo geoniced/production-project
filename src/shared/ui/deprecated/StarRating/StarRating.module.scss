@@ -1,14 +1,22 @@
-.starIcon {
-  cursor: pointer;
-  transition: all 0.3ms;
+.starRating {
+  .hovered {
+    fill: var(--primary-color);
+  }
+}
+
+.starRatingRedesigned {
+  .hovered {
+    fill: var(--icon-redesigned);
+  }
 }
 
 .default {
   fill: none;
 }
 
-.hovered {
-  fill: var(--primary-color);
+.starIcon {
+  cursor: pointer;
+  transition: all 0.3ms;
 }
 
 .selected {

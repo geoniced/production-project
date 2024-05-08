@@ -10,7 +10,7 @@
 .button {
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 6px 16px;
   color: var(--text-redesigned);
   cursor: pointer;
   transition: 0.111s ease-in;
@@ -43,9 +43,14 @@
 }
 
 .outline {
-  border: 1px solid var(--icon-redesigned);
+  border: 2px solid var(--icon-redesigned);
   border-radius: 34px;
   background: none;
+
+  &:hover,
+  &:focus-visible {
+    border: 2px solid var(--accent-redesigned);
+  }
 }
 
 .filled {

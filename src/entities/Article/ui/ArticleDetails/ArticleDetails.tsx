@@ -9,12 +9,12 @@ import {
   ReducersMap,
   useDynamicModuleLoader,
 } from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { ArticleDetailsDeprecated } from './ArticleDetailsDeprecated';
 import { ArticleDetailsRedesigned } from './ArticleDetailsRedesigned';
+import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -59,20 +59,7 @@ export const ArticleDetails = memo(function ArticleDetails(
   let content;
 
   if (isLoading) {
-    content = (
-      <>
-        <Skeleton
-          className={cls.avatar}
-          width={200}
-          height={200}
-          borderRadius="100%"
-        />
-        <Skeleton className={cls.title} width={300} height={32} />
-        <Skeleton className={cls.skeleton} width={600} height={24} />
-        <Skeleton className={cls.skeleton} width="100%" height={200} />
-        <Skeleton className={cls.skeleton} width="100%" height={200} />
-      </>
-    );
+    content = <ArticleDetailsSkeleton />;
   } else if (error) {
     content = (
       <Text
