@@ -6,7 +6,7 @@ import {
   UpdateFeatureFlagsArg,
   updateFeatureFlagsMutation,
 } from '../api/featureFlagsApi';
-import { getAllFeatureFlags } from '../lib/setGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '../lib/setGetFeatures';
 
 export const updateFeatureFlag = createAsyncThunk<
   void,
@@ -15,18 +15,21 @@ export const updateFeatureFlag = createAsyncThunk<
 >('user/updateFeatureFlag', async ({ userId, features }, thunkAPI) => {
   const { dispatch, rejectWithValue } = thunkAPI;
 
+  const newFeatures = {
+    ...getAllFeatureFlags(),
+    ...features,
+  };
+
   try {
     await dispatch(
       updateFeatureFlagsMutation({
         userId,
-        features: {
-          ...getAllFeatureFlags(),
-          ...features,
-        },
+        features: newFeatures,
       }),
     );
 
-    window.location.reload();
+    setFeatureFlags(newFeatures);
+
     return undefined;
   } catch (err) {
     return rejectWithValue('error');

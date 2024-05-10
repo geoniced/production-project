@@ -1,5 +1,4 @@
 import React, { memo, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -7,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
-import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { useSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './DeprecatedSidebar.module.scss';
 
@@ -19,7 +18,7 @@ export const DeprecatedSidebar = memo((props: DeprecatedSidebarProps) => {
   const { className } = props;
 
   const [collapsed, setCollapsed] = useState(false);
-  const sidebarItemsList = useSelector(getSidebarItems);
+  const sidebarItemsList = useSidebarItems();
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };

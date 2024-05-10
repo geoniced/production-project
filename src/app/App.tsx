@@ -17,8 +17,10 @@ function App() {
   const initialized = useSelector(getUserInitialized);
 
   useEffect(() => {
-    dispatch(initAuthData());
-  }, [dispatch]);
+    if (!initialized) {
+      dispatch(initAuthData());
+    }
+  }, [dispatch, initialized]);
 
   if (!initialized) {
     return (

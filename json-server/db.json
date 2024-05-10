@@ -769,12 +769,13 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isAppRedesigned": true
       },
       "avatar": "https://pbs.twimg.com/profile_images/1584258394977931265/lrZvCd27_400x400.jpg",
       "jsonSettings": {
         "isArticlesPageWasVisited": true,
-        "theme": "app_dark_theme"
+        "theme": "app_light_theme"
       }
     },
     {

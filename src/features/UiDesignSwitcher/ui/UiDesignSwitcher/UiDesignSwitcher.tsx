@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
@@ -21,6 +22,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
   const isAppRedesigned = getFeatureFlag('isAppRedesigned');
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
+  const forceUpdate = useForceUpdate();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -50,6 +52,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     ).unwrap();
 
     setIsLoading(false);
+    forceUpdate();
   };
 
   return (

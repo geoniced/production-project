@@ -9,6 +9,7 @@ import {
   ReducersMap,
   useDynamicModuleLoader,
 } from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import {
   Button as ButtonDeprecated,
   ButtonTheme,
@@ -55,6 +56,8 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps) {
   const error = useSelector(getLoginError);
   const isLoading = useSelector(getLoginIsLoading);
 
+  const forceUpdate = useForceUpdate();
+
   const onUsernameChange = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
@@ -74,8 +77,9 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps) {
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate();
     }
-  }, [dispatch, onSuccess, password, username]);
+  }, [dispatch, forceUpdate, onSuccess, password, username]);
 
   return (
     <ToggleFeatures
