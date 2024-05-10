@@ -17,7 +17,6 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const [theme, setTheme] = useState<Theme>(
     initialTheme || defaultTheme || Theme.LIGHT,
   );
-  document.body.className = theme;
 
   useEffect(() => {
     if (!isThemeInitialized && defaultTheme) {
@@ -25,6 +24,10 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
       setIsThemeInitialized(true);
     }
   }, [defaultTheme, isThemeInitialized]);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const providerValue = useMemo(
     () => ({
