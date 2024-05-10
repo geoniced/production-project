@@ -56,7 +56,7 @@ export const RatingCardRedesigned: FC<RatingCardRedesignedProps> = ({
   );
 
   return (
-    <Card className={className} max data-testid="RatingCard">
+    <Card className={className} max data-testid="RatingCard" border="partial">
       <VStack align="center" gap="8" max>
         <Text title={starsCount ? t('Thanks for review!') : title} />
         <StarRating

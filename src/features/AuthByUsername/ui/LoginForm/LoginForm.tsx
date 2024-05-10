@@ -3,14 +3,22 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   ReducersMap,
   useDynamicModuleLoader,
 } from '@/shared/lib/hooks/useDynamicModuleLoader/useDynamicModuleLoader';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -70,39 +78,82 @@ const LoginForm = memo(function LoginForm(props: LoginFormProps) {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <div className={classNames(cls.loginForm, {}, [className])}>
-      <Text className={cls.formTitle} title={t('Authorization')} />
-      {error && (
-        <Text
-          className={cls.formError}
-          text={t('Wrong username or password')}
-          theme={TextTheme.ERROR}
-        />
-      )}
-      <Input
-        autoFocus
-        placeholder={t('Enter username')}
-        type="text"
-        className={cls.input}
-        onChange={onUsernameChange}
-        value={username}
-      />
-      <Input
-        placeholder={t('Enter password')}
-        type="text"
-        className={cls.input}
-        onChange={onPasswordChange}
-        value={password}
-      />
-      <Button
-        theme={ButtonTheme.OUTLINE}
-        className={cls.loginBtn}
-        onClick={onLoginClick}
-        disabled={isLoading}
-      >
-        {t('Login')}
-      </Button>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <VStack gap="16" className={classNames(cls.loginForm, {}, [className])}>
+          <Text className={cls.formTitle} title={t('Authorization')} />
+          {error && (
+            <Text
+              className={cls.formError}
+              text={t('Wrong username or password')}
+              variant="error"
+            />
+          )}
+          <Input
+            autoFocus
+            placeholder={t('Enter username')}
+            type="text"
+            className={cls.input}
+            onChange={onUsernameChange}
+            value={username}
+          />
+          <Input
+            placeholder={t('Enter password')}
+            type="text"
+            className={cls.input}
+            onChange={onPasswordChange}
+            value={password}
+          />
+          <Button
+            variant="outline"
+            className={cls.loginBtn}
+            onClick={onLoginClick}
+            disabled={isLoading}
+          >
+            {t('Login')}
+          </Button>
+        </VStack>
+      }
+      off={
+        <div className={classNames(cls.loginForm, {}, [className])}>
+          <TextDeprecated
+            className={cls.formTitle}
+            title={t('Authorization')}
+          />
+          {error && (
+            <TextDeprecated
+              className={cls.formError}
+              text={t('Wrong username or password')}
+              theme={TextTheme.ERROR}
+            />
+          )}
+          <InputDeprecated
+            autoFocus
+            placeholder={t('Enter username')}
+            type="text"
+            className={cls.input}
+            onChange={onUsernameChange}
+            value={username}
+          />
+          <InputDeprecated
+            placeholder={t('Enter password')}
+            type="text"
+            className={cls.input}
+            onChange={onPasswordChange}
+            value={password}
+          />
+          <ButtonDeprecated
+            theme={ButtonTheme.OUTLINE}
+            className={cls.loginBtn}
+            onClick={onLoginClick}
+            disabled={isLoading}
+          >
+            {t('Login')}
+          </ButtonDeprecated>
+        </div>
+      }
+    />
   );
 });
 

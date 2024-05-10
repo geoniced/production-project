@@ -7,7 +7,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './NavbarRedesigned.module.scss';
@@ -45,11 +45,7 @@ export const NavbarRedesigned = memo((props: NavbarRedesignedProps) => {
 
   return (
     <header className={classNames(cls.navbarRedesigned, {}, [className])}>
-      <Button
-        onClick={onOpenModal}
-        theme={ButtonTheme.CLEAR_INVERTED}
-        className={cls.links}
-      >
+      <Button onClick={onOpenModal} variant="clear" className={cls.links}>
         {t('Login')}
       </Button>
 
