@@ -5,6 +5,7 @@ import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInitialized, initAuthData } from '@/entities/User';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -24,18 +25,28 @@ function App() {
 
   if (!initialized) {
     return (
-      <VStack align="center" justify="center" max className="app">
-        <main className="content-page" style={{ height: '100%' }}>
-          <VStack
-            align="center"
-            justify="center"
-            max
-            style={{ height: '100%' }}
-          >
-            <PageLoader />
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <div id="app" className="app_redesigned">
+            <AppLoaderLayout />
+          </div>
+        }
+        off={
+          <VStack align="center" justify="center" max className="app">
+            <main className="content-page" style={{ height: '100%' }}>
+              <VStack
+                align="center"
+                justify="center"
+                max
+                style={{ height: '100%' }}
+              >
+                <PageLoader />
+              </VStack>
+            </main>
           </VStack>
-        </main>
-      </VStack>
+        }
+      />
     );
   }
 

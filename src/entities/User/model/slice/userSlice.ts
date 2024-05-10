@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage';
+import {
+  LOCAL_STORAGE_LAST_DESIGN_KEY,
+  USER_LOCAL_STORAGE_KEY,
+} from '@/shared/const/localStorage';
 import { setFeatureFlags } from '@/shared/lib/features';
 
 import { initAuthData } from '../services/initAuthData';
@@ -16,10 +19,16 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setAuthData: (state, action: PayloadAction<User>) => {
-      state.authData = action.payload;
-      setFeatureFlags(action.payload.features);
-      localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id);
+    setAuthData: (state, { payload }: PayloadAction<User>) => {
+      state.authData = payload;
+      setFeatureFlags(payload.features);
+
+      // better to set items to LS while in loginByUserName async thunk
+      localStorage.setItem(USER_LOCAL_STORAGE_KEY, payload.id);
+      localStorage.setItem(
+        LOCAL_STORAGE_LAST_DESIGN_KEY,
+        payload?.features?.isAppRedesigned ? 'new' : 'old',
+      );
     },
     // initAuthData: (state) => {
     //   const user = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
