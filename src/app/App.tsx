@@ -11,11 +11,13 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 
 function App() {
   const dispatch = useAppDispatch();
   const initialized = useSelector(getUserInitialized);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!initialized) {
@@ -60,7 +62,7 @@ function App() {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
-              toolbar={<div>{}</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>

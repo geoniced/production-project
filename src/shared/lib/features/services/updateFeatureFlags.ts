@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localStorage';
 
 import {
   UpdateFeatureFlagsArg,
@@ -29,6 +30,10 @@ export const updateFeatureFlag = createAsyncThunk<
     );
 
     setFeatureFlags(newFeatures);
+    localStorage.setItem(
+      LOCAL_STORAGE_LAST_DESIGN_KEY,
+      newFeatures?.isAppRedesigned ? 'new' : 'old',
+    );
     window.location.reload();
     return undefined;
   } catch (err) {
