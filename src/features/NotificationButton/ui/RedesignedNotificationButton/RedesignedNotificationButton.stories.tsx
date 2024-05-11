@@ -8,7 +8,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { RedesignedNotificationButton } from './RedesignedNotificationButton';
 
 export default {
-  title: 'shared/RedesignedNotificationButton',
+  title: 'features/NotificationButton/RedesignedNotificationButton',
   component: RedesignedNotificationButton,
   argTypes: {
     backgroundColor: { control: 'color' },

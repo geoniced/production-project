@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Navbar } from '@/widgets/Navbar';
@@ -13,8 +13,9 @@ import { VStack } from '@/shared/ui/redesigned/Stack';
 
 import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-function App() {
+const App = memo(function App() {
   const dispatch = useAppDispatch();
   const initialized = useSelector(getUserInitialized);
   const toolbar = useAppToolbar();
@@ -80,6 +81,6 @@ function App() {
       }
     />
   );
-}
+});
 
-export default App;
+export default withTheme(App);

@@ -1,5 +1,9 @@
 # Storybook
 
+В рамках редизайна используется декоратор NewDesignDecorator
+
+Для переключения фича-флагов используется FeatureFlagsDecorator
+
 Пример использования:
 ```typescript jsx
 import React from "react";

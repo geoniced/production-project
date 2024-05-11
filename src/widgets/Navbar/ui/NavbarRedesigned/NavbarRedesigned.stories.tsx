@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { NavbarRedesigned } from './NavbarRedesigned';
 
 export default {
-  title: 'shared/NavbarRedesigned',
+  title: 'widgets/Navbar/NavbarRedesigned',
   component: NavbarRedesigned,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -17,3 +19,4 @@ const Template: ComponentStory<typeof NavbarRedesigned> = (args) => (
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
