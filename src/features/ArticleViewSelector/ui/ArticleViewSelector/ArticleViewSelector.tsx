@@ -71,6 +71,7 @@ export const ArticleViewSelector = memo(function ArticleViewSelector(
                 [cls.notSelected]: view !== viewType.view,
               })}
               Svg={viewType.icon}
+              key={viewType.view}
             />
           ))}
         </Card>

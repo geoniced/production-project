@@ -59,7 +59,7 @@ export const ListBox = typedMemo(function ListBox<T extends string>(
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button as={Fragment}>
           <Button
             variant="filled"
             disabled={readonly}
